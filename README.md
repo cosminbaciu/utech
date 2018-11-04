@@ -18,8 +18,7 @@ Totodata, pentru a folosi API-ul Youtube-v3, am obtinut un API-key de pe https:/
 ## Mock-ups
 
 
-
-![Step 1](utech/mock-ups/mock1.jpg)
+![Step 1](https://raw.githubusercontent.com/cosmin.baciu/utech/mock-ups/mock1.jpg)
             
 https://raw.githubusercontent.com/andreeabadea/utech/mock-ups/mock2.png
 
