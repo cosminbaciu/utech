@@ -11,39 +11,136 @@ Fiecare utilizator isi poate adauga in propriul playlist o colectie de videclipu
 Nu in ultimul rand, trebuie mentionat faptul ca aplicatia noastra nu poate fi utilizata fara accesul unei retele Wi-fi, ori utilizarea de date mobile.
 Youtube este una dintre cele mai utile aplicatii datorita posibilitatii de a aceesa videoclipuri oriunde te-ai afla. Alte produse similar pe piata putem enumera: Spotify, ITube, Apple Music, BlackPlayer,etc. 
 
-Pentru partea de backend am ales sa utilizam Java Springboot si Maven.
+Pentru partea de backend am ales sa utilizam Java Springboot si Maven, iar pentru baza de date PostgreSQL.
 Pentru a creea aceasta aplicatie vom folosi librariile com.google.api-client si com.google.goolge-api-services.
 Totodata, pentru a folosi API-ul Youtube-v3, am obtinut un API-key de pe https://developers.google.com/youtube pe care il includem in fisierul de proprietati.
 
-## Mock-ups
-
-
-![Step 1](https://raw.githubusercontent.com/cosmin.baciu/utech/mock-ups/mock1.jpg)
             
-https://raw.githubusercontent.com/andreeabadea/utech/mock-ups/mock2.png
+
 
 ## Interfețe aplicație
 
-/api/search (String keyword)
-/api/getFavouriteVideos
-/api/addVideoToFavourite (Video video)
-/api/createUser (User user)
-/api/logIn(String username, String password, String token)
-/api/deleteVideoFromFavourite/:id (Long id)
-/api/getVideo/:id (Long id)
-/api/updateVideo/:id
+![1](https://raw.githubusercontent.com/cosmin.baciu/utech/mock-ups/mock1.jpg)
+
+![2](https://raw.githubusercontent.com/cosmin.baciu/utech/mock-ups/mock2.jpg)
+
+
+
+
+```
+POST: /api/login
+```
+
+```
+GET : /api/account
+```
+
+```
+POST : /api/account
+```
+
+```
+PUT : /api/account/{id}
+```
+
+```
+POST : /api/account/change-password
+```
+
+```
+GET : /api/search/{keyword}
+```
+
+```
+GET : /api/getFavouriteVideos
+```
+
+```
+GET : /api/getFavouriteVideos/{id}
+```
+
+```
+POST : /api/addVideoToFavourite
+```
+
+```
+DELETE: /api/deleteVideoFromFavourite/{id}
+```
+
+Components:
+
+```
+Login form
+```
+```
+Register form
+```
+```
+User details
+```
+```
+Video search
+```
+```
+Favourite video list
+```
+```
+Delete video
+```
+```
+All video list
+```
+
+User actions:
+
+```
+Login
+```
+```
+Register
+```
+```
+Update personal details
+```
+```
+Search video by keyword
+```
+```
+Update favourite video list
+```
+```
+Get favourite video list
+```
+```
+Delete video from favourite liste
+```
+```
+Get all videos list
+```
+
+
 
 
 ## API REST
 
 
+```
+POST: /api/login
+```
+
+```JSON
+{
+   "username":"string",
+   "password":"string",
+}
+```
 
 ```
 GET : /api/account
 ```
 
 
-```json
+```JSON
 {
 "id": 1,
 "username": "string",
