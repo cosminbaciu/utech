@@ -216,9 +216,9 @@ Response:
 ```JSON
 [
 {
-"videoId" : Long,
-"title": string,
-"thumbnail" , string
+"videoId" : "long",
+"title": "string",
+"thumbnail" : "string"
 }
 ]
 
@@ -234,9 +234,9 @@ Response:
 ```JSON
 [
 {
-"videoId" : Long,
-"title": string,
-"thumbnail" , string
+"videoId" : "long",
+"title": "string",
+"thumbnail" : "string"
 }
 ]
 ```
@@ -250,9 +250,9 @@ Response
 
 ```JSON
 {
-"videoId" : Long,
-"title": string,
-"thumbnail" , string
+"videoId" : "long",
+"title": "string",
+"thumbnail" : "string"
 }
 ```
 
@@ -264,9 +264,9 @@ Request:
 
 ```JSON
 {
-"videoId" : long,
-"title": string,
-"thumbnail" , string
+"videoId" : "long",
+"title": "string",
+"thumbnail": "string"
 }
 ```
 
