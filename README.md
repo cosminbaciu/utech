@@ -17,7 +17,9 @@ Totodata, pentru a folosi API-ul Youtube-v3, am obtinut un API-key de pe https:/
 
 ## Mock-ups
 
-https://raw.githubusercontent.com/andreeabadea/utech/mock-ups/mock1.png
+![alt text](https://raw.githubusercontent.com/cosminbaciu/utech/mock-ups/mock1.png "Logo Title Text 1")
+      
+      
 https://raw.githubusercontent.com/andreeabadea/utech/mock-ups/mock2.png
 
 ## Interfețe aplicație
