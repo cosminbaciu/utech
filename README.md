@@ -22,7 +22,7 @@ Totodata, pentru a folosi API-ul Youtube-v3, am obtinut un API-key de pe https:/
 
 ![1](https://github.com/cosminbaciu/utech/blob/master/mock-ups/mock1.jpg)
 
-![2](https://raw.githubusercontent.com/cosmin.baciu/utech/mock-ups/mock2.jpg)
+![2](https://github.com/cosminbaciu/utech/blob/master/mock-ups/mock2.jpg)
 
 
 
