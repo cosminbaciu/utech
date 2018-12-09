@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ro.uTech.security.model.CustomUserDetails;
 import ro.uTech.security.service.UserRegistrationServiceSupport;
 import ro.uTech.youtube.model.domain.FavouriteVideo;
+import ro.uTech.youtube.model.dto.FavouriteVideoDTO;
 import ro.uTech.youtube.service.FavouriteVideoService;
 
 import javax.validation.Valid;
@@ -31,7 +32,7 @@ public class FavouriteVideoController {
 
 
     @RequestMapping(value = "/addToFavourites", produces = "application/json", method = RequestMethod.POST)
-    public ResponseEntity<FavouriteVideo> addToFavourite(@Valid @RequestBody FavouriteVideo favouriteVideo, @AuthenticationPrincipal CustomUserDetails activeUser){
+    public ResponseEntity<FavouriteVideo> addToFavourite(@Valid @RequestBody FavouriteVideoDTO favouriteVideo, @AuthenticationPrincipal CustomUserDetails activeUser){
 
         return new ResponseEntity<>(favouriteVideoService.addToFavourite(favouriteVideo, userRegistrationServiceSupport.getUserId(activeUser.getEmail())), HttpStatus.CREATED);
     }
@@ -47,7 +48,7 @@ public class FavouriteVideoController {
     }
 
     @RequestMapping(value = "/addAViewForVideo", produces = "application/json", method = RequestMethod.PUT)
-    public ResponseEntity<FavouriteVideo> addAViewForVideo(@Valid @RequestBody FavouriteVideo favouriteVideo, @AuthenticationPrincipal CustomUserDetails activeUser){
+    public ResponseEntity<FavouriteVideo> addAViewForVideo(@Valid @RequestBody FavouriteVideoDTO favouriteVideo, @AuthenticationPrincipal CustomUserDetails activeUser){
 
         return new ResponseEntity<>(favouriteVideoService.addAViewForVideo(favouriteVideo, userRegistrationServiceSupport.getUserId(activeUser.getEmail())), HttpStatus.OK);
     }

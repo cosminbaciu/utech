@@ -42,6 +42,9 @@
             <column name="user_id" type="SERIAL">
                 <constraints nullable="false"/>
             </column>
+            <column name="views" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
             <column name="favourite_flag" type="BOOLEAN">
                 <constraints nullable="false"/>
             </column>
@@ -49,6 +52,7 @@
             <column defaultValueComputed="${now}" name="updated_at" type="datetime"/>
         </createTable>
     </changeSet>
+
 
 
 
