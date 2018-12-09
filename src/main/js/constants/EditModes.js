@@ -1,0 +1,4 @@
+export const NO_EDIT = "NO_EDIT";
+export const EDIT_REGIONS = "EDIT_REGIONS";
+export const EDIT_LOCALITIES_REGIONS = "EDIT_LOCALITIES_REGIONS";
+export const ADD_VOUCHERS = "ADD_VOUCHERS";

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="key" id="1">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_roles"
+                                 constraintName="user_roles_fk1"
+                                 referencedColumnNames="id" referencedTableName="users"
+                                 deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="NO ACTION"
+                                 referencesUniqueColumn="false"/>
+    </changeSet>
+    <changeSet author="key" id="2">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="user_roles"
+                                 constraintName="user_roles_fk2"
+                                 referencedColumnNames="id" referencedTableName="roles"
+                                 deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="NO ACTION"
+                                 referencesUniqueColumn="false"/>
+    </changeSet>
+    <changeSet author="key" id="3">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="role_permissions"
+                                 constraintName="role_permissions_fk1"
+                                 referencedColumnNames="id" referencedTableName="roles"
+                                 deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="NO ACTION"
+                                 referencesUniqueColumn="false"/>
+    </changeSet>
+    <changeSet author="key" id="4">
+        <addForeignKeyConstraint baseColumnNames="permission_id" baseTableName="role_permissions"
+                                 constraintName="role_permissions_fk2"
+                                 referencedColumnNames="id" referencedTableName="permissions"
+                                 deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="NO ACTION"
+                                 referencesUniqueColumn="false"/>
+    </changeSet>
+    <changeSet author="vlad" id="5">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="identities"
+                                 constraintName="identities_fk1"
+                                 referencedColumnNames="id" referencedTableName="users"
+                                 deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="NO ACTION"
+                                 referencesUniqueColumn="false"/>
+    </changeSet>
+
+</databaseChangeLog>

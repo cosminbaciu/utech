@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head th:include="backoffice/fragments::head">
+
+    <title>Digital Attacker | Admin | Security</title>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header" th:include="backoffice/fragments::header">
+
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" th:include="backoffice/fragments::aside">
+
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Customers
+                <small>Dashboard</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>15</h3>
+
+                            <p>Administrators</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>30</h3>
+
+                            <p>Roles</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>15</h3>
+
+                            <p>Groups</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>150</h3>
+                            <p>Users</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-5 col-md-offset-1">
+                    <div class="input-group margin">
+                        <input class="form-control" type="text" data-bind="textInput: searchNameQuery"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info btn-flat"
+                                    data-bind="click: searchCustomersByName">Cauta dupa nume!</button>
+                        </span>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info btn-flat"
+                                    data-bind="click: resetSearch">Reset!</button>
+                        </span>
+                    </div>
+                    <div class="input-group margin">
+                        <input class="form-control" type="text" data-bind="textInput: searchIdQuery"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info btn-flat"
+                                    data-bind="click: searchCustomersById">Cauta dupa id  !</button>
+                        </span>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-warning btn-flat"
+                                    data-bind="click: resetSearch">Reset!</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-5 col-md-offset-1">
+                    <ul class="pagination pagination-sm no-margin pull-right" data-bind="foreach: pages">
+                        <li data-bind="css: { active: $parent.page() == $data.page }"><a href="#"
+                                                                                         data-bind="attr: { href: url }, text: displayText, click: $parent.changePage">N/A</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row" data-bind="template: { name: 'customer-template', foreach: customers}">
+
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="pagination pagination-sm no-margin pull-right" data-bind="foreach: pages">
+                        <li><a href="#" data-bind="attr: { href: url }, text: displayText, click: $parent.changePage">N/A</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 2.3.8
+        </div>
+        <!--<strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights-->
+        <!--reserved.-->
+    </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script th:src="@{/admin/plugins/jQuery/jquery-2.2.3.min.js}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.6 -->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!-- Select2 -->
+<script th:src="@{/admin/plugins/select2/select2.full.min.js}"></script>
+<!-- Morris.js charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script th:src="@{/admin/plugins/morris/morris.min.js}"></script>
+<!-- Sparkline -->
+<script th:src="@{/admin/plugins/sparkline/jquery.sparkline.min.js}"></script>
+<!-- jvectormap -->
+<script th:src="@{/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
+<script th:src="@{/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js}"></script>
+<!-- jQuery Knob Chart -->
+<script th:src="@{/admin/plugins/knob/jquery.knob.js}"></script>
+<!-- daterangepicker -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>-->
+<script th:src="@{/admin/plugins/daterangepicker/daterangepicker.js}"></script>
+<!-- datepicker -->
+<script th:src="@{/admin/plugins/datepicker/bootstrap-datepicker.js}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script th:src="@{/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js}"></script>
+<!-- Slimscroll -->
+<script th:src="@{/admin/plugins/slimScroll/jquery.slimscroll.min.js}"></script>
+<!-- FastClick -->
+<script th:src="@{/admin/plugins/fastclick/fastclick.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/admin/js/app.min.js}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script th:src="@{/admin/js/pages/dashboard.js}"></script>
+<!-- AdminLTE for demo purposes -->
+<script th:src="@{/admin/js/demo.js}"></script>
+<!-- Knockout scripts -->
+<script type="text/javascript" th:src="@{/js/knockout-3.4.2.js}"></script>
+<!-- Page specific knockout scripts -->
+
+<script type="text/html" id="customer-template">
+
+    <div class="row">
+        <div class="col-md-2">
+
+            <!-- Profile Image -->
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                    <div class="pull-right box-tools">
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="tooltip"
+                                title="" data-original-title="Refresh" data-bind="click: $data.refreshCustomer">
+                            <i class="fa fa-refresh"></i></button>
+                    </div>
+
+                    <img class="profile-user-img img-responsive img-circle" th:src="@{/admin/img/avatar.png}"
+                         alt="User profile picture"/>
+
+                    <h3 class="profile-username text-center" data-bind="text: $data.name">Nume Prenume</h3>
+
+                    <p class="text-muted text-center" data-bind="text: $data.accountId">AccountId</p>
+
+                    <p class="text-muted text-center" data-bind="text: $data.statusCode">Status Code</p>
+
+                    <div class="form-group">
+                        <label>Select</label>
+                        <select class="form-control"
+                                data-bind="options: availableStatusCodes, value: selectedStatusCode, optionsText: 'name'">
+                        </select>
+                    </div>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-info btn-flat" data-bind="click: setStatus">Schimba status !</button>
+                    </span>
+
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <b>Contracts</b> <a class="pull-right" data-bind="text: $data.contractsCount"></a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Documents</b> <a class="pull-right" data-bind="text: $data.documentsCount"></a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Electricity POD</b> <a class="pull-right" data-bind="text: $data.electricityPOD"></a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Gas POD</b> <a class="pull-right" data-bind="text: $data.gasPOD"></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+            <!-- About Me Box -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Details</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <strong><i class="fa fa-book margin-r-5"></i>Email</strong>
+
+                    <p class="text-muted" data-bind="text: $data.email"></p>
+
+                    <hr/>
+
+                    <strong><i class="fa fa-book margin-r-5"></i>Phone</strong>
+
+                    <p class="text-muted" data-bind="text: $data.phone"></p>
+
+                    <hr/>
+
+                    <strong><i class="fa fa-map-marker margin-r-5"></i>Legal Address (id: <span
+                            data-bind="text: $data.legalAddressId"></span> )</strong>
+
+                    <p class="text-muted" data-bind="text: $data.legalAddress">Malibu, California</p>
+
+                    <hr/>
+
+                    <strong><i class="fa fa-map-marker margin-r-5"></i>Consumption Address (id: <span
+                            data-bind="text: $data.consumptionAddressId"></span> )</strong>
+
+                    <p class="text-muted" data-bind="text: $data.consumptionAddress">Malibu, California</p>
+
+                    <hr/>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-10">
+            <div class="col-sm-5">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#contact" data-toggle="tab" aria-expanded="false"
+                                              data-bind="attr: { href: $data.contactMenuTabId}">Contact</a></li>
+                        <li class=""><a href="#address" data-toggle="tab" aria-expanded="false"
+                                        data-bind="attr: { href: $data.legalAddressMenuTabId}">Adresa legala</a></li>
+                        <li class=""><a href="#contracts" data-toggle="tab" aria-expanded="false"
+                                        data-bind="attr: { href: $data.contractsMenuTabId}">Contracte</a></li>
+                        <li class=""><a href="#invoiceStorage" data-toggle="tab" aria-expanded="false"
+                                        data-bind="attr: { href: $data.invoiceStorageMenuTabId}">InvoiceStorage</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" data-bind="attr: { id: $data.contactTabId}">
+
+                            <!-- Post -->
+                            <div class="post">
+
+                                <div class="form-group">
+                                    <label for="firstNameField">Nume</label>
+                                    <input id="firstNameField" class="form-control input-sm" placeholder="Last Name"
+                                           type="text" data-bind="textInput: $data.lastName"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastNameField">Prenume</label>
+                                    <input id="lastNameField" class="form-control input-sm" placeholder="First Name"
+                                           type="text" data-bind="textInput: $data.firstName"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="emailField">Email</label>
+                                    <input id="emailField" class="form-control input-sm" placeholder="Email" type="text"
+                                           data-bind="textInput: $data.email"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phoneField">Telefon</label>
+                                    <input id="phoneField" class="form-control input-sm" placeholder="Phone" type="text"
+                                           data-bind="textInput: $data.phone"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="idSeriesField">Serie CI</label>
+                                    <input id="idSeriesField" class="form-control input-sm" placeholder="ID Series"
+                                           type="text" data-bind="textInput: $data.idSeries"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cnpField">CNP</label>
+                                    <input id="cnpField" class="form-control input-sm" placeholder="CNP" type="text"
+                                           data-bind="textInput: $data.cnp"/>
+                                </div>
+
+                                <span class="input-group-btn">
+                                <button type="button" class="btn btn-info btn-flat"
+                                        data-bind="click: $data.updateContact">Salveaza date contact!</button>
+                            </span>
+                            </div>
+                            <!-- /.post -->
+                        </div>
+
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" data-bind="attr: { id: $data.legalAddressTabId}">
+
+                            <div class="box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Adresa din buletin</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+
+                                    <!-- Post -->
+                                    <div class="post">
+
+                                        <div class="form-group">
+                                            <label for="localityField">Localitate</label>
+                                            <input id="localityField" class="form-control input-sm"
+                                                   placeholder="Localitate" disabled="" type="text"
+                                                   data-bind="textInput: $data.address().locality"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subdivisionField">Judet</label>
+                                            <input id="subdivisionField" class="form-control input-sm"
+                                                   placeholder="Subdivision" disabled="" type="text"
+                                                   data-bind="textInput: $data.address().subdivision"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="streetField">Strada</label>
+                                            <input id="streetField" class="form-control input-sm" placeholder="Street"
+                                                   type="text" data-bind="textInput: $data.address().streetName"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="streetNumberField">Numar</label>
+                                            <input id="streetNumberField" class="form-control input-sm"
+                                                   placeholder="Street Number" type="text"
+                                                   data-bind="textInput: $data.address().streetNumber"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="buildingField">Bloc</label>
+                                            <input id="buildingField" class="form-control input-sm"
+                                                   placeholder="Building" type="text"
+                                                   data-bind="textInput: $data.address().building"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="apartmentFied">Apartament</label>
+                                            <input id="apartmentFied" class="form-control input-sm"
+                                                   placeholder="Apartment" type="text"
+                                                   data-bind="textInput: $data.address().apartment"/>
+                                        </div>
+
+                                        <hr/>
+
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-info btn-flat"
+                                                    data-bind="click: $data.address().updateAddress">Salveaza adresa!</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+
+                        </div>
+
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" data-bind="attr: { id: $data.invoiceStorageTabId}">
+
+                            <div class="box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Register in invoiceStorage</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-flat"
+                                                data-bind="click: $data.sendToInvoiceStorage">Register in invoiceStorage!</button>
+                                    </span>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+
+                            <div class="box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title" data-bind="text: $data.name"></h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-flat"
+                                                data-bind="click: $data.sendCustomerFiles">Send documents in InvoiceStorage!</button>
+                                    </span>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+
+                            <div class="box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title" data-bind="text: $data.name"></h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-flat"
+                                                data-bind="click: $data.getMeterDetails">Get meter details!</button>
+                                    </span>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+
+                        </div>
+                        <!-- /.tab-pane -->
+
+                        <div class="tab-pane" data-bind="attr: { id: $data.contractsTabId}">
+
+                            <div class="box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title" data-bind="text: $data.name"></h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+
+                                    <table class="table table-bordered">
+                                        <tbody data-bind="foreach: $data.contracts()">
+                                        <tr>
+                                            <td data-bind="text: $data.id"></td>
+                                            <td data-bind="text: $data.productName"><span class="badge bg-red"></span>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <!--<button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="" data-original-title="View" data-bind="click: $parent.selectContract">-->
+                                                    <!--<i class="fa fa-info-o"></i></button>-->
+                                                    <button type="button" class="btn btn-info btn-flat"
+                                                            data-bind="click: $parent.selectContract">Vizualizeaza!
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+
+                        </div>
+                        <!-- /.tab-pane -->
+                    </div>
+                    <!-- /.tab-content -->
+                </div>
+                <!-- /.nav-tabs-custom -->
+            </div>
+
+            <div class="col-sm-7">
+                <div class="box" data-bind="visible: contractSelected">
+                    <div class="box-header ui-sortable-handle" style="cursor: move;">
+                        <i class="fa fa-envelope"></i>
+
+                        <h3 class="box-title" data-bind="text:'Informatii despre contractul cu numarul ' + id()">Informatii despre contractul cu numarul</h3>
+                        <!-- tools box -->
+                        <div class="pull-right box-tools">
+                            <button type="button" class="btn btn-info btn-sm" data-toggle="tooltip"
+                                    title="" data-original-title="Refresh" data-bind="click: $data.refreshCustomer">
+                                <i class="fa fa-refresh"></i></button>
+                            <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip"
+                                    title="" data-original-title="Inchide" data-bind="click: $data.unselectContract">
+                                <i class="fa fa-times"></i></button>
+                        </div>
+                        <!-- /. tools -->
+                    </div>
+
+                    <div class="box-body">
+
+                        <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#address" data-toggle="tab" aria-expanded="false"
+                                                      data-bind="attr: { href: $data.selectedContract().addressMenuTabId}">Adresa</a>
+                                </li>
+                                <li class=""><a href="#notification" data-toggle="tab" aria-expanded="false"
+                                                data-bind="attr: { href: $data.selectedContract().notificationMenuTabId}">Notificare</a>
+                                </li>
+                                <li><a href="#products" data-toggle="tab" aria-expanded="false"
+                                       data-bind="attr: { href: $data.selectedContract().productsMenuTabId}">Produs</a>
+                                </li>
+                                <li class=""><a href="#documents" data-toggle="tab" aria-expanded="false"
+                                                data-bind="attr: { href: $data.selectedContract().documentsMenuTabId}">Documente</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active"
+                                     data-bind="attr: { id: $data.selectedContract().addressTabId}">
+                                    <!-- Post -->
+                                    <div class="post">
+
+                                        <div class="form-group">
+                                            <label for="localityField">Localitate</label>
+                                            <input id="localityField" class="form-control input-sm"
+                                                   placeholder="Localitate" disabled="" type="text"
+                                                   data-bind="textInput: $data.selectedContract().address().locality"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subdivisionField">Judet</label>
+                                            <input id="subdivisionField" class="form-control input-sm"
+                                                   placeholder="Subdivision" disabled="" type="text"
+                                                   data-bind="textInput: $data.selectedContract().address().subdivision"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="streetField">Strada</label>
+                                            <input id="streetField" class="form-control input-sm" placeholder="Street"
+                                                   type="text"
+                                                   data-bind="textInput: $data.selectedContract().address().streetName"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="streetNumberField">Numar</label>
+                                            <input id="streetNumberField" class="form-control input-sm"
+                                                   placeholder="Street Number" type="text"
+                                                   data-bind="textInput: $data.selectedContract().address().streetNumber"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="buildingField">Bloc</label>
+                                            <input id="buildingField" class="form-control input-sm"
+                                                   placeholder="Building" type="text"
+                                                   data-bind="textInput: $data.selectedContract().address().building"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="apartmentFied">Apartament</label>
+                                            <input id="apartmentFied" class="form-control input-sm"
+                                                   placeholder="Apartment" type="text"
+                                                   data-bind="textInput: $data.selectedContract().address().apartment"/>
+                                        </div>
+
+                                        <hr/>
+
+                                        <div class="form-group">
+                                            <label for="electricityPODFied">POD EE</label>
+                                            <input id="electricityPODFied" class="form-control input-sm"
+                                                   placeholder="POD Electricitate" type="text"
+                                                   data-bind="textInput: $data.selectedContract().address().electricityPOD"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="gasPODFied">POD GN</label>
+                                            <input id="gasPODFied" class="form-control input-sm" placeholder="POD Gaz"
+                                                   type="text"
+                                                   data-bind="textInput: $data.selectedContract().address().gasPOD"/>
+                                        </div>
+
+                                        <hr/>
+
+                                        <div class="form-group">
+                                            <label for="electricityNLCFied">NLC (Cod Loc Consum) Electricitate</label>
+                                            <input id="electricityNLCFied" class="form-control input-sm"
+                                                   placeholder="NLC Electricitate" type="text"
+                                                   data-bind="textInput: $data.selectedContract().address().electricityNLC"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="gasNLCFied">NLC (Cod Loc Consum) Gaz</label>
+                                            <input id="gasNLCFied" class="form-control input-sm" placeholder="NLC Gaz"
+                                                   type="text"
+                                                   data-bind="textInput: $data.selectedContract().address().gasNLC"/>
+                                        </div>
+
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-info btn-flat"
+                                                    data-bind="click: $data.selectedContract().address().updateAddress">Salveaza !</button>
+                                        </span>
+
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-info btn-flat"
+                                                    data-bind="click: $data.generateDocuments">Genereaza contract, anexa, notificari!</button>
+                                        </span>
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-info btn-flat"
+                                                    data-bind="click: $data.obtainNLC">Obtine NLC!</button>
+                                        </span>
+                                    </div>
+                                    <!-- /.post -->
+                                </div>
+                                <!-- /.tab-pane -->
+
+                                <div class="tab-pane"
+                                     data-bind="attr: { id: $data.selectedContract().notificationTabId}">
+
+                                    <h5>Notificare Electricitate</h5>
+
+                                    <div class="post">
+
+                                        <div class="form-group">
+                                            <label for="contractNrField">Numar Contract</label>
+                                            <input id="contractNrField" class="form-control input-sm"
+                                                   placeholder="Numar Contract" type="text"
+                                                   data-bind="textInput: $data.selectedContract().electricityNotification().contractNrField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="customerCodeField">Cod client la actualul furnizor</label>
+                                            <input id="customerCodeField" class="form-control input-sm"
+                                                   placeholder="Cod client la actualul furnizor" type="text"
+                                                   data-bind="textInput: $data.selectedContract().electricityNotification().customerCodeField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="counterIndexField">Valoarea idexului actual</label>
+                                            <input id="counterIndexField" class="form-control input-sm"
+                                                   placeholder="Valoarea idexului actual" type="text"
+                                                   data-bind="textInput: $data.selectedContract().electricityNotification().counterIndexField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="counterSeriesField">Valoarea contorului indexului</label>
+                                            <input id="counterSeriesField" class="form-control input-sm"
+                                                   placeholder="Valoarea contorului indexului" type="text"
+                                                   data-bind="textInput: $data.selectedContract().electricityNotification().counterSeriesField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="dateField">Date</label>
+                                            <input id="dateField" class="form-control input-sm" placeholder="Date"
+                                                   type="text"
+                                                   data-bind="textInput: $data.selectedContract().electricityNotification().dateField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="oldContractDateField">Data start a contractului curent</label>
+                                            <input id="oldContractDateField" class="form-control input-sm"
+                                                   placeholder="Data start a contractului curent" type="text"
+                                                   data-bind="textInput: $data.selectedContract().electricityNotification().oldContractDateField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="oldContractNrField">Numarul contractului curent</label>
+                                            <input id="oldContractNrField" class="form-control input-sm"
+                                                   placeholder="Numarul contractului curent" type="text"
+                                                   data-bind="textInput: $data.selectedContract().electricityNotification().oldContractNrField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="soldField"> Soldul la actualul furnizor</label>
+                                            <input id="soldField" class="form-control input-sm" placeholder=" Soldul la actualul furnizor"
+                                                   type="text"
+                                                   data-bind="textInput: $data.selectedContract().electricityNotification().soldField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="idDateField">Data eliberarii cardului de identitate</label>
+                                            <input id="idDateField" class="form-control input-sm" placeholder="Data eliberarii cardului de identitate"
+                                                   type="text"
+                                                   data-bind="textInput: $data.selectedContract().electricityNotification().idDateField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="idIssuedByField">De cine a fost eliberat cardul de identitate</label>
+                                            <input id="idIssuedByField" class="form-control input-sm"
+                                                   placeholder="De cine a fost eliberat cardul de identitate" type="text"
+                                                   data-bind="textInput: $data.selectedContract().electricityNotification().idIssuedByField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Distribuitor</label>
+                                            <select class="form-control"
+                                                    data-bind="options: $parent.distributors, value: $data.selectedContract().electricityNotification().selectedDistributor, optionsText: 'description'">
+                                            </select>
+                                        </div>
+
+                                        <span class="input-group-btn">
+                                    <button type="button" class="btn btn-info btn-flat"
+                                            data-bind="click: $data.selectedContract().electricityNotification().updateNotificationDetails">Salveaza!</button>
+                                </span>
+                                    </div>
+
+                                    <h5>Notificare Gaz</h5>
+
+                                    <div class="post">
+
+                                        <div class="form-group">
+                                        <label for="contractNrField">Numar Contract</label>
+                                        <input id="contractNrField" class="form-control input-sm"
+                                        placeholder="Numar Contract" type="text"
+                                        data-bind="textInput: $data.selectedContract().gasNotification().contractNrField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="customerCodeField">Cod client la actualul furnizor</label>
+                                            <input id="customerCodeField" class="form-control input-sm"
+                                                   placeholder="Cod client la actualul furnizor" type="text"
+                                                   data-bind="textInput: $data.selectedContract().gasNotification().customerCodeField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="counterIndexField">Valoarea idexului actual</label>
+                                            <input id="counterIndexField" class="form-control input-sm"
+                                                   placeholder="Valoarea idexului actual" type="text"
+                                                   data-bind="textInput: $data.selectedContract().gasNotification().counterIndexField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="counterSeriesField">Valoarea contorului indexului</label>
+                                            <input id="counterSeriesField" class="form-control input-sm"
+                                                   placeholder="Valoarea contorului indexului" type="text"
+                                                   data-bind="textInput: $data.selectedContract().gasNotification().counterSeriesField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="dateField">Date</label>
+                                        <input id="dateField" class="form-control input-sm" placeholder="Date"
+                                        type="text"
+                                        data-bind="textInput: $data.selectedContract().gasNotification().dateField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="oldContractDateField">Data start a contractului curent</label>
+                                            <input id="oldContractDateField" class="form-control input-sm"
+                                                   placeholder="Data start a contractului curent" type="text"
+                                                   data-bind="textInput: $data.selectedContract().gasNotification().oldContractDateField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="oldContractNrField">Numarul contractului curent</label>
+                                            <input id="oldContractNrField" class="form-control input-sm"
+                                                   placeholder="Numarul contractului curent" type="text"
+                                                   data-bind="textInput: $data.selectedContract().gasNotification().oldContractNrField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="soldField"> Soldul la actualul furnizor</label>
+                                            <input id="soldField" class="form-control input-sm" placeholder=" Soldul la actualul furnizor"
+                                                   type="text"
+                                                   data-bind="textInput: $data.selectedContract().gasNotification().soldField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="idDateField">Data eliberarii cardului de identitate</label>
+                                            <input id="idDateField" class="form-control input-sm" placeholder="Data eliberarii cardului de identitate"
+                                                   type="text"
+                                                   data-bind="textInput: $data.selectedContract().gasNotification().idDateField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="idIssuedByField">De cine a fost eliberat cardul de identitate</label>
+                                            <input id="idIssuedByField" class="form-control input-sm"
+                                                   placeholder="De cine a fost eliberat cardul de identitate" type="text"
+                                                   data-bind="textInput: $data.selectedContract().gasNotification().idIssuedByField"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Distribuitor</label>
+                                            <select class="form-control"
+                                                    data-bind="options: $parent.distributors, value: $data.selectedContract().gasNotification().selectedDistributor, optionsText: 'description'">
+                                            </select>
+                                        </div>
+
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-info btn-flat"
+                                                    data-bind="click: $data.selectedContract().gasNotification().updateNotificationDetails">Salveaza !</button>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane"
+                                     data-bind="attr: { id: $data.selectedContract().productsTabId}">
+
+                                    <div class="box">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title"
+                                                data-bind="text: $data.selectedContract().productName"></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+
+                                            <div class="post">
+
+                                                <div class="form-group">
+                                                    <label for="bypassedReportNameField">Tip Anexa</label>
+                                                    <input id="bypassedReportNameField" class="form-control input-sm"
+                                                           placeholder="Tip Anexa" type="text"
+                                                           data-bind="textInput: $data.bypassedReportName"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedTotalCostValueField">Cost total</label>
+                                                    <input id="bypassedTotalCostValueField" class="form-control input-sm"
+                                                           placeholder="Cost total" type="text"
+                                                           data-bind="textInput: $data.bypassedTotalCostValue"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedConsumAnualElectricitateField">Consum anual electricitate</label>
+                                                    <input id="bypassedConsumAnualElectricitateField" class="form-control input-sm"
+                                                           placeholder="Consum anual electricitate" type="text"
+                                                           data-bind="textInput: $data.bypassedConsumAnualElectricitate"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedPretFurnizareElectricitateField">Pret Furnizare Electricitate</label>
+                                                    <input id="bypassedPretFurnizareElectricitateField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedPretFurnizareElectricitate"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedPretTransportElectricitateField">Pret Transport Electricitate</label>
+                                                    <input id="bypassedPretTransportElectricitateField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedPretTransportElectricitate"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedPretDistributieElectricitateField">Pret Distributie Electricitate</label>
+                                                    <input id="bypassedPretDistributieElectricitateField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedPretDistributieElectricitate"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedPretContractElectricitateField">Pret Contract Electricitate</label>
+                                                    <input id="bypassedPretContractElectricitateField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedPretContractElectricitate"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedPretAbonamentElectricitateField">Pret Abonament Electricitate</label>
+                                                    <input id="bypassedPretAbonamentElectricitateField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedPretAbonamentElectricitate"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedConsumAnualGazField">Consum Anual Gaz</label>
+                                                    <input id="bypassedConsumAnualGazField" class="form-control input-sm"
+                                                           placeholder="consumAnualGaz" type="text"
+                                                           data-bind="textInput: $data.bypassedConsumAnualGaz"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedPretFurnizareGazField">Pret Furnizare Gaz</label>
+                                                    <input id="bypassedPretFurnizareGazField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedPretFurnizareGaz"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedPretTransportGazField">Pret Transport Gaz</label>
+                                                    <input id="bypassedPretTransportGazField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedPretTransportGaz"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedPretDistributieGazField">Pret Distributie Gaz</label>
+                                                    <input id="bypassedPretDistributieGazField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedPretDistributieGaz"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedPretContractGazField">Pret Contract Gaz</label>
+                                                    <input id="bypassedPretContractGazField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedPretContractGaz"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedPretAbonamentGazField">Pret Abonament Gaz</label>
+                                                    <input id="bypassedPretAbonamentGazField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedPretAbonamentGaz"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedSurnameField">Nume</label>
+                                                    <input id="bypassedSurnameField" class="form-control input-sm"
+                                                           placeholder="surname" type="text"
+                                                           data-bind="textInput: $data.bypassedSurname"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedGivenNamesField">Prenume</label>
+                                                    <input id="bypassedGivenNamesField" class="form-control input-sm"
+                                                           placeholder="" type="text"
+                                                           data-bind="textInput: $data.bypassedGivenNames"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedContractSigningDateField">Data semnarii contractului</label>
+                                                    <input id="bypassedContractSigningDateField" class="form-control input-sm"
+                                                           placeholder="05-12-2020" type="text"
+                                                           data-bind="textInput: $data.bypassedContractSigningDate"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedEffectiveFromDateField">Data de incepere a contractului</label>
+                                                    <input id="bypassedEffectiveFromDateField" class="form-control input-sm"
+                                                           placeholder="04-01-2021" type="text"
+                                                           data-bind="textInput: $data.bypassedEffectiveFromDate"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="bypassedEffectiveToDateField">Data de incheiere a contractului</label>
+                                                    <input id="bypassedEffectiveToDateField" class="form-control input-sm"
+                                                           placeholder="04-01-2022" type="text"
+                                                           data-bind="textInput: $data.bypassedEffectiveToDate"/>
+                                                </div>
+
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-info btn-flat" data-bind="click: $data.bypassAnnex">Salveaza!</button>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.box -->
+
+                                </div>
+                                <!-- /.tab-pane -->
+
+                                <div class="tab-pane" data-bind="attr: { id: $data.selectedContract().documentsTabId}">
+
+                                    <div class="box">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title" data-bind="text: $data.name"></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Link</th>
+                                                    <th>Create date</th>
+                                                    <th>Type</th>
+                                                    <th>Encrypted</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody data-bind="foreach: $data.selectedContract().documents()">
+                                                <tr>
+                                                    <td data-bind="text: id"></td>
+                                                    <td>
+                                                        <a data-bind="attr: { href: url}">
+                                                            View</a>
+                                                    </td>
+                                                    <td data-bind="text: createdAt">
+                                                    </td>
+                                                    <td data-toggle="tooltip"
+                                                        data-bind="text: type, attr: { title : typeDescription }"><span
+                                                            class="badge bg-red"></span></td>
+
+                                                    <td data-bind="text: secured"><span class="badge bg-red"></span>
+                                                    </td>
+                                                    <td>
+                                                        <button data-bind="click: deleteDocument" type="button"
+                                                                class="btn btn-danger btn-flat">Delete
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.box -->
+
+                                </div>
+                                <!-- /.tab-pane -->
+                            </div>
+                            <!-- /.tab-content -->
+                        </div>
+                        <!-- /.nav-tabs-custom -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+
+</script>
+
+<script type="text/javascript" th:src="@{/admin/js/pages/customers_dashboard.js}"></script>
+
+</body>
+</html>

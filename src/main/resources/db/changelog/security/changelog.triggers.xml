@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet author="key" id="1" dbms="postgresql">
+        <sql splitStatements="false">
+            CREATE TRIGGER users_updated_at BEFORE UPDATE ON users FOR EACH ROW EXECUTE
+            PROCEDURE change_update_time();
+        </sql>
+        <rollback>
+            DROP TRIGGER users_updated_at ON users;
+        </rollback>
+    </changeSet>
+
+    <changeSet author="key" id="2" dbms="postgresql">
+        <sql splitStatements="false">
+            CREATE TRIGGER roles_updated_at BEFORE UPDATE ON roles FOR EACH ROW EXECUTE
+            PROCEDURE change_update_time();
+        </sql>
+        <rollback>
+            DROP TRIGGER roles_updated_at ON roles;
+        </rollback>
+    </changeSet>
+
+    <changeSet author="key" id="3" dbms="postgresql">
+        <sql splitStatements="false">
+            CREATE TRIGGER permissions_updated_at BEFORE UPDATE ON permissions FOR EACH ROW EXECUTE
+            PROCEDURE change_update_time();
+        </sql>
+        <rollback>
+            DROP TRIGGER permissions_updated_at ON permissions;
+        </rollback>
+    </changeSet>
+
+    <changeSet author="key" id="4" dbms="postgresql">
+        <sql splitStatements="false">
+            CREATE TRIGGER user_roles_updated_at BEFORE UPDATE ON user_roles FOR EACH ROW EXECUTE
+            PROCEDURE change_update_time();
+        </sql>
+        <rollback>
+            DROP TRIGGER user_roles_updated_at ON user_roles;
+        </rollback>
+    </changeSet>
+
+    <changeSet author="key" id="5" dbms="postgresql">
+        <sql splitStatements="false">
+            CREATE TRIGGER role_permissions_updated_at BEFORE UPDATE ON role_permissions FOR EACH ROW EXECUTE
+            PROCEDURE change_update_time();
+        </sql>
+        <rollback>
+            DROP TRIGGER role_permissions_updated_at ON role_permissions;
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
