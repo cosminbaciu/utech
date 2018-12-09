@@ -20,8 +20,6 @@ public class FavouriteVideo {
     private Integer views;
     private Boolean favouriteFlag;
     private Long userId;
-    private Date createdAt;
-    private Date updatedAt;
 
 
     @Id
@@ -91,26 +89,6 @@ public class FavouriteVideo {
 
     public void setUserId(Long userId) {
         this.userId = userId;
-    }
-
-    @Column(name = "created_at")
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    @org.springframework.data.annotation.Version
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_at")
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
     }
 
 }

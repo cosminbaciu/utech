@@ -15,8 +15,7 @@ public class Search {
     private Long id;
     private String keyword;
     private Long userId;
-    private Date createdAt;
-    private Date updatedAt;
+
 
 
     @Id
@@ -52,24 +51,5 @@ public class Search {
         this.userId = userId;
     }
 
-    @Column(name = "created_at")
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    @Version
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_at")
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 
 }

@@ -16,8 +16,6 @@ public class PlaylistVideo {
     private Long playlistId;
     private Long FavouriteVideoId;
     private Long userId;
-    private Date createdAt;
-    private Date updatedAt;
 
     @Id
     @Column(name = "id")
@@ -59,26 +57,6 @@ public class PlaylistVideo {
 
     public void setUserId(Long userId) {
         this.userId = userId;
-    }
-
-    @Column(name = "created_at")
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    @org.springframework.data.annotation.Version
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_at")
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
     }
 
 }

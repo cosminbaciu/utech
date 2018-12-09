@@ -123,7 +123,6 @@ All video list
 ```
 Add seen to a video
 ```
-
 ```
 Playlist
 ```
@@ -166,7 +165,6 @@ Add video in playlist
 ```
 Delete video from playlist
 ```
-
 
 
 ## API REST
@@ -639,7 +637,16 @@ curl --user cosmin:Fepece1905 -X GET --header 'Accept: application/json' 'http:/
 3. Call-uri in aplicatie se pot face si cu ajutorul lui Postman.
 
 
-##Schema bazei de date
+## Schema bazei de date
 
 ![3](https://github.com/cosminbaciu/utech/blob/master/mock-ups/db_schema.png)
 
+## Flow 
+
+* Creare user
+* Login
+* Cautare video
+* Vizionare video
+* Salvare favorite
+* Creare playlist
+* Adaugare video vizualizat in playlist

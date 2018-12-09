@@ -15,8 +15,6 @@ public class Playlist {
     private Long id;
     private String name;
     private String genre;
-    private Date createdAt;
-    private Date updatedAt;
 
 
     @Id
@@ -50,26 +48,6 @@ public class Playlist {
 
     public void setGenre(String genre) {
         this.genre = genre;
-    }
-
-    @Column(name = "created_at")
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    @org.springframework.data.annotation.Version
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_at")
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
     }
 
 }

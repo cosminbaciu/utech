@@ -28,7 +28,6 @@ public class PlaylistService {
 
         oldPlaylist.setName(playlist.getName());
         oldPlaylist.setGenre(playlist.getGenre());
-        oldPlaylist.setUpdatedAt(playlist.getUpdatedAt());
 
         return playlistRepository.save(oldPlaylist);
     }
