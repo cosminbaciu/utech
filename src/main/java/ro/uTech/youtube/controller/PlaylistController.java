@@ -1,6 +1,7 @@
 package ro.uTech.youtube.controller;
 
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,9 +45,12 @@ public class PlaylistController {
     }
 
     @RequestMapping(value = "/delete/{id}", produces = "application/json", method = RequestMethod.DELETE)
-    public ResponseEntity<String> deletePlaylist(@PathVariable("id")Long id){
+    public ResponseEntity<JSONObject> deletePlaylist(@PathVariable("id")Long id){
+
+        JSONObject responseObject = new JSONObject();
         playlistService.deletePlaylist(id);
-        return new ResponseEntity<>("Deleted", HttpStatus.OK);
+        responseObject.put("message", "deleted");
+        return new ResponseEntity<>(responseObject, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/addVideo/{playlistId}/{videoId}", produces = "application/json", method = RequestMethod.POST)
@@ -58,12 +62,15 @@ public class PlaylistController {
     }
 
     @RequestMapping(value = "/deleteVideo/{playlistId}/{videoId}", produces = "application/json", method = RequestMethod.DELETE)
-    public ResponseEntity<String> deleteVideoFromPlaylist(@PathVariable("playlistId") Long playlistId, @PathVariable("videoId") Long videoId){
+    public ResponseEntity<JSONObject> deleteVideoFromPlaylist(@PathVariable("playlistId") Long playlistId, @PathVariable("videoId") Long videoId){
+
+        JSONObject responseObject = new JSONObject();
         PlaylistVideo playlistVideo = new PlaylistVideo();
         playlistVideo.setPlaylistId(playlistId);
         playlistVideo.setFavouriteVideoId(videoId);
         playlistVideoService.deleteVideoFromPlaylist(playlistVideo);
-        return new ResponseEntity<>("Deleted", HttpStatus.OK);
+        responseObject.put("message", "deleted");
+        return new ResponseEntity<>(responseObject, HttpStatus.OK);
     }
 
 

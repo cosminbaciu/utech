@@ -64,6 +64,9 @@
             <column name="genre" type="NVARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
+            <column name="user_id" type="SERIAL">
+                <constraints nullable="false"/>
+            </column>
             <column defaultValueComputed="${now}" name="created_at" type="datetime"/>
             <column defaultValueComputed="${now}" name="updated_at" type="datetime"/>
         </createTable>

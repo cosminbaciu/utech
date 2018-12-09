@@ -15,6 +15,7 @@ public class PlaylistVideo {
     private Long id;
     private Long playlistId;
     private Long FavouriteVideoId;
+    private Long userId;
     private Date createdAt;
     private Date updatedAt;
 
@@ -49,6 +50,15 @@ public class PlaylistVideo {
 
     public void setFavouriteVideoId(Long favouriteVideoId) {
         FavouriteVideoId = favouriteVideoId;
+    }
+
+    @Column(name = "user_id")
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     @Column(name = "created_at")
