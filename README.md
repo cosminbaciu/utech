@@ -91,6 +91,14 @@ POST : /api/favourites/addToFavourite
 POST : /api/favourites/addViewForVideo
 ```
 
+```
+POST: /playlist/addVideo/{playlistId}/{videoId}
+```
+
+```
+DELETE: /playlist/deleteVideo/{playlistId}/{videoId}
+```
+
 
 Components:
 
@@ -116,6 +124,10 @@ All video list
 Add seen to a video
 ```
 
+```
+Playlist
+```
+
 User actions:
 
 ```
@@ -139,7 +151,21 @@ Get favourite video list
 ```
 Get all videos list
 ```
-
+```
+Create playlist
+```
+```
+Delete playlist
+```
+```
+Update playlist
+```
+```
+Add video in playlist
+```
+```
+Delete video from playlist
+```
 
 
 
@@ -153,7 +179,7 @@ POST: /api/login
 ```JSON
 {
    "username":"string",
-   "password":"string",
+   "password":"string"
 }
 ```
 ---
@@ -404,8 +430,39 @@ Request: Long id
 
 Response: 200(OK)
 
+---
+---
 
+```
+POST: /playlist/addVideo/{playlistId}/{videoId}
+```
 
+Request: Long playlistId, Long videoId
+
+Response: 201(Created)
+
+```JSON
+{
+  "createdAt": "2018-12-09T17:56:32.220Z",
+  "favouriteVideoId": 0,
+  "id": 0,
+  "playlistId": 0,
+  "updatedAt": "2018-12-09T17:56:32.220Z"
+}
+```
+---
+---
+
+```
+DELETE: /playlist/deleteVideo/{playlistId}/{videoId}
+```
+
+Request: Long playlistId, Long videoId
+
+Response: 200(OK)
+
+---
+---
 
 
 
@@ -557,4 +614,28 @@ Cand vedem in consola de run:
 Started UtechApplication in 6.516 seconds (JVM running for 6.944)
 ```
 mergem in browser si accesam http://localhost:8090/api
+
+
+## Navigare
+
+In momentul in care accesam http://localhost:8090/api in browser, va aparea formularul de log in. 
+Pentru a crea un user, apelam in Postman 
+
+```POST:  http://localhost:8090/api/register/register``` cu body-ul prezentat mai sus. 
+Daca raspunsul este favorabil, ne vom putea loga cu userul creat.
+
+1. Pentru a vizualiza si a utiliza mai bine aplicatia, avand doar partea de back-end, am folosit un tool numit Swagger. 
+Acesta poate fi accesat, in sesiunea userului curent, la adresa ```http://localhost:8090/api/swagger-ui.html```
+
+Acolo regasim fiecare endpoint cu o interfata mai facila pentru utilizator, cu sugestii de body-uri si autocomplete cu date mock pentru request-uri.
+
+2. O alternativa este apelarea endpoint-urilor direct din terminal, cu ```curl```, cu mentiunea ca trebuie sa adaugam autorizare.
+
+Exemplu: 
+```
+curl --user cosmin:Fepece1905 -X GET --header 'Accept: application/json' 'http://localhost:8090/api/playlist/getAll'
+```
+
+3. Call-uri in aplicatie se pot face si cu ajutorul lui Postman.
+
 

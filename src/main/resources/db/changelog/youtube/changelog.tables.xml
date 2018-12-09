@@ -69,6 +69,22 @@
         </createTable>
     </changeSet>
 
+    <changeSet author="cosmin" id="4">
+        <createTable tableName="playlists_favourite_videos">
+            <column name="id" autoIncrement="true" type="SERIAL">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="playlists_favourite_videos_pk"/>
+            </column>
+            <column name="playlist_id" type="SERIAL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="favourite_video_id" type="SERIAL">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueComputed="${now}" name="created_at" type="datetime"/>
+            <column defaultValueComputed="${now}" name="updated_at" type="datetime"/>
+        </createTable>
+    </changeSet>
+
 
 
 
