@@ -70,7 +70,7 @@ public class RegisterController {
 
         User registeredUser;
         try {
-            registeredUser = userRegistrationServiceSupport.registerNewUserAccount(userDTO, DEFAULT_ROLE_NAME, userDTO.getToken());
+            registeredUser = userRegistrationServiceSupport.registerNewUserAccount(userDTO);
         } catch (EmailExistsException | UsernameExistsException e) {
 
             logger.error(e.toString());

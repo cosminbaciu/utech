@@ -37,7 +37,7 @@ import java.util.Objects;
  * Created by an on 23.05.2017.
  */
 @Controller
-@RequestMapping("/admin/security/api")
+@RequestMapping("/security")
 public class SecurityAdminAPIController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());

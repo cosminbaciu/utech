@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin/roles/api")
+@RequestMapping("/roles")
 public class RolesAdminAPIController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());

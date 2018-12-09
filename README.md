@@ -28,44 +28,69 @@ Totodata, pentru a folosi API-ul Youtube-v3, am obtinut un API-key de pe https:/
 
 
 ```
-POST: /api/login
+POST: /api/register/register
 ```
 
 ```
-GET : /api/account
+POST : /api/register/change-password
 ```
 
 ```
-POST : /api/account
+GET : /api/admin/all
 ```
 
 ```
-PUT : /api/account/{id}
+GET : /api/security/users
 ```
 
 ```
-POST : /api/account/change-password
+GET : /api/security/roles
 ```
 
 ```
-GET : /api/search/{keyword}
+GET : /api/security/permissions
 ```
 
 ```
-GET : /api/getFavouriteVideos
+POST : /api/security/roles
 ```
 
 ```
-GET : /api/getFavouriteVideos/{id}
+POST : /api/security/permissions
 ```
 
 ```
-POST : /api/addVideoToFavourite
+GET : /api/me
 ```
 
 ```
-DELETE: /api/deleteVideoFromFavourite/{id}
+GET : /api/userRegistered/{email}
 ```
+
+```
+GET : /api/youtube/search/{keyword}
+```
+
+```
+GET : /api/youtube/searchHistory
+```
+
+```
+GET : /api/favourites/getAllFavouritesVideos
+```
+
+```
+GET : /api/favourites/getAllSeenVideos
+```
+
+```
+POST : /api/favourites/addToFavourite
+```
+
+```
+POST : /api/favourites/addViewForVideo
+```
+
 
 Components:
 
@@ -85,10 +110,10 @@ Video search
 Favourite video list
 ```
 ```
-Delete video
-```
-```
 All video list
+```
+```
+Add seen to a video
 ```
 
 User actions:
@@ -112,9 +137,6 @@ Update favourite video list
 Get favourite video list
 ```
 ```
-Delete video from favourite liste
-```
-```
 Get all videos list
 ```
 
@@ -134,62 +156,28 @@ POST: /api/login
    "password":"string",
 }
 ```
+---
+---
 
 ```
-GET : /api/account
+POST : /api/register/register
 ```
 
+Request:
 
 ```JSON
 {
-"id": 1,
-"username": "string",
-"firstName": "string",
-"lastName": "string",
-"email": "string@string.com",
-"activated": true,
-"createdDate": "2018-10-24T11:43:44.431638Z"
+  "email": "string@string.com",
+  "id": 0,
+  "username" : "string",
+  "password" : "string"
+  
 }
 ```
-
-```
-POST : /api/account
-```
-
-
-Request :
-
-```JSON
-{
-"username": "string",
-"firstName": "string",
-"lastName": "string",
-"email": "string@string.com",
-"createdDate": "2018-10-24T11:43:44.431638Z",
-"password" : "string"
-}
-```
-
 Response: 201 (Created)
 
-```
-PUT : /api/account/{id}
-```
-
-Request :
-
-```JSON
-{
-"username": "string",
-"firstName": "string",
-"lastName": "string",
-"email": "string@string.com",
-"createdDate": "2018-10-24T11:43:44.431638Z",
-"password" : "string"
-}
-```
-
-Response: 201 (Created)
+---
+---
 
 ```
 POST : /api/account/change-password
@@ -207,26 +195,11 @@ Request:
 
 Response: 200 (ok)
 
-```
-GET : /api/search/{keyword}
-```
-
-Response:
-
-```JSON
-[
-{
-"videoId" : "long",
-"title": "string",
-"thumbnail" : "string"
-}
-]
+---
+---
 
 ```
-
-
-```
-GET : /api/getFavouriteVideos
+GET : /api/youtube/search/{keyword}
 ```
 
 Response:
@@ -239,25 +212,81 @@ Response:
 "thumbnail" : "string"
 }
 ]
-```
-
 
 ```
-GET : /api/getFavouriteVideos/{id}
+---
+---
+```
+GET: /api/youtube/searchHistory
 ```
 
-Response
+Response:
+```JSON
+[
+  {
+    "createdAt": "2018-12-09T12:52:14.319Z",
+    "id": 0,
+    "keyword": "string",
+    "updatedAt": "2018-12-09T12:52:14.319Z",
+    "userId": 0
+  }
+]
+```
+
+---
+---
+
+```
+GET : /api/favourites/getAllFavouriteVideos
+```
+
+Response:
 
 ```JSON
-{
-"videoId" : "long",
-"title": "string",
-"thumbnail" : "string"
-}
+[
+  {
+    "createdAt": "2018-12-09T12:52:14.301Z",
+    "favouriteFlag": true,
+    "id": 0,
+    "thumbnailUrl": "string",
+    "title": "string",
+    "updatedAt": "2018-12-09T12:52:14.301Z",
+    "userId": 0,
+    "videoId": "string",
+    "views": 0
+  }
+]
 ```
 
+---
+---
+
 ```
-POST : /api/addVideoToFavourite
+GET : /api/favourites/getAllSeenVideos
+```
+
+Response:
+
+```JSON
+[
+  {
+    "createdAt": "2018-12-09T12:52:14.301Z",
+    "favouriteFlag": true,
+    "id": 0,
+    "thumbnailUrl": "string",
+    "title": "string",
+    "updatedAt": "2018-12-09T12:52:14.301Z",
+    "userId": 0,
+    "videoId": "string",
+    "views": 0
+  }
+]
+```
+---
+---
+
+```
+POST : /api/favourites/addToFavourite
 ```
 
 Request:
@@ -272,8 +301,187 @@ Request:
 
 Response : 201 (Created)
 
+---
+---
+
+
 ```
-DELETE: /api/deleteVideoFromFavourite/{id}
+POST : /api/favourites/addViewForVideo
 ```
 
-Response: 200 (ok)
+Request:
+
+```JSON
+{
+"videoId" : "long",
+"title": "string",
+"thumbnail": "string"
+}
+```
+
+Response : 201 (Created)
+
+```JSON
+{
+  "createdAt": "2018-12-09T12:52:14.293Z",
+  "favouriteFlag": true,
+  "id": 0,
+  "thumbnailUrl": "string",
+  "title": "string",
+  "updatedAt": "2018-12-09T12:52:14.293Z",
+  "userId": 0,
+  "videoId": "string",
+  "views": 0
+}
+```
+
+
+# Configurare mediu de lucru
+
+
+### Tools
+
+1. Maven 3.0+ 
+2. Un IDE (noi am folosit IntelliJ)
+3. JDK 1.8+
+
+### Instalare JDK
+
+
+```
+$ sudo apt update
+```
+
+Verificam daca java este deja instalat:
+
+```
+$ java -version
+```
+
+Daca rezultatul este negativ, instalam JRE
+
+```
+$ sudo apt install openjdk-8-jre
+```
+si verificam iar daca este s-a instalat:
+
+```
+$ java -version
+```
+
+Daca vedem urmatorul output:
+
+```
+Output
+openjdk version "1.8.0_162"
+OpenJDK Runtime Environment (build 1.8.0_162-8u162-b12-1-b12)
+OpenJDK 64-Bit Server VM (build 25.162-b12, mixed mode)
+```
+     
+Continuam cu instalarea JDK-ului:
+
+```
+$ sudo apt install openjdk-8-jdk
+```
+
+Cele mai multe programe java utilizeaza variabila de mediu JAVA_HOME astfel incat trebuie setata. 
+
+
+```
+$ sudo update-alternatives --config java
+```
+
+Mai intai trebuie sa vedem unde este instalat. In tabel cautam /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java:
+
+---
+Deschidem fisierul /etc/environment 
+
+
+```
+$ sudo nano /etc/environment
+```
+
+La sfarsitul fisierului inlocuim calea cu cea determinata mai sus:
+
+```
+JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin/"
+```
+
+Reincarcam fisierul:
+```
+$ source /etc/environment
+```
+
+Verificam daca modificarea a avut loc
+```
+$ echo $JAVA_HOME
+```
+
+Outputul trebuie sa coincida cu modificarea facuta mai sus.
+```
+Output
+/usr/lib/jvm/java-11-openjdk-amd64/bin/
+```
+
+### Instalare Maven
+
+```
+$ sudo apt install maven
+```
+
+``` 
+$ mvn -version
+```
+
+
+### Instalare PosttgreSQL
+
+```
+$ sudo apt-get install postgresql postgresql-contrib
+```
+
+Accesare consola psql:
+
+```
+$  sudo -u postgres psql postgres
+```
+
+Cream user pentru a accesa aplicatia:
+
+```
+postgres=#  create user cosmin with password;
+```
+
+Cream baza de date:
+
+```
+postgres=# create database utech;
+```
+
+Acordam drepturi userului creat anterior:
+```
+postgres=# grant all privileges on database utech to cosmin;
+```
+
+## Rulare aplicatie
+
+Aplicatia este construita in SpringBoot si rulata cu ajutorul Maven.
+
+Pentru a rula aplicatia, intai trebuie sa instalam dependintele
+
+Intram in proiect, in /utech si rulam 
+
+```
+$ mvn install
+```
+
+```
+$ mvn spring-boot:run
+```
+
+Cand vedem in consola de run:
+```
+Started UtechApplication in 6.516 seconds (JVM running for 6.944)
+```
+mergem in browser si accesam http://localhost:8090/api
+
