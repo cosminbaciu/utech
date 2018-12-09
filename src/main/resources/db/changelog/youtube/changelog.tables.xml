@@ -53,6 +53,22 @@
         </createTable>
     </changeSet>
 
+    <changeSet author="cosmin" id="3">
+        <createTable tableName="playlists">
+            <column name="id" autoIncrement="true" type="SERIAL">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="playlists_pk"/>
+            </column>
+            <column name="name" type="NVARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="genre" type="NVARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueComputed="${now}" name="created_at" type="datetime"/>
+            <column defaultValueComputed="${now}" name="updated_at" type="datetime"/>
+        </createTable>
+    </changeSet>
+
 
 
 

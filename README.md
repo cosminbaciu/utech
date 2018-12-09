@@ -334,6 +334,79 @@ Response : 201 (Created)
   "views": 0
 }
 ```
+---
+---
+
+```
+POST: /api/playlist/create
+```
+Request:
+
+```JSON
+{
+  "createdAt": "2018-12-09T16:42:24.199Z",
+  "genre": "string",
+  "id": 0,
+  "name": "string",
+  "updatedAt": "2018-12-09T16:42:24.199Z"
+}
+```
+
+Response: 201(Created)
+
+---
+---
+
+```
+PUT: /api/playlist/update/{id}
+```
+Request:
+
+Long id +
+```JSON
+{
+  "createdAt": "2018-12-09T16:42:24.199Z",
+  "genre": "string",
+  "id": 0,
+  "name": "string",
+  "updatedAt": "2018-12-09T16:42:24.199Z"
+}
+```
+
+Response: 201(Created)
+
+---
+---
+```
+GET: /api/playlist/getAll
+```
+
+Response: 200(OK)
+
+```JSON
+[
+  {
+    "createdAt": "2018-12-09T16:42:24.204Z",
+    "genre": "string",
+    "id": 0,
+    "name": "string",
+    "updatedAt": "2018-12-09T16:42:24.204Z"
+  }
+]
+```
+---
+---
+
+```
+DELETE: /api/playlist/delete/{id}
+```
+Request: Long id
+
+Response: 200(OK)
+
+
+
+
 
 
 # Configurare mediu de lucru

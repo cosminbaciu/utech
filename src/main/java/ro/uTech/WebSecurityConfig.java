@@ -41,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .usernameParameter("username").passwordParameter("password")
-                .successForwardUrl("/admin/security/api/login")
+                .successForwardUrl("/swagger-ui.html")
                 .and().httpBasic().and().csrf().disable()
                 .logout()
                 .logoutSuccessUrl("/login?logout");
