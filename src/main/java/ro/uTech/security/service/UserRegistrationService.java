@@ -5,9 +5,7 @@ import ro.uTech.security.exception.UsernameExistsException;
 import ro.uTech.security.model.domain.User;
 import ro.uTech.security.model.dto.UserDTO;
 
-/**
- * Created by an on 20.04.2017.
- */
+
 public interface UserRegistrationService {
 
     User registerNewUserAccount(UserDTO userDTO) throws EmailExistsException, UsernameExistsException;

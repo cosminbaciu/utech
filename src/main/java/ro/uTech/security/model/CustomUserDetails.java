@@ -1,9 +1,5 @@
 package ro.uTech.security.model;
 
-/**
- * Created by an on 19.04.2017.
- */
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.SpringSecurityCoreVersion;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,9 +8,7 @@ import org.springframework.util.Assert;
 import java.io.Serializable;
 import java.util.*;
 
-/**
- * Created by an on 19.04.2017.
- */
+
 public class CustomUserDetails implements UserDetails {
 
     private static final long serialVersionUID = 9188230014174856593L;

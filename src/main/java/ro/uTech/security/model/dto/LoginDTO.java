@@ -1,8 +1,6 @@
 package ro.uTech.security.model.dto;
 
-/**
- * Created by an on 12.06.2017.
- */
+
 public class LoginDTO {
 
     private String username;

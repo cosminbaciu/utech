@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.google.oauth-client:google-oauth-client-jetty:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/oauth-client/google-oauth-client-jetty/unknown/google-oauth-client-jetty-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/oauth-client/google-oauth-client-jetty/unknown/google-oauth-client-jetty-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/oauth-client/google-oauth-client-jetty/unknown/google-oauth-client-jetty-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

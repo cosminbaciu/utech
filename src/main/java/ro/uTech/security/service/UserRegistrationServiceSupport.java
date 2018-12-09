@@ -21,9 +21,7 @@ import ro.uTech.security.repository.UserRoleRepository;
 
 import java.util.Date;
 
-/**
- * Created by an on 20.04.2017.
- */
+
 @Service
 public class UserRegistrationServiceSupport implements UserRegistrationService {
 

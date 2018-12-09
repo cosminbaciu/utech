@@ -8,9 +8,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 
-/**
- * Created by an on 19.04.2017.
- */
+
 @Entity
 @Table(name = "roles")
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "id")

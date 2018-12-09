@@ -25,4 +25,5 @@
                  path="data/USER_ROLES.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
+
 </databaseChangeLog>

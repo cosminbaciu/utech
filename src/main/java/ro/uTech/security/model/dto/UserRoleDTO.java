@@ -1,8 +1,6 @@
 package ro.uTech.security.model.dto;
 
-/**
- * Created by an on 25.05.2017.
- */
+
 public class UserRoleDTO {
 
     private Long userId;

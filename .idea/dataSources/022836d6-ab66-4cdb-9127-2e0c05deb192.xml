@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="utech@localhost">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.14">
+    <root id="1">
+      <ServerVersion>9.5.14</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="demo">
+      <ObjectId>18715</ObjectId>
+      <StateNumber>1141</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12413</ObjectId>
+      <Comment>default administrative connection database</Comment>
+      <StateNumber>659</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="4" parent="1" name="shop">
+      <ObjectId>58024</ObjectId>
+      <StateNumber>11186</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="5" parent="1" name="utech">
+      <ObjectId>75253</ObjectId>
+      <StateNumber>12178</StateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>612</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+      <Relations>sequence|table|75265|75267|1
+sequence|table|75280|75282|1
+sequence|table|75290|75292|1
+sequence|table|75300|75302|1
+sequence|table|75310|75312|1
+sequence|table|75320|75322|1
+sequence|table|75333|75335|1
+sequence|table|75346|75348|1
+sequence|table|75396|75400|1
+sequence|table|75398|75400|3
+sequence|table|75409|75413|1
+sequence|table|75411|75413|5
+sequence|table|75425|75429|1
+sequence|table|75427|75429|4
+sequence|table|75441|75447|1
+sequence|table|75443|75447|2
+sequence|table|75445|75447|3
+</Relations>
+    </database>
+    <database id="6" parent="1" name="vvupg">
+      <ObjectId>16722</ObjectId>
+      <StateNumber>703</StateNumber>
+      <Owner>george.suditu</Owner>
+    </database>
+    <role id="7" parent="1" name="cosmin">
+      <ObjectId>18714</ObjectId>
+      <Inherit>1</Inherit>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="george.suditu">
+      <ObjectId>16384</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="10" parent="5" name="information_schema">
+      <ObjectId>12121</ObjectId>
+      <StateNumber>609</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="11" parent="5" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+      <StateNumber>606</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="12" parent="5" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+      <StateNumber>22</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="13" parent="5" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+      <StateNumber>1</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="14" parent="5" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+      <StateNumber>22</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="15" parent="5" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <StateNumber>607</StateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionTimestamp>2018-12-09.21:56:13.334</IntrospectionTimestamp>
+      <IntrospectionStateNumber>12257</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="16" parent="5" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <access-method id="17" parent="5" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <access-method id="18" parent="5" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <access-method id="19" parent="5" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <access-method id="20" parent="5" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <access-method id="21" parent="5" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <extension id="22" parent="5" name="plpgsql">
+      <ObjectId>12395</ObjectId>
+      <Comment>PL/pgSQL procedural language</Comment>
+      <StateNumber>612</StateNumber>
+      <Version>1.0</Version>
+      <SchemaName>pg_catalog</SchemaName>
+      <SchemaId>11</SchemaId>
+    </extension>
+    <sequence id="23" parent="15" name="audit_records_id_seq">
+      <ObjectId>75333</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12197</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="24" parent="15" name="favourite_videos_id_seq">
+      <ObjectId>75409</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12241</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="25" parent="15" name="favourite_videos_user_id_seq">
+      <ObjectId>75411</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12241</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="26" parent="15" name="identities_id_seq">
+      <ObjectId>75320</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12195</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="27" parent="15" name="permissions_id_seq">
+      <ObjectId>75290</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12189</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="28" parent="15" name="playlists_favourite_videos_favourite_video_id_seq">
+      <ObjectId>75445</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12245</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="29" parent="15" name="playlists_favourite_videos_id_seq">
+      <ObjectId>75441</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12245</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="30" parent="15" name="playlists_favourite_videos_playlist_id_seq">
+      <ObjectId>75443</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12245</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="31" parent="15" name="playlists_id_seq">
+      <ObjectId>75425</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12243</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="32" parent="15" name="playlists_user_id_seq">
+      <ObjectId>75427</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12243</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="33" parent="15" name="providers_id_seq">
+      <ObjectId>75346</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12199</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="34" parent="15" name="role_permissions_id_seq">
+      <ObjectId>75310</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12193</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="35" parent="15" name="roles_id_seq">
+      <ObjectId>75280</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12187</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="36" parent="15" name="searches_id_seq">
+      <ObjectId>75396</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12239</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="37" parent="15" name="searches_user_id_seq">
+      <ObjectId>75398</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12239</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="38" parent="15" name="user_roles_id_seq">
+      <ObjectId>75300</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12191</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="39" parent="15" name="users_id_seq">
+      <ObjectId>75265</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12185</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="40" parent="15" name="audit_records">
+      <ObjectId>75335</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12197</StateNumber>
+    </table>
+    <table id="41" parent="15" name="databasechangelog">
+      <ObjectId>75259</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12182</StateNumber>
+    </table>
+    <table id="42" parent="15" name="databasechangeloglock">
+      <ObjectId>75254</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12179</StateNumber>
+    </table>
+    <table id="43" parent="15" name="favourite_videos">
+      <ObjectId>75413</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12251</StateNumber>
+    </table>
+    <table id="44" parent="15" name="identities">
+      <ObjectId>75322</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12209</StateNumber>
+    </table>
+    <table id="45" parent="15" name="permissions">
+      <ObjectId>75292</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12225</StateNumber>
+    </table>
+    <table id="46" parent="15" name="playlists">
+      <ObjectId>75429</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12257</StateNumber>
+    </table>
+    <table id="47" parent="15" name="playlists_favourite_videos">
+      <ObjectId>75447</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12255</StateNumber>
+    </table>
+    <table id="48" parent="15" name="providers">
+      <ObjectId>75348</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12199</StateNumber>
+    </table>
+    <table id="49" parent="15" name="role_permissions">
+      <ObjectId>75312</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12229</StateNumber>
+    </table>
+    <table id="50" parent="15" name="roles">
+      <ObjectId>75282</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12223</StateNumber>
+    </table>
+    <table id="51" parent="15" name="searches">
+      <ObjectId>75400</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12247</StateNumber>
+    </table>
+    <table id="52" parent="15" name="user_roles">
+      <ObjectId>75302</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12227</StateNumber>
+    </table>
+    <table id="53" parent="15" name="users">
+      <ObjectId>75267</ObjectId>
+      <Owner>cosmin</Owner>
+      <StateNumber>12257</StateNumber>
+    </table>
+    <routine id="54" parent="15" name="change_update_time">
+      <ObjectId>75390</ObjectId>
+      <Owner>cosmin</Owner>
+      <SourceTextLength>117</SourceTextLength>
+      <StateNumber>12219</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ResultsDefinition>trigger</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <column id="55" parent="40" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12197</StateNumber>
+      <DefaultExpression>nextval(&apos;audit_records_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="56" parent="40" name="user_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>12197</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="57" parent="40" name="record">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12197</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="58" parent="40" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12197</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="59" parent="40" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12197</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="60" parent="40" name="audit_records_pk">
+      <ObjectId>75344</ObjectId>
+      <StateNumber>12197</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="61" parent="40" name="audit_records_pk">
+      <ObjectId>75345</ObjectId>
+      <StateNumber>12197</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>audit_records_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="62" parent="41" name="id">
+      <Position>1</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="63" parent="41" name="author">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="64" parent="41" name="filename">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="65" parent="41" name="dateexecuted">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="66" parent="41" name="orderexecuted">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12182</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="67" parent="41" name="exectype">
+      <Position>6</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="68" parent="41" name="md5sum">
+      <Position>7</Position>
+      <DataType>varchar(35)|0s</DataType>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="69" parent="41" name="description">
+      <Position>8</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="70" parent="41" name="comments">
+      <Position>9</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="71" parent="41" name="tag">
+      <Position>10</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="72" parent="41" name="liquibase">
+      <Position>11</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="73" parent="41" name="contexts">
+      <Position>12</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="74" parent="41" name="labels">
+      <Position>13</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="75" parent="41" name="deployment_id">
+      <Position>14</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <StateNumber>12182</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="76" parent="42" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12179</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="77" parent="42" name="locked">
+      <Position>2</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12179</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="78" parent="42" name="lockgranted">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12179</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="79" parent="42" name="lockedby">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>12179</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="80" parent="42" name="pk_databasechangeloglock">
+      <ObjectId>75257</ObjectId>
+      <StateNumber>12179</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="81" parent="42" name="pk_databasechangeloglock">
+      <ObjectId>75258</ObjectId>
+      <StateNumber>12179</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>pk_databasechangeloglock</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="82" parent="43" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12241</StateNumber>
+      <DefaultExpression>nextval(&apos;favourite_videos_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="83" parent="43" name="title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12241</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="84" parent="43" name="video_id">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12241</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="85" parent="43" name="thumbnail_url">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12241</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="86" parent="43" name="user_id">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12241</StateNumber>
+      <DefaultExpression>nextval(&apos;favourite_videos_user_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="87" parent="43" name="views">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12241</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="88" parent="43" name="favourite_flag">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12241</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="89" parent="43" name="created_at">
+      <Position>8</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12241</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="90" parent="43" name="updated_at">
+      <Position>9</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12241</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="91" parent="43" name="favourite_videos_pk">
+      <ObjectId>75423</ObjectId>
+      <StateNumber>12241</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="92" parent="43" name="favourite_videos_pk">
+      <ObjectId>75424</ObjectId>
+      <StateNumber>12241</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>favourite_videos_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="93" parent="43" name="user_favourite_videos_fk1">
+      <ObjectId>75462</ObjectId>
+      <StateNumber>12249</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>75267</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="94" parent="44" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <DefaultExpression>nextval(&apos;identities_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="95" parent="44" name="user_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>12195</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="96" parent="44" name="providerId">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="97" parent="44" name="providerUserId">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="98" parent="44" name="rank">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="99" parent="44" name="displayName">
+      <Position>6</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="100" parent="44" name="profileUrl">
+      <Position>7</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="101" parent="44" name="imageUrl">
+      <Position>8</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="102" parent="44" name="accessToken">
+      <Position>9</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="103" parent="44" name="secret">
+      <Position>10</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="104" parent="44" name="refreshToken">
+      <Position>11</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="105" parent="44" name="expireTime">
+      <Position>12</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12195</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="106" parent="44" name="created_at">
+      <Position>13</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12195</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="107" parent="44" name="updated_at">
+      <Position>14</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12195</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="108" parent="44" name="identities_pk">
+      <ObjectId>75331</ObjectId>
+      <StateNumber>12195</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="109" parent="44" name="identities_pk">
+      <ObjectId>75332</ObjectId>
+      <StateNumber>12195</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>identities_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="110" parent="44" name="identities_fk1">
+      <ObjectId>75379</ObjectId>
+      <StateNumber>12209</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>75267</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="111" parent="45" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12189</StateNumber>
+      <DefaultExpression>nextval(&apos;permissions_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="112" parent="45" name="name">
+      <Position>2</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <StateNumber>12189</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="113" parent="45" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12189</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="114" parent="45" name="updated_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12189</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="115" parent="45" name="permissions_pk">
+      <ObjectId>75298</ObjectId>
+      <StateNumber>12189</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="116" parent="45" name="permissions_pk">
+      <ObjectId>75299</ObjectId>
+      <StateNumber>12189</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>permissions_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <trigger id="117" parent="45" name="permissions_updated_at">
+      <ObjectId>75393</ObjectId>
+      <StateNumber>12225</StateNumber>
+      <Turn>before-row</Turn>
+      <Events>U</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>75390</CallRoutineId>
+    </trigger>
+    <column id="118" parent="46" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12243</StateNumber>
+      <DefaultExpression>nextval(&apos;playlists_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="119" parent="46" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12243</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="120" parent="46" name="genre">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12243</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="121" parent="46" name="user_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12243</StateNumber>
+      <DefaultExpression>nextval(&apos;playlists_user_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="122" parent="46" name="created_at">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12243</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="123" parent="46" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12243</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="124" parent="46" name="playlists_pk">
+      <ObjectId>75439</ObjectId>
+      <StateNumber>12243</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="125" parent="46" name="playlists_pk">
+      <ObjectId>75440</ObjectId>
+      <StateNumber>12243</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>playlists_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="126" parent="46" name="user_playlists_videos_fk1">
+      <ObjectId>75477</ObjectId>
+      <StateNumber>12257</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>75267</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="127" parent="47" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12245</StateNumber>
+      <DefaultExpression>nextval(&apos;playlists_favourite_videos_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="128" parent="47" name="playlist_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12245</StateNumber>
+      <DefaultExpression>nextval(&apos;playlists_favourite_videos_playlist_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="129" parent="47" name="favourite_video_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12245</StateNumber>
+      <DefaultExpression>nextval(&apos;playlists_favourite_videos_favourite_video_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="130" parent="47" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12245</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="131" parent="47" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12245</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="132" parent="47" name="playlists_favourite_videos_pk">
+      <ObjectId>75455</ObjectId>
+      <StateNumber>12245</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="133" parent="47" name="playlists_favourite_videos_pk">
+      <ObjectId>75456</ObjectId>
+      <StateNumber>12245</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>playlists_favourite_videos_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="134" parent="47" name="play1_favourite_videos_fk1">
+      <ObjectId>75472</ObjectId>
+      <StateNumber>12255</StateNumber>
+      <ColNames>playlist_id</ColNames>
+      <RefTableId>75429</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>playlists</RefTableName>
+      <RefKeyName>playlists_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="135" parent="47" name="play_favourite_videos_fk1">
+      <ObjectId>75467</ObjectId>
+      <StateNumber>12251</StateNumber>
+      <ColNames>favourite_video_id</ColNames>
+      <RefTableId>75413</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>favourite_videos</RefTableName>
+      <RefKeyName>favourite_videos_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="136" parent="48" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12199</StateNumber>
+      <DefaultExpression>nextval(&apos;providers_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="137" parent="48" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12199</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="138" parent="48" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12199</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="139" parent="48" name="updated_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12199</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="140" parent="48" name="providers_pk">
+      <ObjectId>75357</ObjectId>
+      <StateNumber>12199</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="141" parent="48" name="providers_pk">
+      <ObjectId>75358</ObjectId>
+      <StateNumber>12199</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>providers_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="142" parent="49" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12193</StateNumber>
+      <DefaultExpression>nextval(&apos;role_permissions_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="143" parent="49" name="role_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>12193</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="144" parent="49" name="permission_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>12193</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="145" parent="49" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12193</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="146" parent="49" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12193</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="147" parent="49" name="role_permissions_pk">
+      <ObjectId>75318</ObjectId>
+      <StateNumber>12193</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="148" parent="49" name="role_permissions_pk">
+      <ObjectId>75319</ObjectId>
+      <StateNumber>12193</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>role_permissions_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="149" parent="49" name="role_permissions_fk1">
+      <ObjectId>75369</ObjectId>
+      <StateNumber>12205</StateNumber>
+      <ColNames>role_id</ColNames>
+      <RefTableId>75282</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>roles</RefTableName>
+      <RefKeyName>roles_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="150" parent="49" name="role_permissions_fk2">
+      <ObjectId>75374</ObjectId>
+      <StateNumber>12207</StateNumber>
+      <ColNames>permission_id</ColNames>
+      <RefTableId>75292</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>permissions</RefTableName>
+      <RefKeyName>permissions_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <trigger id="151" parent="49" name="role_permissions_updated_at">
+      <ObjectId>75395</ObjectId>
+      <StateNumber>12229</StateNumber>
+      <Turn>before-row</Turn>
+      <Events>U</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>75390</CallRoutineId>
+    </trigger>
+    <column id="152" parent="50" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12187</StateNumber>
+      <DefaultExpression>nextval(&apos;roles_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="153" parent="50" name="name">
+      <Position>2</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <StateNumber>12187</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="154" parent="50" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12187</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="155" parent="50" name="updated_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12187</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="156" parent="50" name="roles_pk">
+      <ObjectId>75288</ObjectId>
+      <StateNumber>12187</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="157" parent="50" name="roles_pk">
+      <ObjectId>75289</ObjectId>
+      <StateNumber>12187</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>roles_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <trigger id="158" parent="50" name="roles_updated_at">
+      <ObjectId>75392</ObjectId>
+      <StateNumber>12223</StateNumber>
+      <Turn>before-row</Turn>
+      <Events>U</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>75390</CallRoutineId>
+    </trigger>
+    <column id="159" parent="51" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12239</StateNumber>
+      <DefaultExpression>nextval(&apos;searches_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="160" parent="51" name="keyword">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12239</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="161" parent="51" name="user_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12239</StateNumber>
+      <DefaultExpression>nextval(&apos;searches_user_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="162" parent="51" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12239</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="163" parent="51" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12239</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="164" parent="51" name="searches_pk">
+      <ObjectId>75407</ObjectId>
+      <StateNumber>12239</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="165" parent="51" name="searches_pk">
+      <ObjectId>75408</ObjectId>
+      <StateNumber>12239</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>searches_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="166" parent="51" name="user_searches_fk1">
+      <ObjectId>75457</ObjectId>
+      <StateNumber>12247</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>75267</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="167" parent="52" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12191</StateNumber>
+      <DefaultExpression>nextval(&apos;user_roles_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="168" parent="52" name="user_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>12191</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="169" parent="52" name="role_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>12191</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="170" parent="52" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12191</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="171" parent="52" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12191</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="172" parent="52" name="user_roles_pk">
+      <ObjectId>75308</ObjectId>
+      <StateNumber>12191</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="173" parent="52" name="user_roles_pk">
+      <ObjectId>75309</ObjectId>
+      <StateNumber>12191</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>user_roles_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="174" parent="52" name="user_roles_fk1">
+      <ObjectId>75359</ObjectId>
+      <StateNumber>12201</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>75267</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="175" parent="52" name="user_roles_fk2">
+      <ObjectId>75364</ObjectId>
+      <StateNumber>12203</StateNumber>
+      <ColNames>role_id</ColNames>
+      <RefTableId>75282</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>roles</RefTableName>
+      <RefKeyName>roles_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <trigger id="176" parent="52" name="user_roles_updated_at">
+      <ObjectId>75394</ObjectId>
+      <StateNumber>12227</StateNumber>
+      <Turn>before-row</Turn>
+      <Events>U</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>75390</CallRoutineId>
+    </trigger>
+    <column id="177" parent="53" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12185</StateNumber>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="178" parent="53" name="email">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12185</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="179" parent="53" name="username">
+      <Position>3</Position>
+      <DataType>varchar(90)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12185</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="180" parent="53" name="encrypted_password">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12185</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="181" parent="53" name="is_active">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>12185</StateNumber>
+      <DefaultExpression>true</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="182" parent="53" name="reset_password_token">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>12185</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="183" parent="53" name="reset_password_sent_at">
+      <Position>7</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12185</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="184" parent="53" name="created_at">
+      <Position>8</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12185</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="185" parent="53" name="updated_at">
+      <Position>9</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>12185</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="186" parent="53" name="users_uk1">
+      <ObjectId>75384</ObjectId>
+      <StateNumber>12211</StateNumber>
+      <ColNames>id
+email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="187" parent="53" name="users_uk2">
+      <ObjectId>75386</ObjectId>
+      <StateNumber>12213</StateNumber>
+      <ColNames>id
+username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="188" parent="53" name="users_pk">
+      <ObjectId>75278</ObjectId>
+      <StateNumber>12185</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="189" parent="53" name="users_i1">
+      <ObjectId>75388</ObjectId>
+      <StateNumber>12215</StateNumber>
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="190" parent="53" name="users_i2">
+      <ObjectId>75389</ObjectId>
+      <StateNumber>12217</StateNumber>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="191" parent="53" name="users_pk">
+      <ObjectId>75279</ObjectId>
+      <StateNumber>12185</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="192" parent="53" name="users_uk1">
+      <ObjectId>75385</ObjectId>
+      <StateNumber>12211</StateNumber>
+      <ColNames>id
+email</ColNames>
+      <UnderlyingIndexName>users_uk1</UnderlyingIndexName>
+    </key>
+    <key id="193" parent="53" name="users_uk2">
+      <ObjectId>75387</ObjectId>
+      <StateNumber>12213</StateNumber>
+      <ColNames>id
+username</ColNames>
+      <UnderlyingIndexName>users_uk2</UnderlyingIndexName>
+    </key>
+    <trigger id="194" parent="53" name="users_updated_at">
+      <ObjectId>75391</ObjectId>
+      <StateNumber>12221</StateNumber>
+      <Turn>before-row</Turn>
+      <Events>U</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>75390</CallRoutineId>
+    </trigger>
+    <argument id="195" parent="54">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0s</DataType>
+    </argument>
+  </database-model>
+</dataSource>

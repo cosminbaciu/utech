@@ -4,9 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 
-/**
- * Created by an on 25.05.2017.
- */
+
 public class RoleDTO {
 
     @NotNull

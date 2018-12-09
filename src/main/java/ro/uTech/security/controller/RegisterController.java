@@ -28,9 +28,6 @@ import ro.uTech.security.service.UserRegistrationServiceSupport;
 import javax.validation.Valid;
 
 
-/**
- * Created by an on 20.04.2017.
- */
 @Controller
 @RequestMapping("/register")
 public class RegisterController {

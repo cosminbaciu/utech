@@ -6,9 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import ro.uTech.security.model.domain.Role;
 
-/**
- * Created by an on 20.04.2017.
- */
+
 public interface RoleRepository extends JpaRepository<Role, Long> {
 
     Role findByName(@Param("name") String name);

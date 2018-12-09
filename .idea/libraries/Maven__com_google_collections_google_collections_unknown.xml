@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.google.collections:google-collections:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/collections/google-collections/unknown/google-collections-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/collections/google-collections/unknown/google-collections-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/collections/google-collections/unknown/google-collections-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -7,9 +7,7 @@ import org.springframework.data.annotation.Version;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by an on 19.04.2017.
- */
+
 @Entity
 @Table(name = "role_permissions")
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "id")

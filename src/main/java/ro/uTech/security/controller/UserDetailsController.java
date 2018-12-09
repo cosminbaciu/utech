@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ro.uTech.security.model.CustomUserDetails;
 import ro.uTech.security.service.UserRegistrationServiceSupport;
 
-/**
- * Created by vlad.ginju on 6/9/17.
- */
 
 @Controller
 @RequestMapping("/me")

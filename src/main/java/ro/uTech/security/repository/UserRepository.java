@@ -6,9 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import ro.uTech.security.model.domain.User;
 
-/**
- * Created by an on 19.04.2017.
- */
+
 public interface UserRepository extends JpaRepository<User, Long> {
 
     User findByEmail(@Param("email") String email);

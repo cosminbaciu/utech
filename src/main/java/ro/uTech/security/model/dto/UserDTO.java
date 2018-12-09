@@ -4,9 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 
-/**
- * Created by an on 20.04.2017.
- */
+
 public class UserDTO {
 
     @NotNull

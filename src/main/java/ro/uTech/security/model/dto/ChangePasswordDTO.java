@@ -4,9 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 
-/**
- * Created by vlad.ginju on 5/24/17.
- */
+
 public class ChangePasswordDTO {
 
 

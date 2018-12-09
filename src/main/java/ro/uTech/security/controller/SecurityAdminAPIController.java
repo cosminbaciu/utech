@@ -33,9 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * Created by an on 23.05.2017.
- */
+
 @Controller
 @RequestMapping("/security")
 public class SecurityAdminAPIController {
@@ -90,15 +88,6 @@ public class SecurityAdminAPIController {
         return "redirect:/admin/customers/dashboard";
     }
 
-    @RequestMapping(value = "/socialLogin",
-            consumes = {"application/json"},
-            produces = {"application/json"}, method = RequestMethod.POST)
-    public ResponseEntity<LoginDTO> loadsagin(HttpServletRequest request, HttpServletResponse response, @RequestBody LoginDTO loginForm,
-                                              BindingResult result) throws ServletException {
-
-
-        return new ResponseEntity<>(loginForm, HttpStatus.OK);
-    }
 
     @RequestMapping(value = "/users",
             produces = {"application/json"}, method = RequestMethod.GET)
@@ -130,7 +119,6 @@ public class SecurityAdminAPIController {
             if (userRole.getRole() != null && userRole.getRole().getId().equals(userRoleDTO.getRoleId()))
                 throw new UserAlreadyBelongsToGroupException(userRoleDTO.getUserId(), userRoleDTO.getRoleId());
         }
-        // TODO move this to service
         UserRole userRole = new UserRole();
         userRole.setUser(user);
         userRole.setRole(role);
@@ -165,7 +153,6 @@ public class SecurityAdminAPIController {
                 throw new PermissionAlreadyBelongsToRoleException(rolePermissionDTO.getRoleId(), rolePermissionDTO.getPermissionId());
         }
 
-        // TODO move this to service
         RolePermission rolePermission = new RolePermission();
         rolePermission.setRole(role);
         rolePermission.setPermission(permission);
@@ -238,7 +225,7 @@ public class SecurityAdminAPIController {
 
     @RequestMapping(value = "/permissions/delete",
             consumes = {"application/json"},
-            produces = {"application/json"}, method = RequestMethod.POST)
+            produces = {"application/json"}, method = RequestMethod.DELETE)
     @PreAuthorize("hasRole('ROLE_ADMINISTRATOR')")
     public ResponseEntity<PermissionDTO> deletePermission(@RequestBody @Valid PermissionDTO permissionDTO, BindingResult bindingResult) {
 
@@ -310,7 +297,6 @@ public class SecurityAdminAPIController {
         return roleDTO;
     }
 
-    //TODO: DTOs should stay where they belong, no matter the excuse. One maybe would need the same DTO in the future, but they won't find them in a Controller class.
     class UserDTO {
 
         private Long id;
