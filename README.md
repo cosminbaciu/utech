@@ -641,5 +641,5 @@ curl --user cosmin:Fepece1905 -X GET --header 'Accept: application/json' 'http:/
 
 ##Schema bazei de date
 
-![3](https://github.com/cosminbaciu/utech/blob/master/mock-ups/db_schema.png)
+![3](https://github.com/cosminbaciu/utech/blob/master/mock-ups/db_schema)
 
