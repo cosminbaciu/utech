@@ -642,3 +642,23 @@ curl --user cosmin:Fepece1905 -X GET --header 'Accept: application/json' 'http:/
 ##Schema bazei de date
 
 ![3](https://github.com/cosminbaciu/utech/blob/master/mock-ups/db_schema)
+
+
+
+## Front-end
+
+Pentru partea de front-end am folosit limbajul React. 
+
+Am structurat proiectul in pachetele common, components, user si util, pentru o mai buna vizualizare a fisierelor
+
+Proiectul porneste ruland comanda
+
+```
+npm start
+```
+
+Pentru usurarea dezvoltarii componentei de UI, am folosit biblioteca Material UI care implementeaza Google Material Design.
+
+
+
+
