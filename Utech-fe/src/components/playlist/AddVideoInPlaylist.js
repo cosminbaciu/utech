@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Button, TextField} from '@material-ui/core';
-import {ACCESS_TOKEN} from "../constants";
+import {ACCESS_TOKEN} from "../../constants";
 
 
 const API = 'http://localhost:5000';

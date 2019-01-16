@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ACCESS_TOKEN} from "../constants";
+import {ACCESS_TOKEN} from "../../constants";
 
 
 const API = 'http://localhost:5000';
@@ -74,7 +74,7 @@ class Playlist extends Component {
                             allowFullScreen/>
                 </div>
             );
-        else return ( <div> Loading</div>);
+        else return ( <div></div>);
 
     }
 }

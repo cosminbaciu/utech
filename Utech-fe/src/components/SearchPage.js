@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Button from "@material-ui/core/Button/Button";
 import {TextField, Typography} from "@material-ui/core";
 import Video from './Video';
-import './SearchPage.css';
+import '../common/SearchPage.css';
 
 
 import {ACCESS_TOKEN} from "../constants";
@@ -10,14 +10,14 @@ import {MuiThemeProviderOld} from "@material-ui/core/es/styles/MuiThemeProvider"
 import Card from "@material-ui/core/Card/Card";
 import CardContent from "@material-ui/core/CardContent/CardContent";
 import CardActions from "@material-ui/core/CardActions/CardActions";
-import AddToFavourite from "./AddToFavourite";
-import FavouriteVideos from "./FavouriteVideos";
-import AddView from "./AddView";
-import NoOfViews from "./NoOfViews";
-import AddPlaylist from "./AddPlaylist";
-import GetPlaylists from "./GetPlaylists";
-import AddToPlaylist from "./AddToPlaylist";
-import Playlist from "./Playlist";
+import AddToFavourite from "./FavouriteVideos/AddToFavourite";
+import FavouriteVideos from "./FavouriteVideos/FavouriteVideos";
+import AddView from "./FavouriteVideos/AddView";
+import NoOfViews from "./FavouriteVideos/NoOfViews";
+import AddPlaylist from "./playlist/AddPlaylist";
+import GetPlaylists from "./playlist/GetPlaylists";
+import AddToPlaylist from "./playlist/AddToPlaylist";
+import Playlist from "./playlist/Playlist";
 
 const styles = {
     card: {

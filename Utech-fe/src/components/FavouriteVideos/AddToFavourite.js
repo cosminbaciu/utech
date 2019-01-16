@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
-import {ACCESS_TOKEN} from "../constants";
+import {ACCESS_TOKEN} from "../../constants";
 
 
 const API = 'http://localhost:5000';

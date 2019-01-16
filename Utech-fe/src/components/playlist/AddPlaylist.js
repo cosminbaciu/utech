@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@material-ui/core';
-import {ACCESS_TOKEN} from "../constants";
+import {Button, TextField} from '@material-ui/core';
+import {ACCESS_TOKEN} from "../../constants";
 
 
 const API = 'http://localhost:5000';
 
-class AddView extends Component {
+class AddPlaylist extends Component {
 
     constructor(props){
         super(props);
@@ -17,10 +16,7 @@ class AddView extends Component {
 
     state = {
         loading: true,
-        id: null,
-        title: '',
-        videoId: '',
-        thumbnailURL: '',
+        name: ''
     };
 
     async fetch(method, endpoint, body) {
@@ -33,9 +29,7 @@ class AddView extends Component {
                     'Authorization' : 'Bearer ' + localStorage.getItem(ACCESS_TOKEN)
                 },
                 body: JSON.stringify({
-                    title: this.props.title,
-                    videoId: this.props.videoId,
-                    thumbnailURL: this.props.thumbnailURL
+                    name: this.state.name
                 }),
 
             })
@@ -49,12 +43,14 @@ class AddView extends Component {
         }
     }
 
-    async addToFavourite() {
+    async addPlaylist() {
         this.setState({loading: false});
-        await this.fetch('PUT', '/favourites/addAViewForVideo')
+        await this.fetch('POST', '/playlist/create')
     }
 
     handleChange(event) {
+        this.setState({name: event.target.value});
+
     }
 
     handleSubmit(event) {
@@ -64,11 +60,26 @@ class AddView extends Component {
 
 
     render() {
+
+
+
         return (
 
-            <Button onClick = {this.addToFavourite.bind(this)}> View </Button>
-        );
+            <div>
+                <TextField
+                    id="addCategory"
+                    value={this.state.name}
+                    label="Add Playlist"
+                    type="search"
+                    margin="normal"
+                    onChange={this.handleChange}
+                />
+                <p></p><Button onClick={this.addPlaylist.bind(this)}  variant="contained" color="primary">Add </Button>
+
+            </div>
+
+    );
     }
 }
 
-export default AddView;
+export default AddPlaylist;

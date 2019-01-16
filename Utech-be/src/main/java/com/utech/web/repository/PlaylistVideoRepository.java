@@ -9,5 +9,5 @@ import java.util.List;
 public interface PlaylistVideoRepository extends JpaRepository<PlaylistVideo, Long> {
 
     PlaylistVideo findByPlaylistIdAndFavouriteVideoId(@PathVariable("playlistId") Long playlistId, @PathVariable("favouriteVideoId") String favouriteVideoId);
-    List<PlaylistVideo> findByPlaylistId(@PathVariable("playlistId") Long id);
+    List<PlaylistVideo> findByPlaylistIdAndUserId(@PathVariable("playlistId") Long id, @PathVariable("userId") Long userId);
 }

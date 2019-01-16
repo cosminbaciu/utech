@@ -14,11 +14,11 @@ import Signup from '../user/signup/Signup';
 import Profile from '../user/profile/Profile';
 import AppHeader from '../common/AppHeader';
 import NotFound from '../common/NotFound';
-import LoadingIndicator from '../common/LoadingIndicator';
+import LoadingIndicator from '../components/LoadingIndicator';
 
 import { Layout, notification } from 'antd';
-import SearchBar from "../common/SearchBarComponent";
-import Search from "../common/SearchPage";
+import SearchBar from "../components/SearchBarComponent";
+import Search from "../components/SearchPage";
 const { Content } = Layout;
 
 class App extends Component {

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {ACCESS_TOKEN} from "../constants";
+import {ACCESS_TOKEN} from "../../constants";
+// import '../common/NoOfViews.css';
 
 
 const API = 'http://localhost:5000';
@@ -12,6 +13,7 @@ class NoOfViews extends Component {
         loading: true,
         videos: [],
         listVideos: [],
+        listNoOfViews: []
     };
 
     componentDidMount() {
@@ -51,8 +53,14 @@ class NoOfViews extends Component {
         await this.fetch('GET', '/favourites/getAllSeenVideos');
 
         let videos = this.state.videos.map((video) => <li key = {video.title}>{video.title}</li>);
-        if (this._isMounted)
+        if (this._isMounted) {
             this.setState({listVideos: videos});
+        }
+
+        videos = this.state.videos.map((video) => <li key = {video.views}>{video.views}</li>);
+        if (this._isMounted) {
+            this.setState({listNoOfViews: videos});
+        }
 
     }
 
@@ -61,7 +69,14 @@ class NoOfViews extends Component {
         return (
             <div>
                 <h3> Number of views </h3>
-                <ul>{this.state.listVideos}</ul>
+                <table>
+                    <th>
+                        <ul style={{listStyleType: 'none'}}>{this.state.listVideos}</ul>
+                    </th>
+                    <th>
+                        <ul style={{listStyleType: 'none'}}>{this.state.listNoOfViews}</ul>
+                    </th>
+                </table>
             </div>
         );
     }

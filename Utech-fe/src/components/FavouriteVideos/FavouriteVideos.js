@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ACCESS_TOKEN} from "../constants";
+import {ACCESS_TOKEN} from "../../constants";
 
 
 const API = 'http://localhost:5000';
@@ -60,16 +60,13 @@ class FavouriteVideos extends Component {
 
     render(){
 
-        const{videos} = this.state;
-
-        if(videos.length !== 0)
         return (
             <div>
               <h3> Favourite videos </h3>
-                <ul>{this.state.listVideos}</ul>
+                <ul style={{listStyleType: 'none'}}>{this.state.listVideos}</ul>
             </div>
         );
-        else return ( <div> Loading</div>);
+
 
     }
 }
