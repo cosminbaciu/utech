@@ -613,19 +613,19 @@ Cand vedem in consola de run:
 ```
 Started UtechApplication in 6.516 seconds (JVM running for 6.944)
 ```
-mergem in browser si accesam http://localhost:8090/api
+mergem in browser si accesam http://localhost:5000/api
 
 
 ## Navigare
 
-In momentul in care accesam http://localhost:8090/api in browser, va aparea formularul de log in. 
+In momentul in care accesam http://localhost:5000/api in browser, va aparea formularul de log in. 
 Pentru a crea un user, apelam in Postman 
 
-```POST:  http://localhost:8090/api/register/register``` cu body-ul prezentat mai sus. 
+```POST:  http://localhost:5000/api/register/register``` cu body-ul prezentat mai sus. 
 Daca raspunsul este favorabil, ne vom putea loga cu userul creat.
 
 1. Pentru a vizualiza si a utiliza mai bine aplicatia, avand doar partea de back-end, am folosit un tool numit Swagger. 
-Acesta poate fi accesat, in sesiunea userului curent, la adresa ```http://localhost:8090/api/swagger-ui.html```
+Acesta poate fi accesat, in sesiunea userului curent, la adresa ```http://localhost:5000/api/swagger-ui.html```
 
 Acolo regasim fiecare endpoint cu o interfata mai facila pentru utilizator, cu sugestii de body-uri si autocomplete cu date mock pentru request-uri.
 
@@ -633,7 +633,7 @@ Acolo regasim fiecare endpoint cu o interfata mai facila pentru utilizator, cu s
 
 Exemplu: 
 ```
-curl --user cosmin:Fepece1905 -X GET --header 'Accept: application/json' 'http://localhost:8090/api/playlist/getAll'
+curl --user cosmin:Fepece1905 -X GET --header 'Accept: application/json' 'http://localhost:5000/api/playlist/getAll'
 ```
 
 3. Call-uri in aplicatie se pot face si cu ajutorul lui Postman.
