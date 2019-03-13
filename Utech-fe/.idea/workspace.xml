@@ -2,49 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f995c01-3d5f-407b-aacf-5915deb97908" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/NoOfViews.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/PlaylistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/RoleName.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/RoleName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/audit/UserDateAudit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/audit/UserDateAudit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/ApiResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/JwtAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/JwtAuthenticationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/SignUpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/PlaylistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/PlaylistVideoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/PlaylistVideoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/JwtAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/JwtAuthenticationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/FavouriteVideoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/PlaylistController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/SearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/FavouriteVideo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Playlist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/PlaylistVideo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/dto/FavouriteVideoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/FavouriteVideoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/PlaylistRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/PlaylistVideoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/SearchRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/FavouriteVideoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/PlaylistService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/PlaylistVideoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/security/SearchService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/UTech.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UTech.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/polling-app-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UTech.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-overrides.js" beforeDir="false" afterPath="$PROJECT_DIR$/config-overrides.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/AddPlaylist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playlist/AddPlaylist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/AddToFavourite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FavouriteVideos/AddToFavourite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/AddToPlaylist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playlist/AddToPlaylist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/AddVideoInPlaylist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playlist/AddVideoInPlaylist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/AddView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FavouriteVideos/AddView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/FavouriteVideos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FavouriteVideos/FavouriteVideos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/GetPlaylists.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playlist/GetPlaylists.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/LoadingIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoadingIndicator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/NoOfViews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FavouriteVideos/NoOfViews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playlist/Playlist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/SearchBarComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchBarComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/AppHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/AppHeader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/AppHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/AppHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/NoOfViews.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/NoOfViews.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/NotFound.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/NotFound.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/NotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/PrivateRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/SearchPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/SearchPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/SearchPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/ServerError.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/ServerError.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/ServerError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/ServerError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FavouriteVideos/AddToFavourite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FavouriteVideos/AddView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FavouriteVideos/FavouriteVideos.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FavouriteVideos/NoOfViews.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoadingIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoadingIndicator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchBarComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Video.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playlist/AddPlaylist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playlist/AddToPlaylist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playlist/AddVideoInPlaylist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playlist/GetPlaylists.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playlist/Playlist.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/poll.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/poll.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registerServiceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/registerServiceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/login/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/profile/Profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/profile/Profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/signup/Signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/signup/Signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/signup/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/signup/Signup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/APIUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/APIUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,43 +99,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/constants/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
+            <state relative-caret-position="45">
               <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/SearchPage.js">
+        <entry file="file://$PROJECT_DIR$/src/app/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1843">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/FavouriteVideos/NoOfViews.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="71" column="23" lean-forward="true" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+            <state relative-caret-position="318">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/FavouriteVideos/FavouriteVideos.js">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1235">
-              <caret line="65" column="51" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-139109" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config-overrides.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -118,20 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/NoOfViews.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="15">
               <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/playlist/GetPlaylists.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -139,20 +155,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="135">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/playlist/Playlist.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -160,8 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/SearchPage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="75">
+              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -216,7 +220,6 @@
         <option value="$PROJECT_DIR$/src/common/AddPlaylist.js" />
         <option value="$PROJECT_DIR$/src/common/SearchPage.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/app/App.js" />
         <option value="$PROJECT_DIR$/src/constants/index.js" />
         <option value="$PROJECT_DIR$/src/util/APIUtils.js" />
         <option value="$PROJECT_DIR$/src/components/SearchPage.js" />
@@ -227,6 +230,8 @@
         <option value="$PROJECT_DIR$/src/common/SearchPage.css" />
         <option value="$PROJECT_DIR$/src/components/FavouriteVideos/NoOfViews.js" />
         <option value="$PROJECT_DIR$/src/components/FavouriteVideos/FavouriteVideos.js" />
+        <option value="$PROJECT_DIR$/src/app/App.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -242,8 +247,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,21 +254,18 @@
               <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
               <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547633845451" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550678719700" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -311,24 +311,26 @@
       <workItem from="1547541928789" duration="2681000" />
       <workItem from="1547552376542" duration="2851000" />
       <workItem from="1547627165974" duration="5672000" />
+      <workItem from="1550655457498" duration="4397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55904000" />
+    <option name="totallyTimeSpent" value="60301000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2642344" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.26755112" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2998955" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.5141066" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
@@ -355,21 +357,9 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/react-router/es/withRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-router/es/withRouter.js" />
     <entry file="file://$PROJECT_DIR$/src/common/Swagger.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="417" column="17" selection-start-line="417" selection-start-column="17" selection-end-line="417" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts" />
     <entry file="file://$PROJECT_DIR$/src/components/SearchBarComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -475,16 +465,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config-overrides.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md" />
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/user/login/Login.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -565,16 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1501">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/APIUtils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -597,29 +568,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ResultCard.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/SearchPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants/index.js">
+    <entry file="file://$PROJECT_DIR$/src/components/FavouriteVideos/NoOfViews.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="1050">
+          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ResultCard.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/AppHeader.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/NoOfViews.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/playlist/GetPlaylists.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/playlist/Playlist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
+        <state relative-caret-position="1125">
           <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -627,54 +623,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/playlist/GetPlaylists.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SearchPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1843">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/SearchPage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/NoOfViews.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/FavouriteVideos/NoOfViews.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="71" column="23" lean-forward="true" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FavouriteVideos/FavouriteVideos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1235">
+        <state relative-caret-position="590">
           <caret line="65" column="51" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/npm-debug.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-326" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-overrides.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yarn.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139109" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
         </state>
       </provider>
     </entry>

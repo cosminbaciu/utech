@@ -17,8 +17,6 @@ import NotFound from '../common/NotFound';
 import LoadingIndicator from '../components/LoadingIndicator';
 
 import { Layout, notification } from 'antd';
-import SearchBar from "../components/SearchBarComponent";
-import Search from "../components/SearchPage";
 const { Content } = Layout;
 
 class App extends Component {
@@ -102,7 +100,6 @@ class App extends Component {
           <Content className="app-content">
             <div className="container">
               <Switch>
-                <Route path="/search" component = {Search}/>
                 <Route path="/login" render={(props) => <Login onLogin={this.handleLogin} {...props} />}/>
                 <Route path="/signup" component={Signup}/>
                 <Route path="/users/:username"
