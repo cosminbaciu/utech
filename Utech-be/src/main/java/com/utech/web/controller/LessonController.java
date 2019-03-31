@@ -39,10 +39,18 @@ public class LessonController {
     }
 
     @RequestMapping (value = "/getLesson/{id}", produces = "application/json", method = RequestMethod.GET)
-    public ResponseEntity<Lesson> getLesson(@PathParam(value = "id") Long id){
+    public ResponseEntity<Lesson> getLessonById(@PathVariable Long id){
 
         return new ResponseEntity<>(lessonRepository.findById(id).get(), HttpStatus.OK);
     }
+
+    @RequestMapping (value = "/getLessonsByUser", produces = "application/json", method = RequestMethod.GET)
+    public ResponseEntity<List<Lesson>> getLessonByUser(@CurrentUser UserPrincipal currentUser){
+
+        return new ResponseEntity<>(lessonRepository.findAllByUserId(currentUser.getId()), HttpStatus.OK);
+    }
+
+
 
 
 
