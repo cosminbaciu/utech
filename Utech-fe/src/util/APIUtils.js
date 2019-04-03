@@ -53,7 +53,6 @@ export function checkEmailAvailability(email) {
     });
 }
 
-
 export function getCurrentUser() {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -97,6 +96,13 @@ export function getLessons() {
     });
 }
 
+export function getLessonsByDomain(id) {
+    return request({
+        url: API_BASE_URL + "/lessons/getLessonByDomain/"+id,
+        method: 'GET'
+    });
+}
+
 export function getDomains(id) {
     return request({
         url: API_BASE_URL + "/domains/getDomainsByCategory/" + id,
@@ -114,6 +120,14 @@ export function getCategories() {
 export function addLesson(addLessonRequest) {
     return request({
         url: API_BASE_URL + "/lessons/addLesson",
+        method: 'POST',
+        body: JSON.stringify(addLessonRequest)
+    });
+}
+
+export function addLessonRequest(addLessonRequest) {
+    return request({
+        url: API_BASE_URL + "/lessonRequest/addLessonRequest",
         method: 'POST',
         body: JSON.stringify(addLessonRequest)
     });

@@ -23,6 +23,9 @@ class Categories extends Component{
 
     }
 
+    componentDidMount() {
+    }
+
     componentWillMount() {
         getCategories()
             .then(response => {
@@ -38,7 +41,8 @@ class Categories extends Component{
         return(
 
             <Layout>
-                <Sider>
+                <Sider style={{margin:40}}>
+                    <h3 style={{margin:40}}>Categories</h3>
                     <List
                         itemLayout="horizontal"
                         dataSource={this.state.categories}

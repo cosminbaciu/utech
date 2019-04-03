@@ -50,6 +50,11 @@ public class LessonController {
         return new ResponseEntity<>(lessonRepository.findAllByUserId(currentUser.getId()), HttpStatus.OK);
     }
 
+    @RequestMapping (value = "/getLessonByDomain/{id}", produces = "application/json", method = RequestMethod.GET)
+    public ResponseEntity<List<Lesson>> getLessonByDomain(@PathVariable Long id){
+
+        return new ResponseEntity<>(lessonRepository.findAllByDomainId(id), HttpStatus.OK);
+    }
 
 
 

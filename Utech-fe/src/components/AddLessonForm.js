@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {addLesson, getAllDomains} from '../util/APIUtils';
 import {Button, Form, Input, notification, Menu, Dropdown, Icon } from "antd";
-import {Link} from "react-router-dom";
 import FormItem from "antd/es/form/FormItem";
 import {NAME_MAX_LENGTH, NAME_MIN_LENGTH} from "../constants";
-import Select from "antd/es/select";
+import TextArea from "antd/es/input/TextArea";
 
 class AddLessonForm extends Component{
     constructor(props){
@@ -107,8 +106,8 @@ class AddLessonForm extends Component{
                             hasFeedback
                             validateStatus={this.state.name.validateStatus}
                             help={this.state.name.errorMsg}>
-                            <Input
-                                size="large"
+                            <TextArea
+                                rows={5}
                                 name="description"
                                 type="description"
                                 autoComplete="off"
@@ -130,7 +129,7 @@ class AddLessonForm extends Component{
                                 onChange={(event) => this.handleInputChange(event, this.validateName)} />
                         </FormItem>
 
-                        <select value={this.state.selectedDomain}
+                        <select style={{marginBottom:40}} value={this.state.selectedDomain}
                                 onChange={(e) => this.setState({selectedDomain: e.target.options.selectedIndex, validationError: e.target.value === "" ? "You must select your domain" : ""})}>
                             {this.state.domains.map((domain) => <option key={domain.id} value={domain.name}>{domain.display}</option>)}
                         </select>

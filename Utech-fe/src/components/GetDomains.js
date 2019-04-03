@@ -7,6 +7,7 @@ import * as antd from "antd";
 import Categories from "./Categories";
 import Layout from "antd/es/layout";
 import Sider from "antd/es/layout/Sider";
+import GetLessons from "./GetLessons";
 
 const { Card, Icon, Avatar } = antd;
 
@@ -18,8 +19,15 @@ class GetDomains extends Component{
     constructor(props){
         super(props);
         this.state = {
-            domains: []
+            domains: [],
+            domainId: 0,
+            displayQuestions: false
         }
+    }
+
+    markDomain(domainId){
+        this.setState({domainId: domainId, displayQuestions: !this.state.displayQuestions});
+
     }
 
     componentWillMount() {
@@ -36,26 +44,34 @@ class GetDomains extends Component{
 
 
     render() {
+        const self = this;
         return (
             <div>
                 <Layout>
+                    {/*<Sider style={{margin:40}}>*/}
+                        {/*<h3 style={{margin:20}}>Categories</h3>*/}
+                        {/*<Categories />*/}
+                    {/*</Sider>*/}
+
                     <ul>
 
-                        {this.state.domains.map(function(domain, index){
+                        {!this.state.displayQuestions ? (this.state.domains.map(function(domain, index){
 
                             return(
-                                <Card
-                                    style={{width: 300}}
-                                    cover={<img alt="example"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwyHi43XgiMlHnEBjLSAolNuLV4_V2EIdieYapr3rmsxEQ6Dz-VA"/>}
-                                    actions={[<Icon type="setting"/>, <Icon type="edit"/>, <Icon type="ellipsis"/>]}
-                                >
-                                    <Meta
-                                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                        title={domain.name}
-                                    />
-                                </Card>);
-                        })}
+                                <div style={{margin:40}}>
+                                    <Card
+                                        style={{width: 300}}
+                                        cover={<img alt="example"
+                                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwyHi43XgiMlHnEBjLSAolNuLV4_V2EIdieYapr3rmsxEQ6Dz-VA"/>}
+                                        actions={[<a onClick={() => self.markDomain(domain.id)}> <Icon type="plus" /></a>, <Icon type="edit"/>, <Icon type="heart" theme="twoTone" />]}
+                                    >
+                                        <Meta
+                                            avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                            title={domain.name}
+                                        />
+                                    </Card>
+                                </div>);
+                        })): (<GetLessons domain = {this.state.domainId}/>)}
                     </ul>
                 </Layout>
             </div>
