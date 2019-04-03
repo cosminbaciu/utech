@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import {
   Route,
@@ -17,6 +18,11 @@ import NotFound from '../common/NotFound';
 import LoadingIndicator from '../components/LoadingIndicator';
 
 import { Layout, notification } from 'antd';
+import AddLessonForm from "../components/AddLessonForm";
+import GetLessons from "../components/GetLessons";
+import Categories from "../components/Categories";
+import GetDomains from "../components/GetDomains";
+import Carousel from "antd/es/carousel";
 const { Content } = Layout;
 
 class App extends Component {
@@ -102,11 +108,19 @@ class App extends Component {
               <Switch>
                 <Route path="/login" render={(props) => <Login onLogin={this.handleLogin} {...props} />}/>
                 <Route path="/signup" component={Signup}/>
+                <Route path="/addLesson" component={AddLessonForm}/>
+                <Route path="/getLessons" component={GetLessons}/>
+                <Route path="/getCategories" component={Categories}/>
+                {/*<Route path="/getDomains/:id" component={GetDomains}/>*/}
+
+
                 <Route path="/users/:username"
                   render={(props) => <Profile isAuthenticated={this.state.isAuthenticated} currentUser={this.state.currentUser} {...props}  />}>
                 </Route>
               </Switch>
+
             </div>
+
           </Content>
         </Layout>
     );

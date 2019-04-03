@@ -82,3 +82,39 @@ export function getUserProfile(username) {
         method: 'GET'
     });
 }
+
+export function getAllDomains() {
+    return request({
+        url: API_BASE_URL + "/domains/getAllDomain",
+        method: 'GET'
+    });
+}
+
+export function getLessons() {
+    return request({
+        url: API_BASE_URL + "/lessons/getAllLessons",
+        method: 'GET'
+    });
+}
+
+export function getDomains(id) {
+    return request({
+        url: API_BASE_URL + "/domains/getDomainsByCategory/" + id,
+        method: 'GET'
+    });
+}
+
+export function getCategories() {
+    return request({
+        url: API_BASE_URL + "/categories/getAllCategories",
+        method: 'GET'
+    });
+}
+
+export function addLesson(addLessonRequest) {
+    return request({
+        url: API_BASE_URL + "/lessons/addLesson",
+        method: 'POST',
+        body: JSON.stringify(addLessonRequest)
+    });
+}

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,4 +32,11 @@ public class DomainController {
     public ResponseEntity<List<Domain>> getAllDomains(){
         return new ResponseEntity<>(domainRepository.findAll(), HttpStatus.OK);
     }
+
+    @RequestMapping (value = "/getDomainsByCategory/{id}", produces = "application/json", method = RequestMethod.GET)
+    public ResponseEntity<List<Domain>> getDomainsByCategory(@PathVariable Long id){
+        return new ResponseEntity<>(domainRepository.findAllByCategoryId(id), HttpStatus.OK);
+    }
+
+
 }
