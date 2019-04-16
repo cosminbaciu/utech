@@ -130,8 +130,8 @@ class AddLessonForm extends Component{
                         </FormItem>
 
                         <select style={{marginBottom:40}} value={this.state.selectedDomain}
-                                onChange={(e) => this.setState({selectedDomain: e.target.options.selectedIndex, validationError: e.target.value === "" ? "You must select your domain" : ""})}>
-                            {this.state.domains.map((domain) => <option key={domain.id} value={domain.name}>{domain.display}</option>)}
+                                onChange={(e) => this.setState({selectedDomain: e.target.selectedIndex, validationError: e.target.value === "" ? "You must select your domain" : ""})}>
+                            {this.state.domains.map((domain) => <option value={domain.id}>{domain.display}</option>)}
                         </select>
 
                         <FormItem>

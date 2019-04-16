@@ -110,9 +110,23 @@ export function getDomains(id) {
     });
 }
 
+export function getMessages() {
+    return request({
+        url: API_BASE_URL + "/messages/getMessagesByUser",
+        method: 'GET'
+    });
+}
+
 export function getCategories() {
     return request({
         url: API_BASE_URL + "/categories/getAllCategories",
+        method: 'GET'
+    });
+}
+
+export function getNextLessons() {
+    return request({
+        url: API_BASE_URL + "/lessonScheduler/getNextLessons",
         method: 'GET'
     });
 }
@@ -122,6 +136,14 @@ export function addLesson(addLessonRequest) {
         url: API_BASE_URL + "/lessons/addLesson",
         method: 'POST',
         body: JSON.stringify(addLessonRequest)
+    });
+}
+
+export function scheduleLesson(lessonScheduler) {
+    return request({
+        url: API_BASE_URL + "/lessonScheduler/addLessonScheduler",
+        method: 'POST',
+        body: JSON.stringify(lessonScheduler)
     });
 }
 

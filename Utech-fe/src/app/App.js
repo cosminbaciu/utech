@@ -21,8 +21,11 @@ import { Layout, notification } from 'antd';
 import AddLessonForm from "../components/AddLessonForm";
 import GetLessons from "../components/GetLessons";
 import Categories from "../components/Categories";
+import Notification from "../components/Notifications";
 import GetDomains from "../components/GetDomains";
 import Carousel from "antd/es/carousel";
+import StreamComponent from "../components/StreamComponent";
+import HistoryLesson from "../components/HistoryLesson";
 const { Content } = Layout;
 
 class App extends Component {
@@ -64,6 +67,13 @@ class App extends Component {
 
   componentDidMount() {
     this.loadCurrentUser();
+
+    var schedule = require('node-schedule');
+    var date = new Date(2012, 11, 21, 5, 30, 0);
+
+    var j = schedule.scheduleJob(date, function(){
+      console.log('The world is going to end today.');
+    });
   }
 
   handleLogout(redirectTo="/", notificationType="success", description="You're successfully logged out.") {
@@ -111,8 +121,14 @@ class App extends Component {
                 <Route path="/addLesson" component={AddLessonForm}/>
                 <Route path="/getLessons" component={GetLessons}/>
                 <Route path="/getCategories" component={Categories}/>
-                {/*<Route path="/getDomains/:id" component={GetDomains}/>*/}
+                <Route path="/getMessages" component={Notification}/>
+                <Route path="/stream" component={StreamComponent}/>
+                <Route path="/history" component={HistoryLesson}/>
 
+
+
+
+                {/*<Route path="/getDomains/:id" component={GetDomains}/>*/}
 
                 <Route path="/users/:username"
                   render={(props) => <Profile isAuthenticated={this.state.isAuthenticated} currentUser={this.state.currentUser} {...props}  />}>

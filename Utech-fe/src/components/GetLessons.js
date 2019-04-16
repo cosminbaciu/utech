@@ -1,6 +1,6 @@
 import {Component} from "react";
 import {getLessons, getLessonsByDomain} from "../util/APIUtils";
-import {Button, Form, Input, notification} from "antd";
+import {Button, DatePicker, Form, Input, notification} from "antd";
 import FormItem from "./AddLessonForm";
 import React from "react";
 import * as antd from "antd";
@@ -11,6 +11,10 @@ import ModalComponent from "./ModalComponent";
 import Modal from "antd/es/modal";
 import AddLessonRequest from "./AddLessonRequest";
 import * as APIUtils from "../util/APIUtils";
+import TimePicker from "antd/es/time-picker";
+import Collapse from "antd/es/collapse";
+
+const Panel = Collapse.Panel;
 
 const { Card, Icon, Avatar } = antd;
 
@@ -24,8 +28,24 @@ class GetLessons extends Component{
         this.state = {
             lessons: [],
             visible: false,
-            lessonId: 0
+            lessonId: 0,
+            time: new Date(),
+            date: new Date()
         }
+    }
+
+    onChangeDate = (date, dateString)=> {
+        this.setState({
+            date: new Date(date),
+        });
+        console.log(this.state.date);
+    }
+
+    onChangeTime = (time, timeString) =>{
+        this.setState({
+            time: new Date(time),
+        });
+        console.log(this.state.time);
     }
 
     componentWillMount() {
@@ -59,8 +79,14 @@ class GetLessons extends Component{
 
     handleSubmit(lesson) {
 
+        var scheduled = new Date(this.state.date.getFullYear(), this.state.date.getMonth(), this.state.date.getDate(),
+            this.state.time.getHours(), this.state.time.getMinutes(), this.state.time.getSeconds());
+
+        console.log(scheduled);
+
         const addLessonRequest = {
-            lessonId: lesson
+            lessonId: lesson,
+            date: new Date(scheduled)
         };
         APIUtils.addLessonRequest(addLessonRequest)
             .then(response => {
@@ -78,6 +104,10 @@ class GetLessons extends Component{
         this.handleCancel();
     }
 
+    callback(key) {
+        console.log(key);
+    }
+
     render() {
         const self = this;
         return (
@@ -93,13 +123,13 @@ class GetLessons extends Component{
                                     style={{width: 300}}
                                     cover={<img alt="example"
                                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwyHi43XgiMlHnEBjLSAolNuLV4_V2EIdieYapr3rmsxEQ6Dz-VA"/>}
-                                    actions={[<a onClick={self.showModal}> <Icon type="setting"/></a>, <Icon type="edit"/>, <Icon type="heart" />]}
+                                    actions={[<a onClick={self.showModal}> <Icon type="check"/></a>, <Icon type="edit"/>, <Icon type="heart" />]}
                                 >
                                 <Meta
                                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
                                     title={lesson.name}
                                     description={lesson.description}
-                                />
+                                    />
 
                                     <Modal
                                         title={lesson.name}
@@ -115,6 +145,21 @@ class GetLessons extends Component{
                                         ]}
                                     >
                                         <p>{lesson.description} </p>
+
+                                        <Collapse onChange={self.callback}>
+                                            <Panel header={<Button>Apply</Button>} key="1">
+                                                <p></p>
+                                                <p>Please propose a date and time for the meeting</p>
+                                                <p></p>
+                                                <p>
+                                                    <DatePicker onChange={self.onChangeDate} />
+                                                </p>
+                                                <p>
+                                                    <TimePicker onChange={self.onChangeTime} />,
+                                                </p>
+                                            </Panel>
+                                        </Collapse>
+
                                     </Modal>
                                  </Card>
                             </div>);

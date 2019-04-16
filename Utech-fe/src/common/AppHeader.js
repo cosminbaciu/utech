@@ -5,11 +5,15 @@ import {
 } from 'react-router-dom';
 import './AppHeader.css';
 import { Layout, Menu, Dropdown, Icon } from 'antd';
+import {getLessonsByDomain, getNextLessons} from "../util/APIUtils";
 const Header = Layout.Header;
     
 class AppHeader extends Component {
     constructor(props) {
-        super(props);   
+        super(props);
+        this.state = {
+            lessonSchedulers: []
+        }
         this.handleMenuClick = this.handleMenuClick.bind(this);   
     }
 
@@ -18,6 +22,48 @@ class AppHeader extends Component {
         this.props.onLogout();
       }
     }
+
+    // componentDidMount() {
+    //
+    //     var now = new Date();
+    //     var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 49, 0, 0) - now;
+    //     if (millisTill10 < 0) {
+    //         millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
+    //     }
+    //     setTimeout(function(){
+    //         window.alert("It's 10am!")}, millisTill10);
+    // }
+
+    componentWillMount() {
+        getNextLessons()
+            .then(response => {
+                this.setState({
+                    lessonSchedulers : response
+                });
+            });
+
+        console.log(this.state.lessonSchedulers);
+        if(this.state.lessonSchedulers.length > 0)
+            for(var i=0; i< this.state.lessonSchedulers.length; i++)
+                window.alert("Peste o ora aveti o lectie");
+    }
+
+    // componentDidMount(){
+    //     getNextLessons()
+    //         .then(response => {
+    //             this.setState({
+    //                 lessons : response
+    //             });
+    //         });
+    //
+    //     console.log(this.state.lessons);
+    //     if(this.state.lessons.length > 0)
+    //         for(var i=0; i< this.state.lessons.length; i++)
+    //             window.alert("Peste o ora aveti o lectie");
+    //
+    // }
+
+
 
     render() {
         let menuItems;
@@ -33,12 +79,11 @@ class AppHeader extends Component {
                   <Icon type="search" className="nav-icon" />
               </Link>
           </Menu.Item>,
-          <Menu.Item key="/addLesson">
-              <Link to="/addLesson">
-                  <Icon type="plus" className="nav-icon" />
+          <Menu.Item key="/getMessages">
+              <Link to="/getMessages">
+                  <Icon type="mail" className="nav-icon" />
               </Link>
           </Menu.Item>,
-
           <Menu.Item key="/profile" className="profile-menu">
                 <ProfileDropdownMenu 
                   currentUser={this.props.currentUser} 
@@ -90,12 +135,20 @@ function ProfileDropdownMenu(props) {
       <Menu.Item key="profile" className="dropdown-item">
         <Link to={`/users/${props.currentUser.username}`}>Profile</Link>
       </Menu.Item>
-        <Menu.Item key="my lessons" className="dropdown-item">
-            My lessons
-            {/*<Link to={`/users/${props.currentUser.username}`}>Profile</Link>*/}
+        <Menu.Item key="/addLesson">
+            <Link to="/addLesson">
+                Add lesson
+            </Link>
         </Menu.Item>
+        {/*<Menu.Item key="my lessons" className="dropdown-item">*/}
+            {/*My lessons*/}
+
+            {/*/!*<Link to={`/users/${props.currentUser.username}`}>Profile</Link>*!/*/}
+        {/*</Menu.Item>*/}
         <Menu.Item key="my lessons" className="dropdown-item">
+            <Link to ="/history">
             History
+            </Link>
             {/*<Link to={`/users/${props.currentUser.username}`}>Profile</Link>*/}
         </Menu.Item>
       <Menu.Item key="logout" className="dropdown-item">
