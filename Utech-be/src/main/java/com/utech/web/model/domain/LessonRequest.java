@@ -2,6 +2,7 @@ package com.utech.web.model.domain;
 
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 @Entity
@@ -23,11 +24,16 @@ public class LessonRequest {
     @Column(name = "email_sent_flag")
     private Boolean emailSentFlag;
 
+    private Timestamp date;
+
+    private Boolean accepted;
+
     @Column(name = "createdAt")
-    private LocalDate createdAt;
+    private Timestamp createdAt;
 
     @Column(name = "updatedAt")
-    private LocalDate updatedAt;
+    private Timestamp updatedAt;
+
 
     public Long getId() {
         return id;
@@ -69,19 +75,35 @@ public class LessonRequest {
         this.emailSentFlag = emailSentFlag;
     }
 
-    public LocalDate getCreatedAt() {
+    public Timestamp getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDate createdAt) {
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
+        this.date = date;
+    }
+
+    public Boolean getAccepted() {
+        return accepted;
+    }
+
+    public void setAccepted(Boolean accepted) {
+        this.accepted = accepted;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDate getUpdatedAt() {
+    public Timestamp getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDate updatedAt) {
+    public void setUpdatedAt(Timestamp updatedAt) {
         this.updatedAt = updatedAt;
     }
 

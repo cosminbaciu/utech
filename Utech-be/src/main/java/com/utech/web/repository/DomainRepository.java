@@ -8,4 +8,5 @@ import java.util.List;
 public interface DomainRepository extends JpaRepository<Domain, Long> {
 
     List<Domain> findAllByCategoryId(Long categoryId);
+    List<Domain> findAllByOrderByIdAsc();
 }

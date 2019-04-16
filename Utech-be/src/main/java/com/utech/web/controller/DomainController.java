@@ -30,7 +30,7 @@ public class DomainController {
 
     @RequestMapping (value = "/getAllDomain", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<List<Domain>> getAllDomains(){
-        return new ResponseEntity<>(domainRepository.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(domainRepository.findAllByOrderByIdAsc(), HttpStatus.OK);
     }
 
     @RequestMapping (value = "/getDomainsByCategory/{id}", produces = "application/json", method = RequestMethod.GET)

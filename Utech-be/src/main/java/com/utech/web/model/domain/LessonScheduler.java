@@ -1,6 +1,7 @@
 package com.utech.web.model.domain;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 @Entity
@@ -11,17 +12,16 @@ public class LessonScheduler {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "lesson_id")
-    private Long lessonId;
-
-    @Column (name = "user_id")
-    private Long userId;
+    @Column(name = "lesson_request_id")
+    private Long lessonRequestId;
 
     @Column (name = "scheduled_at")
-    private LocalDate scheduledAt;
+    private Timestamp scheduledAt;
+
+    private Boolean done;
 
     @Column (name = "created_at")
-    private LocalDate createdAt;
+    private Timestamp createdAt;
 
     public Long getId() {
         return id;
@@ -31,35 +31,35 @@ public class LessonScheduler {
         this.id = id;
     }
 
-    public Long getLessonId() {
-        return lessonId;
+    public Long getLessonRequestId() {
+        return lessonRequestId;
     }
 
-    public void setLessonId(Long lessonId) {
-        this.lessonId = lessonId;
+    public void setLessonRequestId(Long lessonRequestId) {
+        this.lessonRequestId = lessonRequestId;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public LocalDate getScheduledAt() {
+    public Timestamp getScheduledAt() {
         return scheduledAt;
     }
 
-    public void setScheduledAt(LocalDate scheduledAt) {
+    public void setScheduledAt(Timestamp scheduledAt) {
         this.scheduledAt = scheduledAt;
     }
 
-    public LocalDate getCreatedAt() {
+    public Boolean getDone() {
+        return done;
+    }
+
+    public void setDone(Boolean done) {
+        this.done = done;
+    }
+
+    public Timestamp getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDate createdAt) {
+    public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -67,8 +67,6 @@ public class LessonScheduler {
     public String toString() {
         return "LessonScheduler{" +
                 "id=" + id +
-                ", lessonId=" + lessonId +
-                ", userId=" + userId +
                 ", scheduledAt=" + scheduledAt +
                 ", createdAt=" + createdAt +
                 '}';
