@@ -9,4 +9,6 @@ public interface LessonRequestRepository extends JpaRepository<LessonRequest, Lo
 
     List<LessonRequest> findAllByUserId(Long userId);
 
+    List<LessonRequest> findAllByLessonId(Long lessonId);
+
 }

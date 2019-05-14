@@ -3,6 +3,7 @@ package com.utech.web.controller;
 
 import com.utech.web.model.domain.LessonRequest;
 import com.utech.web.model.domain.LessonScheduler;
+import com.utech.web.model.dtos.LessonScheduleDTO;
 import com.utech.web.repository.LessonRequestRepository;
 import com.utech.web.repository.LessonSchedulerRepository;
 import com.utech.web.security.CurrentUser;
@@ -47,11 +48,18 @@ public class LessonSchedulerController {
         return new ResponseEntity<>(lessonSchedulerRepository.findAll(), HttpStatus.OK);
     }
 
+    @RequestMapping (value = "/getMyLessonScheduled", produces = "application/json", method = RequestMethod.GET)
+    public ResponseEntity<List<LessonScheduleDTO>> getAllLessonScheduled(@CurrentUser UserPrincipal currentUser){
+        return new ResponseEntity<>(lessonSchedulerService.getLessonScheduleAsMentor(currentUser.getId()), HttpStatus.OK);
+    }
+
     @RequestMapping (value = "/getNextLessons", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<List<LessonScheduler>> getNextLessons(@CurrentUser UserPrincipal currentUser){
 
         return new ResponseEntity<>(lessonSchedulerService.getNextLessonsPerUser(currentUser.getId()), HttpStatus.OK);
     }
+
+
 
 
 

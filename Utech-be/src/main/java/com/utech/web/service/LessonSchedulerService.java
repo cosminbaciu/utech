@@ -1,8 +1,11 @@
 package com.utech.web.service;
 
 
+import com.utech.web.model.domain.Lesson;
 import com.utech.web.model.domain.LessonRequest;
 import com.utech.web.model.domain.LessonScheduler;
+import com.utech.web.model.dtos.LessonScheduleDTO;
+import com.utech.web.repository.LessonRepository;
 import com.utech.web.repository.LessonRequestRepository;
 import com.utech.web.repository.LessonSchedulerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,9 @@ public class LessonSchedulerService {
 
     @Autowired
     private LessonSchedulerRepository lessonSchedulerRepository;
+
+    @Autowired
+    private LessonRepository lessonRepository;
 
     public List<LessonScheduler>  getNextLessonsPerUser(Long userId){
 
@@ -46,6 +52,32 @@ public class LessonSchedulerService {
         }
 
         return lessonSchedulers;
+    }
+
+
+    public List<LessonScheduleDTO> getLessonScheduleAsMentor(Long id){
+
+        List<Lesson> myLessonsList =  lessonRepository.findAllByUserId(id);
+
+        List<LessonScheduleDTO> myLEssonScheduleDTOList = new ArrayList<>();
+
+        for(Lesson lesson :myLessonsList)
+        {
+            List<LessonRequest> myLessonRequests = lessonRequestRepository.findAllByLessonId(lesson.getId());
+
+            for(LessonRequest lessonRequest: myLessonRequests)
+            {
+                List<LessonScheduler> myLessonSchedulers = lessonSchedulerRepository.findAllByLessonRequestId(lessonRequest.getId());
+
+                for(LessonScheduler lessonScheduler: myLessonSchedulers)
+                {
+                    myLEssonScheduleDTOList.add(new LessonScheduleDTO(lesson.getName(), lesson.getDescription(), lesson.getPrice(), lessonScheduler.getScheduledAt(), lesson.getUserId(), lessonRequest.getUserId()));
+                }
+            }
+        }
+
+        return myLEssonScheduleDTOList;
+
     }
 
 
