@@ -97,7 +97,12 @@ class AppHeader extends Component {
             </Menu.Item>,
             <Menu.Item key="/signup">
               <Link to="/signup">Signup</Link>
-            </Menu.Item>                  
+            </Menu.Item>  ,
+              <Menu.Item key="/stream">
+                  <Link to="/stream">Stream</Link>
+              </Menu.Item>
+
+
           ];
         }
 
@@ -157,6 +162,8 @@ function ProfileDropdownMenu(props) {
             </Link>
             {/*<Link to={`/users/${props.currentUser.username}`}>Profile</Link>*/}
         </Menu.Item>
+
+
       <Menu.Item key="logout" className="dropdown-item">
         Logout
       </Menu.Item>
