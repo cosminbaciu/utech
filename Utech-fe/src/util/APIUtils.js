@@ -124,6 +124,13 @@ export function getCategories() {
     });
 }
 
+export function getScheduledLessons() {
+    return request({
+        url: API_BASE_URL + "/lessonScheduler/getMyLessonScheduled",
+        method: 'GET'
+    });
+}
+
 export function getNextLessons() {
     return request({
         url: API_BASE_URL + "/lessonScheduler/getNextLessons",

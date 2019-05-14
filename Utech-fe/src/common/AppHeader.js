@@ -146,6 +146,12 @@ function ProfileDropdownMenu(props) {
             {/*/!*<Link to={`/users/${props.currentUser.username}`}>Profile</Link>*!/*/}
         {/*</Menu.Item>*/}
         <Menu.Item key="my lessons" className="dropdown-item">
+            <Link to ="/scheduled">
+                My scheduled lessons
+            </Link>
+            {/*<Link to={`/users/${props.currentUser.username}`}>Profile</Link>*/}
+        </Menu.Item>
+        <Menu.Item key="my lessons" className="dropdown-item">
             <Link to ="/history">
             History
             </Link>
