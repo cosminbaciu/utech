@@ -1,20 +1,89 @@
-import * as React from "react";
-import {Component} from "react";
+import React, { Component } from 'react';
+import '../app/App.css';
+import CountDown from 'ant-design-pro/lib/CountDown';
+
+
+
+import Messages from "./Messages";
+import InputMessage from "./InputMessage";
+import Tabs from "antd/es/tabs";
+const { TabPane } = Tabs;
+
+function randomName() {
+    const adjectives = [
+        "autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark",
+        "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter",
+        "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue",
+        "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long",
+        "late", "lingering", "bold", "little", "morning", "muddy", "old", "red",
+        "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering",
+        "withered", "wild", "black", "young", "holy", "solitary", "fragrant",
+        "aged", "snowy", "proud", "floral", "restless", "divine", "polished",
+        "ancient", "purple", "lively", "nameless"
+    ];
+    const nouns = [
+        "waterfall", "river", "breeze", "moon", "rain", "wind", "sea", "morning",
+        "snow", "lake", "sunset", "pine", "shadow", "leaf", "dawn", "glitter",
+        "forest", "hill", "cloud", "meadow", "sun", "glade", "bird", "brook",
+        "butterfly", "bush", "dew", "dust", "field", "fire", "flower", "firefly",
+        "feather", "grass", "haze", "mountain", "night", "pond", "darkness",
+        "snowflake", "silence", "sound", "sky", "shape", "surf", "thunder",
+        "violet", "water", "wildflower", "wave", "water", "resonance", "sun",
+        "wood", "dream", "cherry", "tree", "fog", "frost", "voice", "paper", "frog",
+        "smoke", "star"
+    ];
+    const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    const noun = nouns[Math.floor(Math.random() * nouns.length)];
+    return adjective + noun;
+}
+
+function randomColor() {
+    return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+}
 
 class StreamComponent extends Component {
+    state = {
+        messagesChat: [],
+        memberChat: {
+            username: randomName(),
+            color: randomColor(),
+        }
+    }
+
+    constructor() {
+        super();
+        this.droneChat = new window.Scaledrone("GkFOGe2cf6ht9lgH", {
+            data: this.state.memberChat
+        });
+        this.droneChat.on('open', error => {
+            if (error) {
+                return console.error(error);
+            }
+            const member = {...this.state.memberChat};
+            member.id = this.droneChat.clientId;
+            this.setState({memberChat: member});
+        });
+        const room = this.droneChat.subscribe("observable-room");
+        room.on('data', (data, member) => {
+            const messages = this.state.messagesChat;
+            console.log("In room.on");
+            console.log(messages);
+            messages.push({member: member, text: data});
+            console.log(messages);
+            this.setState({messagesChat: messages});
+        });
+    }
+
+
 
 
     click () {
 
-        // Generate random room name if needed
         if (!window.location.hash) {
             window.location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
         }
         const roomHash = window.location.hash.substring(1);
-
-// TODO: Replace with your own channel ID
         const drone = new window.ScaleDrone('yiS12Ts5RdNhebyM');
-// Room name needs to be prefixed with 'observable-'
         const roomName = 'observable-' + roomHash;
         const configuration = {
             iceServers: [{
@@ -30,10 +99,6 @@ class StreamComponent extends Component {
             console.error(error);
         };
 
-
-
-// Send signaling data via Scaledrone
-
         function sendMessage(message) {
             drone.publish({
                 room: roomName,
@@ -44,25 +109,22 @@ class StreamComponent extends Component {
         function startWebRTC(isOfferer) {
             pc = new RTCPeerConnection(configuration);
 
-            // 'onicecandidate' notifies us whenever an ICE agent needs to deliver a
-            // message to the other peer through the signaling server
             pc.onicecandidate = event => {
                 if (event.candidate) {
                     sendMessage({'candidate': event.candidate});
                 }
             };
 
-            // If user is offerer let the 'negotiationneeded' event create the offer
             if (isOfferer) {
                 pc.onnegotiationneeded = () => {
                     pc.createOffer().then(localDescCreated).catch(onError);
                 }
             }
 
-            // When a remote stream arrives display it in the #remoteVideo element
             pc.ontrack = event => {
                 const stream = event.streams[0];
-                if (!window.remoteVideo.srcObject || window.remoteVideo.srcObject.id !== stream.id) {
+                if (!window.remoteVideo.srcObject
+                    || window.remoteVideo.srcObject.id !== stream.id) {
                     window.remoteVideo.srcObject = stream;
                 }
             };
@@ -118,36 +180,72 @@ class StreamComponent extends Component {
                     onError(error);
                 }
             });
-            // We're connected to the room and received an array of 'members'
-            // connected to the room (including us). Signaling server is ready.
             room.on('members', members => {
                 console.log('MEMBERS', members);
-                // If we are the second user to connect to the room we will be creating the offer
                 const isOfferer = members.length === 2;
                 startWebRTC(isOfferer);
             });
         });
+
+        function stop() {
+            drone.close();
+
+        }
 
     }
 
 
 
     render() {
+        const targetTime = new Date().getTime() + 3900000;
+
         return (
-            <div>
-                <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'/>
+            <div className="App">
+                <div className="App-header">
+                    <div>
+                        <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'/>
 
-                <meta charSet="utf-8"/>
-                <meta name="viewport" content="width=device-width"/>
+                        <meta charSet="utf-8"/>
+                        <meta name="viewport" content="width=device-width"/>
 
-                <style
-                    dangerouslySetInnerHTML={{__html: "\n     video {\n      max-width: calc(50% - 100px);\n      margin: 0 50px;\n      box-sizing: border-box;\n      border-radius: 2px;\n      padding: 0;\n      box-shadow: rgba(156, 172, 172, 0.2) 0px 2px 2px, rgba(156, 172, 172, 0.2) 0px 4px 4px, rgba(156, 172, 172, 0.2) 0px 8px 8px, rgba(156, 172, 172, 0.2) 0px 16px 16px, rgba(156, 172, 172, 0.2) 0px 32px 32px, rgba(156, 172, 172, 0.2) 0px 64px 64px;\n    }\n    .copy {\n      position: fixed;\n      top: 10px;\n      left: 50%;\n      transform: translateX(-50%);\n      font-size: 16px;\n      color: rgba(0, 0, 0, 0.5);\n    }\n  "}}/>
-                <video id="localVideo" autoPlay muted/>
-                <video id="remoteVideo" autoPlay/>
-                <button onClick={this.click}>Aici</button>
+                        <style
+                            dangerouslySetInnerHTML={{__html: "\n     video {\n      max-width: calc(50% - 100px);\n      margin: 0 50px;\n      box-sizing: border-box;\n      border-radius: 2px;\n      padding: 0;\n      box-shadow: rgba(156, 172, 172, 0.2) 0px 2px 2px, rgba(156, 172, 172, 0.2) 0px 4px 4px, rgba(156, 172, 172, 0.2) 0px 8px 8px, rgba(156, 172, 172, 0.2) 0px 16px 16px, rgba(156, 172, 172, 0.2) 0px 32px 32px, rgba(156, 172, 172, 0.2) 0px 64px 64px;\n    }\n    .copy {\n      position: fixed;\n      top: 10px;\n      left: 50%;\n      transform: translateX(-50%);\n      font-size: 16px;\n      color: rgba(0, 0, 0, 0.5);\n    }\n  "}}/>
+                        <video id="localVideo" autoPlay muted/>
+                        <video id="remoteVideo" autoPlay/>
+                            <button onClick={this.click}>Apeleaza</button>
+                        <CountDown style={{ fontSize: 20 }} target={targetTime} />
+
+
+
+
+                    </div>
+                </div>
+                <Tabs defaultActiveKey="1">
+                    <TabPane tab="Chat" key="1">
+                        <Messages
+                            messages={this.state.messagesChat}
+                            currentMember={this.state.memberChat}
+                        />
+                        <InputMessage
+                            placeholder = "Insert your message here"
+                            onSendMessage={this.onSendMessage}
+                        />
+                    </TabPane>
+                    <TabPane tab="Files" key="2">
+                        Content of Tab Pane 2
+                    </TabPane>
+                </Tabs>
+
             </div>
         );
     }
-}
 
+    onSendMessage = (message) => {
+        this.droneChat.publish({
+            room: "observable-room",
+            message
+        });
+    }
+
+}
 export default StreamComponent;

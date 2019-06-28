@@ -4,7 +4,7 @@ import {Tooltip, List, notification} from 'antd';
 import moment from 'moment';
 import Layout from "./Categories";
 import * as antd from "antd";
-import {addLesson, getLessonsByDomain, getMessages, scheduleLesson} from "../util/APIUtils";
+import {addLesson, getCurrentUser, getLessonsByDomain, getMessages, scheduleLesson} from "../util/APIUtils";
 
 
 const { Comment} = antd;
@@ -14,7 +14,8 @@ class Notifications extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            messages: []
+            messages: [],
+            username: ''
         }
     }
 
@@ -25,6 +26,13 @@ class Notifications extends Component {
                     messages : response
                 });
             });
+        getCurrentUser()
+            .then(response =>{
+                this.setState({
+                    username: response.username
+                })
+            })
+
     }
 
     handleOk = (e) => {
@@ -63,7 +71,7 @@ class Notifications extends Component {
                     <Comment
                         actions={([<span onClick={() => self.handleOk(item)}>Accept</span>, <span>Decline</span>])}
                         author={item.senderName}
-                        avatar={'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'}
+                        avatar={"http://localhost:5000/api/downloadProfilePicture/" + this.state.username + "/profile.jpg"}
                         content={(<div dangerouslySetInnerHTML={{ __html: item.message }} />)}
                         datetime={(new Date(item.createdAt)).toLocaleString()}
                     />

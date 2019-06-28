@@ -161,3 +161,31 @@ export function addLessonRequest(addLessonRequest) {
         body: JSON.stringify(addLessonRequest)
     });
 }
+
+export function getProfilePicture() {
+    return request({
+        url: API_BASE_URL + "/downloadProfilePicture/profile.png",
+        method: 'GET'
+    });
+}
+
+export function getUserPrincipal() {
+    return request({
+        url: API_BASE_URL + "/user/me",
+        method: 'GET'
+    });
+}
+
+export function getLessonsByKeyword(keyword) {
+    return request({
+        url: API_BASE_URL + "/lessons/getLessonByKeyword/"+keyword,
+        method: 'GET'
+    });
+}
+
+export function getLessonsByKeywordSearch(keyword) {
+    return request({
+        url: API_BASE_URL + "/lessons/getLessonByKeywordSearch/"+keyword,
+        method: 'GET'
+    });
+}

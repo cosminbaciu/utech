@@ -1,11 +1,20 @@
 import {Component} from "react";
-import {getCategories, getLessons} from "../util/APIUtils";
+import {getCategories, getLessons, getLessonsByKeyword, getLessonsByKeywordSearch} from "../util/APIUtils";
 import React from "react";
 import List from "antd/es/list";
 import Link from "react-router-dom/es/Link";
-import Layout from "antd/es/layout";
-import Sider from "antd/es/layout/Sider";
 import GetDomains from "./GetDomains";
+import Input from "antd/es/input";
+import Search from "antd/es/input/Search";
+import {AutoComplete, Button, Icon, Layout} from 'antd';
+const { Option } = AutoComplete;
+
+
+const { Header, Footer, Sider, Content } = Layout;
+
+function onSelect(value) {
+    console.log('onSelect', value);
+}
 
 class Categories extends Component{
 
@@ -14,7 +23,8 @@ class Categories extends Component{
         this.state = {
             categories: [],
             categoryId: 0,
-            displayQuestions: false
+            displayQuestions: false,
+            dataSource: []
         }
     }
 
@@ -36,6 +46,20 @@ class Categories extends Component{
 
     }
 
+    handleSearch = value => {
+
+        getLessonsByKeywordSearch(value)
+            .then(response => {
+
+                this.setState({
+                    dataSource: response
+                });
+            });
+        console.log(this.state.dataSource);
+
+    };
+
+
     render() {
 
         return(
@@ -56,6 +80,19 @@ class Categories extends Component{
                     />
                 </Sider>
 
+                <Layout>
+                <Header style={{margin: 20}}>
+                    <AutoComplete
+                        dataSource={this.state.dataSource}
+                        style={{ width: 400 }}
+                        onSelect={onSelect}
+                        onSearch={this.handleSearch}
+                        placeholder="Search by name, category, mentor etc."
+                    />
+                </Header>
+
+
+                <Content>
                 {this.state.displayQuestions ? (
                     <GetDomains categoryId = {this.state.categoryId} />
                 ) : (<div>
@@ -63,6 +100,8 @@ class Categories extends Component{
                         <GetDomains categoryId = {this.state.categoryId} />
                      </div>
                     )}
+                </Content>
+            </Layout>
             </Layout>);
 
     }

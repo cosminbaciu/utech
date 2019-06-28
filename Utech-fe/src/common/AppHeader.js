@@ -98,9 +98,9 @@ class AppHeader extends Component {
             <Menu.Item key="/signup">
               <Link to="/signup">Signup</Link>
             </Menu.Item>  ,
-              <Menu.Item key="/stream">
+              /*<Menu.Item key="/stream">
                   <Link to="/stream">Stream</Link>
-              </Menu.Item>
+              </Menu.Item>*/
 
 
           ];

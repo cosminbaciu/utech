@@ -27,6 +27,10 @@ import Carousel from "antd/es/carousel";
 import StreamComponent from "../components/StreamComponent";
 import HistoryLesson from "../components/HistoryLesson";
 import GetScheduledLessons from "../components/GetScheduledLessons";
+import HomePage from "../components/Homepage";
+import ReviewComponent from "../components/ReviewComponent";
+import ProfilePage from "../components/Profile page";
+import ProfilePageEdit from "../components/ProfilePageEdit";
 const { Content } = Layout;
 
 class App extends Component {
@@ -126,6 +130,14 @@ class App extends Component {
                 <Route path="/stream" component={StreamComponent}/>
                 <Route path="/history" component={HistoryLesson}/>
                 <Route path="/scheduled" component={GetScheduledLessons}/>
+                  <Route path="/review" component={ReviewComponent}/>
+                <Route path="/profilePage" component={ProfilePage}/>
+                <Route path="/profilePageEdit" component={ProfilePageEdit}/>
+
+
+
+                <Route path="/" component={HomePage}/>
+
 
 
 

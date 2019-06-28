@@ -119,6 +119,7 @@ class GetLessons extends Component{
 
                         return(
                             <div style={{margin:30}}>
+
                                 <Card
                                     style={{width: 300}}
                                     cover={<img alt="example"

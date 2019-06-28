@@ -1,8 +1,7 @@
 import {Component} from "react";
 import * as antd from "antd";
 import React from "react";
-
-const { Modal, Button } = antd;
+const { Modal} = antd;
 
 class ModalComponent extends Component {
 
@@ -46,9 +45,6 @@ class ModalComponent extends Component {
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}
                 >
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
                 </Modal>
             </div>
         );
