@@ -2,7 +2,6 @@ import {Component} from "react";
 import React from "react";
 import "./profile.css";
 import {getProfilePicture, getUserPrincipal} from "../util/APIUtils";
-import image from "/Users/cobaciu/Projects/utech/Utech-fe/src/cosmic.baciu/profile.jpg";
 import Messages from "./StreamComponent";
 import {Button, Icon} from "antd";
 import Tabs from "antd/es/tabs";
