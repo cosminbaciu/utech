@@ -1,7 +1,9 @@
 package com.utech.web.controller;
 
 import com.utech.web.model.domain.Lesson;
+import com.utech.web.model.dtos.LessonDTO;
 import com.utech.web.repository.LessonRepository;
+import com.utech.web.repository.UserRepository;
 import com.utech.web.security.CurrentUser;
 import com.utech.web.security.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.websocket.server.PathParam;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -24,6 +27,8 @@ public class LessonController {
 
     @Autowired
     private LessonRepository lessonRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     @RequestMapping (value = "/addLesson", produces = "application/json", method = RequestMethod.POST)
     public ResponseEntity<Lesson> addLesson(@RequestBody Lesson lesson, @CurrentUser UserPrincipal currentUser){
@@ -52,10 +57,46 @@ public class LessonController {
     }
 
     @RequestMapping (value = "/getLessonByDomain/{id}", produces = "application/json", method = RequestMethod.GET)
-    public ResponseEntity<List<Lesson>> getLessonByDomain(@PathVariable Long id){
+    public ResponseEntity<List<LessonDTO>> getLessonByDomain(@PathVariable Long id){
 
-        return new ResponseEntity<>(lessonRepository.findAllByDomainId(id), HttpStatus.OK);
+
+        List<LessonDTO> lessonDTOs = new ArrayList<>();
+
+        List<Lesson> lessons = lessonRepository.findAllByDomainId(id);
+
+        for(Lesson lesson: lessons)
+        {
+            LessonDTO lessonDTO = new LessonDTO();
+            lessonDTO.setLesson(lesson);
+            lessonDTO.setUser(userRepository.findById(lesson.getUserId()).get());
+
+            lessonDTOs.add(lessonDTO);
+        }
+
+        return new ResponseEntity<>(lessonDTOs, HttpStatus.OK);
     }
+
+
+    @RequestMapping (value = "/getLessonByKeyword/{keyword}", produces = "application/json", method = RequestMethod.GET)
+    public ResponseEntity<List<Lesson>> getLessonByKeyword(@PathVariable String keyword){
+
+        return new ResponseEntity<>(lessonRepository.findAllByNameContains(keyword), HttpStatus.OK);
+    }
+
+    @RequestMapping (value = "/getLessonByKeywordSearch/{keyword}", produces = "application/json", method = RequestMethod.GET)
+    public ResponseEntity<?> getLessonByKeywordSearch(@PathVariable String keyword){
+
+        List<Lesson> lessons = lessonRepository.findAllByNameContains(keyword);
+        List<String> lessonsNames = new ArrayList<>();
+
+        for(Lesson lesson:lessons)
+            lessonsNames.add(lesson.getName());
+
+        return new ResponseEntity<>(lessonsNames, HttpStatus.OK);
+
+    }
+
+
 
 
 

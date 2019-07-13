@@ -39,7 +39,7 @@ public class LessonSchedulerService {
 
         for(LessonRequest lessonRequest : lessonRequests){
 
-            List<LessonScheduler> scheduler = lessonSchedulerRepository.findAllByLessonRequestId(lessonRequest.getId());
+            List<LessonScheduler> scheduler = lessonSchedulerRepository.findAllByLessonRequestIdOrderByScheduledAt(lessonRequest.getId());
 
             for(LessonScheduler lessonScheduler: scheduler) {
 
@@ -67,7 +67,7 @@ public class LessonSchedulerService {
 
             for(LessonRequest lessonRequest: myLessonRequests)
             {
-                List<LessonScheduler> myLessonSchedulers = lessonSchedulerRepository.findAllByLessonRequestId(lessonRequest.getId());
+                List<LessonScheduler> myLessonSchedulers = lessonSchedulerRepository.findAllByLessonRequestIdOrderByScheduledAt(lessonRequest.getId());
 
                 for(LessonScheduler lessonScheduler: myLessonSchedulers)
                 {

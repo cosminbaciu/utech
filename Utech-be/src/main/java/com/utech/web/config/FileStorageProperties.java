@@ -1,18 +1,10 @@
 package com.utech.web.config;
 
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-/**
- * @author rdafinoiu
- * 2019-06-11
- */
 
 @ConfigurationProperties(prefix = "file")
-@Getter
-@Setter
 public class FileStorageProperties {
 
     private String uploadDirectory;
@@ -27,4 +19,19 @@ public class FileStorageProperties {
         this.uploadDir = uploadDir;
     }
 
+    public String getUploadDirectory() {
+        return uploadDirectory;
+    }
+
+    public void setUploadDirectory(String uploadDirectory) {
+        this.uploadDirectory = uploadDirectory;
+    }
+
+    public String getUploadFileFormat() {
+        return uploadFileFormat;
+    }
+
+    public void setUploadFileFormat(String uploadFileFormat) {
+        this.uploadFileFormat = uploadFileFormat;
+    }
 }

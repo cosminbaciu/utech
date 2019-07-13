@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface LessonSchedulerRepository extends JpaRepository<LessonScheduler, Long> {
 
-    List<LessonScheduler> findAllByLessonRequestId(Long id);
+    List<LessonScheduler> findAllByLessonRequestIdOrderByScheduledAt(Long id);
 }

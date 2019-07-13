@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class UserController {
@@ -21,14 +23,12 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-
-
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @GetMapping("/user/me")
     @PreAuthorize("hasRole('USER')")
     public UserSummary getCurrentUser(@CurrentUser UserPrincipal currentUser) {
-        UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getName());
+        UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getName(), currentUser.getEmail());
         return userSummary;
     }
 
@@ -53,5 +53,12 @@ public class UserController {
 
         return userProfile;
     }
+
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return userRepository.findAll();
+
+    }
+
 
 }

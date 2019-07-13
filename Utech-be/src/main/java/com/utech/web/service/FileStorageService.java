@@ -1,6 +1,13 @@
 package com.utech.web.service;
 
 
+import com.utech.web.config.FileStorageProperties;
+import com.utech.web.exception.AppException;
+import com.utech.web.exception.FileStorageException;
+import com.utech.web.exception.IncorrectFileFormatException;
+import com.utech.web.exception.MyFileNotFoundException;
+import com.utech.web.model.FileType;
+import com.utech.web.security.UserPrincipal;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -8,13 +15,6 @@ import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
-import ro.digital.deloitte.ats.enums.FileType;
-import ro.digital.deloitte.ats.exception.AppException;
-import ro.digital.deloitte.ats.exception.FileStorageException;
-import ro.digital.deloitte.ats.exception.IncorrectFileFormatException;
-import ro.digital.deloitte.ats.exception.MyFileNotFoundException;
-import ro.digital.deloitte.ats.security.UserPrincipal;
-import ro.digital.deloitte.ats.utils.FileStorageProperties;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,12 +24,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Objects;
-
-
-/**
- * @author rdafinoiu
- * 2019-06-11
- */
 
 
 @Service
@@ -126,23 +120,157 @@ public class FileStorageService {
         }
     }
 
-    public Resource loadProfilePicture(UserPrincipal userPrincipal, FileType filetype) {
+    public String storeTutoringFiles(MultipartFile file, UserPrincipal currentUser, Long otherUserId, String lessonName) {
+
+        File folder = new File(this.fileStorageLocation.toString() + "/" + lessonName);
+        if (!folder.exists()) {
+            if (folder.mkdir()) {
+                System.out.println("Directory is created!");
+            } else {
+                System.out.println("Failed to create directory!");
+            }
+        }
+
+        String reverse = new StringBuilder(Objects.requireNonNull(file.getOriginalFilename())).reverse().toString();
+        String extensionReverse = Objects.requireNonNull(reverse.split("\\."))[0];
+        String extension = new StringBuilder(extensionReverse).reverse().toString();
+
+
+
+        String fileName = null;
+
+        fileName = otherUserId +  "-"+ file.getOriginalFilename();
+
+
+        try {
+            if(fileName.contains("..")) {
+                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
+            }
+
+            Path targetLocation = Paths.get(this.fileStorageLocation.toString() +  "/" + lessonName).resolve(fileName);
+            Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
+
+//            String fileNameWithoutExt = FilenameUtils.removeExtension(fileName);
+
+//            if(extension.equals("jpg"))
+//                new File(this.fileStorageLocation.toString() + "/" + lessonName + "/" + fileNameWithoutExt + ".png").delete();
+//            else if(extension.equals("png"))
+//                new File(this.fileStorageLocation.toString() + "/" + currentUser.getUsername() + "/" + fileNameWithoutExt + ".jpg").delete();
+
+            return fileName;
+        } catch (IOException ex) {
+            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
+        }
+    }
+
+    public String storeLessonPhoto(String name, MultipartFile file, FileType fileType, UserPrincipal currentUser) {
+
+        File folder = new File(this.fileStorageLocation.toString() + "/lessons");
+        if (!folder.exists()) {
+            if (folder.mkdir()) {
+                System.out.println("Directory is created!");
+            } else {
+                System.out.println("Failed to create directory!");
+            }
+        }
+
+        String reverse = new StringBuilder(Objects.requireNonNull(file.getOriginalFilename())).reverse().toString();
+        String extensionReverse = Objects.requireNonNull(reverse.split("\\."))[0];
+        String extension = new StringBuilder(extensionReverse).reverse().toString();
+
+
+
+        String fileName = null;
+
+            if(extension.equals("jpg") || extension.equals("png"))
+                fileName = name + "." + extension;
+            else throw new IncorrectFileFormatException("Extension is not jpg or png");
+
+
+        try {
+            if(fileName.contains("..")) {
+                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
+            }
+
+            Path targetLocation = Paths.get(this.fileStorageLocation.toString() + "/lessons").resolve(fileName);
+            Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
+
+            String fileNameWithoutExt = FilenameUtils.removeExtension(fileName);
+
+            if(extension.equals("jpg"))
+                new File(this.fileStorageLocation.toString() + "/lessons" + "/" + fileNameWithoutExt + ".png").delete();
+            else if(extension.equals("png"))
+                new File(this.fileStorageLocation.toString() + "/lessons" + "/" + fileNameWithoutExt + ".jpg").delete();
+
+            return fileName;
+        } catch (IOException ex) {
+            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
+        }
+    }
+
+    public Resource loadProfilePicture(String username, String filename, FileType filetype) {
 
         try {
             Path filePath = Paths.get(this.fileStorageLocation.toString() + "/"
-                    + userPrincipal.getUsername()).resolve("profile.jpg").normalize();
+                    + username).resolve(filename).normalize();
             Resource resource = new UrlResource(filePath.toUri());
             if(resource.exists()) {
                 return resource;
             } else {
 
                 filePath = Paths.get(this.fileStorageLocation.toString() + "/"
-                        + userPrincipal.getUsername()).resolve("profile.png").normalize();
+                        + "cosmic.baciu").resolve("profile.jpg").normalize();
                 resource = new UrlResource(filePath.toUri());
                 if (resource.exists()) {
                     return resource;
                 } else
-                    throw new MyFileNotFoundException("File not found " + "profile.png");
+                    throw new MyFileNotFoundException("File not found " + "profile.jpg");
+
+            }
+        } catch (MalformedURLException ex) {
+            throw new MyFileNotFoundException("File not found ", ex);
+        }
+    }
+
+    public Resource loadLessonPhoto(String lessonName) {
+
+        try {
+            Path filePath = Paths.get(this.fileStorageLocation.toString() + "/lessons").resolve(lessonName + ".jpg").normalize();
+            Resource resource = new UrlResource(filePath.toUri());
+            if(resource.exists()) {
+                return resource;
+            } else {
+
+                filePath = Paths.get(this.fileStorageLocation.toString() + "/lessons").resolve(lessonName + ".jpg").normalize();
+                resource = new UrlResource(filePath.toUri());
+                if (resource.exists()) {
+                    return resource;
+                } else
+                    throw new MyFileNotFoundException("File not found " + lessonName);
+
+            }
+        } catch (MalformedURLException ex) {
+            throw new MyFileNotFoundException("File not found ", ex);
+        }
+    }
+
+    public Resource loadTutoringFiles(String lessonName, String filename) {
+
+
+
+        try {
+            Path filePath = Paths.get(this.fileStorageLocation.toString() + "/" + lessonName).resolve(filename).normalize();
+            Resource resource = new UrlResource(filePath.toUri());
+            if(resource.exists()) {
+                return resource;
+            } else {
+
+                filePath = Paths.get(this.fileStorageLocation.toString() + "/" + lessonName).resolve(filename).normalize();
+                resource = new UrlResource(filePath.toUri());
+                if (resource.exists()) {
+                    return resource;
+                } else
+                    throw new MyFileNotFoundException("File not found " + lessonName);
 
             }
         } catch (MalformedURLException ex) {

@@ -13,6 +13,9 @@ public class UploadFileResponse {
         this.size = size;
     }
 
+    public UploadFileResponse() {
+    }
+
     public String getFileName() {
         return fileName;
     }
