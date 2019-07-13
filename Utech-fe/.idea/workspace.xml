@@ -1,57 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f995c01-3d5f-407b-aacf-5915deb97908" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/ReviewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/FileSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/dtos/LessonDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/dtos/MultipartFileDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/FileSenderRespository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/ReviewRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ExternalProfilePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FileUpload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Graphic.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HomepageUser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/canvasjs.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/canvasjs.react.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/jquery.canvasjs.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/UtechApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/UtechApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/FileStorageProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/FileStorageProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/LessonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/LessonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Language.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Skill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserLanguages.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserLanguages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserSkils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserSkils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/dtos/UploadFileResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/dtos/UploadFileResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/UserSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/UserSummary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/LessonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/LessonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/LessonSchedulerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/LessonSchedulerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/service/FileStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/service/LessonSchedulerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/service/LessonSchedulerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/AppHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/AppHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddLessonForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddLessonForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GetLessons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetLessons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GetScheduledLessons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetScheduledLessons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReviewComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReviewComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StreamComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StreamComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/APIUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/APIUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="5f995c01-3d5f-407b-aacf-5915deb97908" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,6 +289,13 @@
               <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
               <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -384,7 +341,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563047993751" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563053836176" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -467,26 +424,25 @@
       <workItem from="1562762591174" duration="4000" />
       <workItem from="1562762781369" duration="41000" />
       <workItem from="1562762845902" duration="6801000" />
-      <workItem from="1562920551373" duration="29823000" />
+      <workItem from="1562920551373" duration="30155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256332000" />
+    <option name="totallyTimeSpent" value="256664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.1965812" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.1965812" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.29387754" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.29387754" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
