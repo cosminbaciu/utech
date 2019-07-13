@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button, notification, Rate} from "antd";
 import TextArea from "antd/es/input/TextArea";
-import image from '/Users/cobaciu/Projects/utech/Utech-fe/src/congratulations-png-8.png';
+import image from './congratulations-png-8.png';
 import {addLesson, addReview} from "../util/APIUtils";
 
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
