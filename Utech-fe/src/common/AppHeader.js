@@ -70,7 +70,7 @@ class AppHeader extends Component {
         if(this.props.currentUser) {
           menuItems = [
             <Menu.Item key="/">
-              <Link to="/">
+              <Link to="/profilePage">
                 <Icon type="home" className="nav-icon" />
               </Link>
             </Menu.Item>,
@@ -102,7 +102,6 @@ class AppHeader extends Component {
                   <Link to="/stream">Stream</Link>
               </Menu.Item>*/
 
-
           ];
         }
 
@@ -110,7 +109,7 @@ class AppHeader extends Component {
             <Header className="app-header">
             <div className="container">
               <div className="app-title" >
-                <Link to="/">UTech</Link>
+                <Link to="/profilePage">UTech</Link>
               </div>
               <Menu
                 className="app-menu"

@@ -37,6 +37,13 @@ class GetScheduledLessons extends Component{
                     scheduledLessons : response
                 });
             });
+
+        var date = new Date();
+        date.setMinutes(date.getMinutes() + 30);
+
+        console.log(date);
+        console.log(new Date());
+        console.log(Math.round((((date - new Date())) % 86400000) % 3600000) / 60000)
     }
 
 
@@ -52,18 +59,33 @@ class GetScheduledLessons extends Component{
 
                             return(
                                 <div style={{margin:40}}>
+                                    { Math.round((((new Date(scheduledLesson.scheduletAt).getMinutes() - new Date().getMinutes())) % 86400000) % 3600000) / 60000 <60 && new Date(scheduledLesson.scheduletAt)> new Date() ? (
+
                                     <Card
                                         style={{width: 300}}
                                         cover={<img alt="example"
-                                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwyHi43XgiMlHnEBjLSAolNuLV4_V2EIdieYapr3rmsxEQ6Dz-VA"/>}
-                                        actions={[ <Icon type="plus" />, <Icon type="edit"/>, <Icon type="heart" theme="twoTone" />]}
+                                                    src="https://giordanos.com/wp-content/uploads/coming-soon-v2.png"/>}
+                                        actions={[ <a  href={'/stream'}><Icon type="caret-right"  /> </a> , <Icon type="edit"/>, <Icon type="heart" theme="twoTone" />]}
                                     >
                                         <Meta
                                             avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
                                             title={scheduledLesson.name}
                                             description={(new Date(scheduledLesson.scheduletAt)).toLocaleString()}
                                         />
-                                    </Card>
+                                    </Card>)
+                                        :
+                                        (<Card
+                                            style={{width: 300}}
+                                            cover={<img alt="example"
+                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwyHi43XgiMlHnEBjLSAolNuLV4_V2EIdieYapr3rmsxEQ6Dz-VA"/>}
+                                            actions={[ <Icon type="plus" />, <Icon type="edit"/>, <Icon type="heart" theme="twoTone" />]}
+                                        >
+                                            <Meta
+                                                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                                title={scheduledLesson.name}
+                                                description={(new Date(scheduledLesson.scheduletAt)).toLocaleString()}
+                                            />
+                                        </Card>) }
                                 </div>);
                         })}
                     </ul>

@@ -43,8 +43,8 @@ class HomePage extends Component{
                                         (Dalai Lama)</p>
                                     <p></p>
                                     <div className="custom-btn-group mt-4">
-                                        <a href="#" className="btn mr-lg-2 custom-btn"><i className="uil uil-file-alt" /> Sign up</a>
-                                        <a href="#contact" className="btn custom-btn custom-btn-bg custom-btn-link">Log in</a>
+                                        <a href="/signup" className="btn mr-lg-2 custom-btn"><i className="uil uil-file-alt" /> Sign up</a>
+                                        <a href="/login" className="btn custom-btn custom-btn-bg custom-btn-link">Log in</a>
                                     </div>
                                 </div>
                             </div>

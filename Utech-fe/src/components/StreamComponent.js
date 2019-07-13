@@ -7,6 +7,18 @@ import CountDown from 'ant-design-pro/lib/CountDown';
 import Messages from "./Messages";
 import InputMessage from "./InputMessage";
 import Tabs from "antd/es/tabs";
+import {Button, Icon, notification} from "antd";
+import {
+    addLessonPhoto,
+    addTutoringFiles,
+    getProfilePicture,
+    getScheduledLessons, getTutoringFiles,
+    getUserPrincipal
+} from "../util/APIUtils";
+import Modal from "antd/es/modal";
+import Upload from "antd/es/upload";
+import {Link} from "react-router-dom";
+
 const { TabPane } = Tabs;
 
 function randomName() {
@@ -41,17 +53,40 @@ function randomColor() {
     return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
 
+function getBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+}
+
 class StreamComponent extends Component {
-    state = {
-        messagesChat: [],
-        memberChat: {
-            username: randomName(),
-            color: randomColor(),
-        }
-    }
+
 
     constructor() {
         super();
+        this.state = {
+            messagesChat: [],
+            memberChat: {
+                username: randomName(),
+                color: randomColor(),
+            },
+            fileList: [],
+            uploading: false,
+            scheduledLessons: [],
+            lesson: {},
+            myId: null,
+            otherId: null,
+            receivedFiles: [],
+
+        };
+        this.handleSubmit=this.handleSubmit.bind(this);
+        this.handleLoadFiles=this.handleLoadFiles.bind(this);
+
+
+
         this.droneChat = new window.Scaledrone("GkFOGe2cf6ht9lgH", {
             data: this.state.memberChat
         });
@@ -74,7 +109,71 @@ class StreamComponent extends Component {
         });
     }
 
+    componentWillMount(): void {
 
+        getScheduledLessons()
+            .then(response => {
+                this.setState({
+                    scheduledLessons : response
+                });
+            });
+
+        this.getLesson();
+
+        getUserPrincipal()
+            .then(response => {
+                    this.setState({
+                        myId: response.id
+                    });
+            });
+
+        this.getOtherId();
+
+
+    }
+
+    sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async getOtherId(){
+
+        await this.sleep(2000);
+
+        if(this.state.myId === this.state.lesson.mentorId)
+            this.setState({
+                otherId: this.state.lesson.menteeId
+            });
+        else this.setState({
+            otherId: this.state.lesson.mentorId
+        });
+
+        console.log(this.state.myId);
+        console.log(this.state.otherId);
+
+    }
+
+    async getLesson(){
+
+        await this.sleep(2000);
+
+        console.log(this.state.scheduledLessons.length);
+
+        for(let i =0; i< this.state.scheduledLessons.length; i++)
+        {
+
+            if(Math.round((((new Date(this.state.scheduledLessons[i].scheduletAt).getMinutes() - new Date().getMinutes())) % 86400000) % 3600000) / 60000 <60)
+            {
+                this.setState({
+                    lesson :this.state.scheduledLessons[i]
+            });
+            }
+
+        }
+        await this.sleep(2000);
+        console.log(this.state.lesson);
+
+    }
 
 
     click () {
@@ -195,9 +294,73 @@ class StreamComponent extends Component {
     }
 
 
+    handleSubmit(){
+        const { fileList } = this.state;
+        const formData = new FormData();
+        fileList.forEach(file => {
+            formData.append('files', file);
+            formData.append('name', this.state.lesson.name);
+            formData.append('other', this.state.otherId);
+        });
+
+        this.setState({
+            uploading: true,
+        });
+
+        addTutoringFiles(formData)
+            .then(response => {
+                notification.success({
+                    message: 'UTech',
+                    description: "Thank you! Your lesson was succesfully saved",
+                });
+            }).catch(error => {
+            notification.error({
+                message: 'UTech',
+                description: error.message || 'Sorry! Something went wrong. Please try again!'
+            });
+        });
+    }
+
+    handleLoadFiles(){
+
+        const formData = new FormData();
+        console.log(this.state.lesson.name);
+
+        formData.append('name', this.state.lesson.name);
+
+        getTutoringFiles(formData)
+            .then(response => {
+                    this.setState({
+                        receivedFiles: response
+                    });
+                    console.log(response);
+            });
+
+    }
+
+
 
     render() {
-        const targetTime = new Date().getTime() + 3900000;
+        const { uploading, fileList } = this.state;
+        const props = {
+            onRemove: file => {
+                this.setState(state => {
+                    const index = state.fileList.indexOf(file);
+                    const newFileList = state.fileList.slice();
+                    newFileList.splice(index, 1);
+                    return {
+                        fileList: newFileList,
+                    };
+                });
+            },
+            beforeUpload: file => {
+                this.setState(state => ({
+                    fileList: [...state.fileList, file],
+                }));
+                return false;
+            },
+            fileList,
+        };
 
         return (
             <div className="App">
@@ -212,11 +375,14 @@ class StreamComponent extends Component {
                             dangerouslySetInnerHTML={{__html: "\n     video {\n      max-width: calc(50% - 100px);\n      margin: 0 50px;\n      box-sizing: border-box;\n      border-radius: 2px;\n      padding: 0;\n      box-shadow: rgba(156, 172, 172, 0.2) 0px 2px 2px, rgba(156, 172, 172, 0.2) 0px 4px 4px, rgba(156, 172, 172, 0.2) 0px 8px 8px, rgba(156, 172, 172, 0.2) 0px 16px 16px, rgba(156, 172, 172, 0.2) 0px 32px 32px, rgba(156, 172, 172, 0.2) 0px 64px 64px;\n    }\n    .copy {\n      position: fixed;\n      top: 10px;\n      left: 50%;\n      transform: translateX(-50%);\n      font-size: 16px;\n      color: rgba(0, 0, 0, 0.5);\n    }\n  "}}/>
                         <video id="localVideo" autoPlay muted/>
                         <video id="remoteVideo" autoPlay/>
-                            <button onClick={this.click}>Apeleaza</button>
-                        <CountDown style={{ fontSize: 20 }} target={targetTime} />
-
-
-
+                        <Button
+                            type="primary"
+                            onClick={this.click}
+                            style={{ marginTop: 16 }}
+                        >Call
+                        </Button>
+                        <Link to="/review">Finish</Link>
+                        {/*<CountDown style={{ fontSize: 20 }} target={targetTime} />*/}
 
                     </div>
                 </div>
@@ -231,9 +397,35 @@ class StreamComponent extends Component {
                             onSendMessage={this.onSendMessage}
                         />
                     </TabPane>
-                    <TabPane tab="Files" key="2">
-                        Content of Tab Pane 2
+                    <TabPane tab="Send files" key="2">
+
+                        <Upload {...props}>
+                            <Button>
+                                <Icon type="upload" /> Select File
+                            </Button>
+                        </Upload>
+                        <Button
+                            type="primary"
+                            onClick={this.handleSubmit}
+                            disabled={fileList.length === 0}
+                            loading={uploading}
+                            style={{ marginTop: 16 }}
+                        >
+                            {uploading ? 'Uploading' : 'Start Upload'}
+                        </Button>
                     </TabPane>
+                    <TabPane tab="Receive files" key="3">
+
+                        <Button
+                            type="primary"
+                            onClick={this.handleLoadFiles}
+                            style={{ marginTop: 16 }}
+                        >
+                        </Button>
+
+                    </TabPane>
+
+
                 </Tabs>
 
             </div>

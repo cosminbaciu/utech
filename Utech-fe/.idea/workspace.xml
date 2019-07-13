@@ -2,81 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f995c01-3d5f-407b-aacf-5915deb97908" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/FileStorageProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/FileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/exception/FileStorageException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/exception/IncorrectFileFormatException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/exception/MyFileNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/FileType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/File.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Review.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Skill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserLanguages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserSkils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/dtos/UploadFileResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/service/FileStorageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/font/unicons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/font/unicons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/font/unicons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/font/unicons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/font/unicons.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/images/call.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/images/congratulations-png-8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/images/project/Screenshot 2019-06-22 at 23.37.34.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/images/project/Screenshot 2019-06-23 at 21.44.23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/images/project/project-image01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/images/project/project-image02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/images/project/project-image03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/images/project/project-image04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/images/project/project-image05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/images/undraw/undraw_software_engineer_lvl5.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/js/Headroom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/js/jQuery.headroom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/js/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/js/smoothscroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/sass/tooplate-style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Homepage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/InputMessage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Messages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Profile page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProfilePageEdit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReviewComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/owl.theme.default.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/tooplate-style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/unicons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/ReviewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/FileSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/dtos/LessonDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/dtos/MultipartFileDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/FileSenderRespository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/ReviewRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ExternalProfilePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FileUpload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Graphic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HomepageUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/canvasjs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/canvasjs.react.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/jquery.canvasjs.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Utech-be/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/UtechApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/UtechApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/FileStorageProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/FileStorageProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/FileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/LessonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/LessonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/File.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/Skill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserLanguages.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserLanguages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserSkils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/domain/UserSkils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/dtos/UploadFileResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/model/dtos/UploadFileResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/UserSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/payload/UserSummary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/LessonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/LessonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/UTech.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UTech.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/LessonSchedulerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/repository/LessonSchedulerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/service/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/service/LessonSchedulerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/java/com/utech/web/service/LessonSchedulerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utech-be/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Utech-be/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/AppHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/AppHeader.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/AppHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/AppHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddLessonForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddLessonForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GetLessons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetLessons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Notifications.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Notifications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GetScheduledLessons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetScheduledLessons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReviewComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReviewComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StreamComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StreamComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/APIUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/APIUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,35 +75,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ProfilePageEdit.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Notifications.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+            <state relative-caret-position="770">
+              <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Categories.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/GetDomains.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,8 +89,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/GetLessons.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1605">
-              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="270">
+              <caret line="211" column="44" lean-forward="true" selection-start-line="211" selection-start-column="44" selection-end-line="211" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Messages.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/ReviewComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/AddLessonRequest.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/GetDomains.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -151,8 +149,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/APIUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2715">
-              <caret line="181" column="21" selection-start-line="181" selection-start-column="21" selection-end-line="181" selection-end-column="21" />
+            <state relative-caret-position="305">
+              <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -160,8 +158,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/StreamComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2835">
-              <caret line="197" selection-start-line="197" selection-end-line="197" />
+            <state relative-caret-position="3419">
+              <caret line="382" column="33" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -170,29 +168,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/owl.theme.default.min.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/MiApp/js/script.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/MiApp/index.html">
+        <entry file="file://$PROJECT_DIR$/src/components/Homepage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5130">
-              <caret line="342" column="22" selection-start-line="253" selection-start-column="12" selection-end-line="342" selection-end-column="22" />
+            <state relative-caret-position="347">
+              <caret line="46" column="55" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#126#156#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/index.html">
+        <entry file="file://$PROJECT_DIR$/src/user/login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+            <state relative-caret-position="525">
+              <caret line="84" column="62" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -230,6 +225,10 @@
       <find>Json.</find>
       <find>JSON.</find>
       <find>owl.video.play.png</find>
+      <find>CountDown</find>
+      <find>&quot;/&quot;</find>
+      <find>&quot;/search&quot;</find>
+      <find>UTech</find>
     </findStrings>
     <replaceStrings>
       <replace>UTech</replace>
@@ -247,17 +246,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/playlist/Playlist.js" />
-        <option value="$PROJECT_DIR$/src/components/playlist/GetPlaylists.js" />
-        <option value="$PROJECT_DIR$/src/common/SearchPage.css" />
-        <option value="$PROJECT_DIR$/src/components/FavouriteVideos/NoOfViews.js" />
         <option value="$PROJECT_DIR$/src/components/FavouriteVideos/FavouriteVideos.js" />
         <option value="$PROJECT_DIR$/src/components/LoadMoreList.js" />
         <option value="$PROJECT_DIR$/src/components/Modal.js" />
         <option value="$PROJECT_DIR$/src/components/AddLessonRequest.js" />
         <option value="$PROJECT_DIR$/src/util/Comment.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/AddLessonForm.js" />
         <option value="$PROJECT_DIR$/src/components/ScheduledLessons.js" />
         <option value="$PROJECT_DIR$/src/components/GetDomains.js" />
         <option value="$PROJECT_DIR$/src/util/indes.css" />
@@ -265,7 +259,6 @@
         <option value="$PROJECT_DIR$/src/util/script.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/HistoryLesson.js" />
-        <option value="$PROJECT_DIR$/src/components/GetScheduledLessons.js" />
         <option value="$PROJECT_DIR$/src/components/css/boot&#10;                strap.min.css" />
         <option value="$PROJECT_DIR$/src/app/message.css" />
         <option value="$PROJECT_DIR$/src/components/Messages.js" />
@@ -277,27 +270,33 @@
         <option value="$PROJECT_DIR$/src/components/rater.css" />
         <option value="$PROJECT_DIR$/src/components/AnimatedRater.js" />
         <option value="$PROJECT_DIR$/src/common/AppHeader.css" />
-        <option value="$PROJECT_DIR$/src/common/AppHeader.js" />
         <option value="$PROJECT_DIR$/src/app/sass/tooplate-style.scss" />
         <option value="$PROJECT_DIR$/src/components/tooplate-style.css" />
         <option value="$PROJECT_DIR$/src/components/Input.js" />
         <option value="$PROJECT_DIR$/src/components/InputMessage.js" />
         <option value="$PROJECT_DIR$/src/app/App.css" />
         <option value="$PROJECT_DIR$/src/components/stream.css" />
-        <option value="$PROJECT_DIR$/src/components/GetLessons.js" />
-        <option value="$PROJECT_DIR$/src/components/ReviewComponent.js" />
         <option value="$PROJECT_DIR$/src/components/home.css" />
         <option value="$PROJECT_DIR$/src/util/index.html" />
         <option value="$PROJECT_DIR$/src/components/MiApp/css/owl.carousel.css" />
-        <option value="$PROJECT_DIR$/src/components/Homepage.js" />
         <option value="$PROJECT_DIR$/src/components/profile.css" />
-        <option value="$PROJECT_DIR$/src/components/StreamComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/Profile page.js" />
         <option value="$PROJECT_DIR$/src/components/Notifications.js" />
         <option value="$PROJECT_DIR$/src/components/ProfilePageEdit.js" />
-        <option value="$PROJECT_DIR$/src/app/App.js" />
-        <option value="$PROJECT_DIR$/src/util/APIUtils.js" />
         <option value="$PROJECT_DIR$/src/components/Categories.js" />
+        <option value="$PROJECT_DIR$/src/components/FileUpload.js" />
+        <option value="$PROJECT_DIR$/src/components/AddLessonForm.js" />
+        <option value="$PROJECT_DIR$/src/components/GetScheduledLessons.js" />
+        <option value="$PROJECT_DIR$/src/components/Graphic.js" />
+        <option value="$PROJECT_DIR$/src/components/HomepageUser.js" />
+        <option value="$PROJECT_DIR$/src/components/Profile page.js" />
+        <option value="$PROJECT_DIR$/src/app/App.js" />
+        <option value="$PROJECT_DIR$/src/common/AppHeader.js" />
+        <option value="$PROJECT_DIR$/src/components/ExternalProfilePage.js" />
+        <option value="$PROJECT_DIR$/src/components/ReviewComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/StreamComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/Homepage.js" />
+        <option value="$PROJECT_DIR$/src/util/APIUtils.js" />
+        <option value="$PROJECT_DIR$/src/components/GetLessons.js" />
       </list>
     </option>
   </component>
@@ -318,8 +317,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -342,29 +339,6 @@
               <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
               <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="cosmic.baciu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -372,12 +346,6 @@
               <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
@@ -397,7 +365,7 @@
               <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="signup" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
@@ -409,12 +377,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561371793883" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563047993751" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -424,19 +394,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/app/images/project" />
+      <recent name="$PROJECT_DIR$/src/app/images" />
+      <recent name="$PROJECT_DIR$/src/components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/components/FavouriteVideos" />
       <recent name="$PROJECT_DIR$/src/components/playlist" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/app/images/project" />
-      <recent name="$PROJECT_DIR$/src/app/images" />
-      <recent name="$PROJECT_DIR$/src/components" />
-      <recent name="$PROJECT_DIR$/src/util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -485,14 +455,27 @@
       <workItem from="1561367652488" duration="2852000" />
       <workItem from="1561400471788" duration="3268000" />
       <workItem from="1561535611469" duration="418000" />
+      <workItem from="1561721156207" duration="1104000" />
+      <workItem from="1561986715326" duration="2839000" />
+      <workItem from="1561993383150" duration="218000" />
+      <workItem from="1562052743187" duration="6000" />
+      <workItem from="1562068230546" duration="655000" />
+      <workItem from="1562230238295" duration="418000" />
+      <workItem from="1562310214375" duration="1027000" />
+      <workItem from="1562761122339" duration="739000" />
+      <workItem from="1562761915053" duration="56000" />
+      <workItem from="1562762591174" duration="4000" />
+      <workItem from="1562762781369" duration="41000" />
+      <workItem from="1562762845902" duration="6801000" />
+      <workItem from="1562920551373" duration="29823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212601000" />
+    <option name="totallyTimeSpent" value="256332000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -500,10 +483,43 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.17155068" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.1965812" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.29795918" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.29387754" />
+      <window_info anchor="bottom" id="Database Changes" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32857144" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.32857144" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="TypeScript" order="12" />
+      <window_info anchor="bottom" id="ConsoleMavenPlugin" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" />
+      <window_info anchor="right" id="Theme Preview" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.07875458" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17521368" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.32959184" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.23571429" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
@@ -526,136 +542,12 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="0" />
-      <window_info id="UI Designer" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.27045178" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="ConsoleMavenPlugin" order="0" />
-      <window_info anchor="bottom" id="Messages" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.2" />
-      <window_info anchor="bottom" id="Database Changes" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.3291536" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="bottom" id="TypeScript" order="14" />
-      <window_info anchor="right" id="Theme Preview" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.30952382" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/react-motion/lib/presets.js.flow">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-motion/lib/stripStyle.js.flow">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-motion/lib/spring.js.flow">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-motion/lib/reorderKeys.js.flow">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-motion/lib/react-motion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="34" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AnimatedRater.scss" />
-    <entry file="file://$PROJECT_DIR$/src/components/rater.css" />
-    <entry file="file://$PROJECT_DIR$/src/user/login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/PrivateRoute.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddLessonRequest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/AppHeader.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/indes.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/sass/tooplate-style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
@@ -672,9 +564,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/star.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Rater.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/ScheduledLessons.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ModalComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
@@ -718,23 +607,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/AnimatedRater.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/ReviewComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="7" selection-start-line="7" selection-end-line="40" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/user/profile/Profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-577">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -745,66 +617,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/HistoryLesson.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddLessonForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2439">
-          <caret line="172" column="14" selection-start-line="172" selection-end-line="172" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/AppHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="42" column="15" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Messages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MiApp/js/owl.carousel.min.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Homepage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4470">
-          <caret line="308" column="29" selection-start-line="219" selection-start-column="19" selection-end-line="308" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#126#156#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MiApp/css/owl.carousel.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -815,82 +629,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/owl.carousel.min.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Profile page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" selection-end-line="213" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2025">
-          <caret line="135" selection-start-line="135" selection-end-line="135" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Notifications.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ProfilePageEdit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GetDomains.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GetLessons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/APIUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2715">
-          <caret line="181" column="21" selection-start-line="181" selection-start-column="21" selection-end-line="181" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/StreamComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2835">
-          <caret line="197" selection-start-line="197" selection-end-line="197" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/owl.theme.default.min.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -912,10 +650,272 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/HistoryLesson.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ScheduledLessons.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Categories.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+        <state relative-caret-position="1515">
+          <caret line="109" selection-start-line="109" selection-end-line="109" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/canvasjs.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ProfilePageEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="30" column="15" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="30" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/Helpers.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/icon/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FileUpload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GetScheduledLessons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="61" column="165" lean-forward="true" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="165" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-jsx-highcharts/dist/es/components/HighchartsProvider/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-jsx-highcharts/dist/es/components/HighchartsChart/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-jsx-highcharts/dist/es/components/Chart/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graphic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="32" column="70" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/HomepageUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user/profile/Profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/AppHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Profile page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="36" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddLessonForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ExternalProfilePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ReviewComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user/login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="84" column="62" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/StreamComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3419">
+          <caret line="382" column="33" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Homepage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="46" column="55" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#126#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Notifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddLessonRequest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GetDomains.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/APIUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GetLessons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="211" column="44" lean-forward="true" selection-start-line="211" selection-start-column="44" selection-end-line="211" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Messages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>

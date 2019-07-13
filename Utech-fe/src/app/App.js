@@ -31,6 +31,7 @@ import HomePage from "../components/Homepage";
 import ReviewComponent from "../components/ReviewComponent";
 import ProfilePage from "../components/Profile page";
 import ProfilePageEdit from "../components/ProfilePageEdit";
+import HomepageUser from "../components/HomepageUser";
 const { Content } = Layout;
 
 class App extends Component {
@@ -105,7 +106,7 @@ class App extends Component {
       description: "You're successfully logged in.",
     });
     this.loadCurrentUser();
-    this.props.history.push("/search");
+    this.props.history.push("/profilePage");
   }
 
   render() {
@@ -133,6 +134,7 @@ class App extends Component {
                   <Route path="/review" component={ReviewComponent}/>
                 <Route path="/profilePage" component={ProfilePage}/>
                 <Route path="/profilePageEdit" component={ProfilePageEdit}/>
+                {/*<Route path="/homepageUser" component={HomepageUser}/>*/}
 
 
 

@@ -2,11 +2,16 @@ import { API_BASE_URL, POLL_LIST_SIZE, ACCESS_TOKEN } from '../constants';
 
 const request = (options) => {
     const headers = new Headers({
-        'Content-Type': 'application/json',
+         // 'Content-Type': 'application/json',
     })
-    
+
+    if(options.contentType==null) {
+        headers.append('Content-Type', 'application/json')
+    }
+
     if(localStorage.getItem(ACCESS_TOKEN)) {
-        headers.append('Authorization', 'Bearer ' + localStorage.getItem(ACCESS_TOKEN))
+        headers.append('Authorization', 'Bearer ' + localStorage.getItem(ACCESS_TOKEN));
+
     }
 
     const defaults = {headers: headers};
@@ -142,7 +147,7 @@ export function addLesson(addLessonRequest) {
     return request({
         url: API_BASE_URL + "/lessons/addLesson",
         method: 'POST',
-        body: JSON.stringify(addLessonRequest)
+        body: JSON.stringify(addLessonRequest),
     });
 }
 
@@ -158,7 +163,30 @@ export function addLessonRequest(addLessonRequest) {
     return request({
         url: API_BASE_URL + "/lessonRequest/addLessonRequest",
         method: 'POST',
-        body: JSON.stringify(addLessonRequest)
+        body: JSON.stringify(addLessonRequest)});
+}
+
+export function addReview(review) {
+    return request({
+        url: API_BASE_URL + "/review/add",
+        method: 'POST',
+        body: JSON.stringify(review)});
+}
+export function addLessonPhoto(addLessonPhoto) {
+    return request({
+        url: API_BASE_URL + "/uploadMultipleFilesForLessons",
+        method: 'POST',
+        body: addLessonPhoto,
+        contentType: 'application/json'
+    });
+}
+
+export function addTutoringFiles(addLessonPhoto) {
+    return request({
+        url: API_BASE_URL + "/uploadMultipleTutoringFiles",
+        method: 'POST',
+        body: addLessonPhoto,
+        contentType: 'application/json'
     });
 }
 
@@ -169,9 +197,38 @@ export function getProfilePicture() {
     });
 }
 
+export function getExternalProfilePicture(name) {
+    return request({
+        url: API_BASE_URL + "/downloadExternalProfilePicture/" + name + "/profile.png",
+        method: 'GET'
+    });
+}
+
+export function getTutoringFiles(name) {
+    return request({
+        url: API_BASE_URL + "/downloadTutoringFiles",
+        body: name,
+        method: 'POST'
+    });
+}
+
+export function getLessonPicture(lessonName) {
+    return request({
+        url: API_BASE_URL + "/downloadProfilePicture/" + lessonName,
+        method: 'GET'
+    });
+}
+
 export function getUserPrincipal() {
     return request({
         url: API_BASE_URL + "/user/me",
+        method: 'GET'
+    });
+}
+
+export function getUser(name) {
+    return request({
+        url: API_BASE_URL + "/users/"+name,
         method: 'GET'
     });
 }
@@ -186,6 +243,13 @@ export function getLessonsByKeyword(keyword) {
 export function getLessonsByKeywordSearch(keyword) {
     return request({
         url: API_BASE_URL + "/lessons/getLessonByKeywordSearch/"+keyword,
+        method: 'GET'
+    });
+}
+
+export function getUsers() {
+    return request({
+        url: API_BASE_URL + "/users",
         method: 'GET'
     });
 }

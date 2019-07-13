@@ -1,10 +1,9 @@
 import {Component} from "react";
-import {getLessons, getLessonsByDomain} from "../util/APIUtils";
+import {getLessonPicture, getLessons, getLessonsByDomain, getProfilePicture, getUsers} from "../util/APIUtils";
 import {Button, DatePicker, Form, Input, notification} from "antd";
 import FormItem from "./AddLessonForm";
 import React from "react";
 import * as antd from "antd";
-import Categories from "./Categories";
 import Layout from "antd/es/layout";
 import Sider from "antd/es/layout/Sider";
 import ModalComponent from "./ModalComponent";
@@ -13,6 +12,8 @@ import AddLessonRequest from "./AddLessonRequest";
 import * as APIUtils from "../util/APIUtils";
 import TimePicker from "antd/es/time-picker";
 import Collapse from "antd/es/collapse";
+import Popover from "antd/es/popover";
+import ExternalProfilePage from "./ExternalProfilePage";
 
 const Panel = Collapse.Panel;
 
@@ -28,10 +29,14 @@ class GetLessons extends Component{
         this.state = {
             lessons: [],
             visible: false,
+            visible1: false,
             lessonId: 0,
             time: new Date(),
-            date: new Date()
-        }
+            date: new Date(),
+            image: null,
+            images:[],
+            users: []
+        };
     }
 
     onChangeDate = (date, dateString)=> {
@@ -48,13 +53,48 @@ class GetLessons extends Component{
         console.log(this.state.time);
     }
 
-    componentWillMount() {
+    componentDidMount() {
+
         getLessonsByDomain(this.props.domain)
             .then(response => {
                 this.setState({
                     lessons : response
                 });
             });
+
+
+
+
+        // let i;
+        // let imagess;
+        //
+        // console.log(this.state.lessons.length);
+        //
+        // for(i=0; i<this.state.lessons.length; i++) {
+        //     console.log("aaa");
+        //
+        // }
+
+    }
+
+    sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async getPhoto(name){
+
+        let image;
+
+        getLessonPicture(name)
+            .then(response  => {
+                this.image = response;
+
+            });
+
+        await this.sleep(2000);
+
+        return this.image;
+        // return image;
     }
 
     showModal = () => {
@@ -62,6 +102,14 @@ class GetLessons extends Component{
             visible: true,
         });
     }
+
+    showModal1 = () => {
+        this.setState({
+            visible1: true,
+        });
+    }
+
+
 
     handleOk = (e) => {
         console.log(e);
@@ -76,6 +124,21 @@ class GetLessons extends Component{
             visible: false,
         });
     }
+
+    handleOk1 = (e) => {
+        console.log(e);
+        this.setState({
+            visible1: false,
+        });
+    }
+
+    handleCancel1 = (e) => {
+        console.log(e);
+        this.setState({
+            visible1: false,
+        });
+    }
+
 
     handleSubmit(lesson) {
 
@@ -108,8 +171,11 @@ class GetLessons extends Component{
         console.log(key);
     }
 
+
+
     render() {
         const self = this;
+
         return (
             <div>
                 <Layout>
@@ -123,29 +189,42 @@ class GetLessons extends Component{
                                 <Card
                                     style={{width: 300}}
                                     cover={<img alt="example"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwyHi43XgiMlHnEBjLSAolNuLV4_V2EIdieYapr3rmsxEQ6Dz-VA"/>}
+                                                src={self.getPhoto(lesson.lesson.name)} />}
                                     actions={[<a onClick={self.showModal}> <Icon type="check"/></a>, <Icon type="edit"/>, <Icon type="heart" />]}
                                 >
                                 <Meta
                                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                    title={lesson.name}
-                                    description={lesson.description}
+                                    title={lesson.lesson.name + " - " + lesson.lesson.price + " LEI"}
+                                    description={
+                                        <a onClick={self.showModal1}> {lesson.user.username}</a>
+                                    }
                                     />
 
                                     <Modal
-                                        title={lesson.name}
+                                        visible={self.state.visible1}
+                                        onOk={self.handleOk1}
+                                        onApply={self.handleOk1}
+                                        onCancel={self.handleCancel1} >
+
+                                        <ExternalProfilePage username={lesson.user.username} />
+
+                                        />
+                                    </Modal>
+
+                                    <Modal
+                                        title={lesson.lesson.name + " - " + lesson.lesson.price}
                                         visible={self.state.visible}
                                         onOk={self.handleOk}
                                         onApply={self.handleOk}
                                         onCancel={self.handleCancel}
                                         footer={[
                                             <Button key="back" onClick={self.handleCancel}>Return</Button>,
-                                            <Button key="apply" type="primary"  onClick={() => self.handleSubmit(lesson.id)}>
+                                            <Button key="apply" type="primary"  onClick={() => self.handleSubmit(lesson.lesson.id)}>
                                                 Submit
                                             </Button>,
                                         ]}
                                     >
-                                        <p>{lesson.description} </p>
+                                        <p>{lesson.lesson.description} </p>
 
                                         <Collapse onChange={self.callback}>
                                             <Panel header={<Button>Apply</Button>} key="1">
