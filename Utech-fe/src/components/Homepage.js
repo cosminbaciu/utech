@@ -3,8 +3,8 @@ import '../app/bootstrap.min.css'; // Tell Webpack that Button.js uses these sty
 import './tooplate-style.css';
 import './unicons.css'
 import image1 from './images/undraw/undraw_software_engineer_lvl5.svg';
-import image2 from '/Users/cobaciu/Projects/utech/Utech-fe/src/components/images/project/Screenshot 2019-06-22 at 23.37.34.png';
-import image3 from "/Users/cobaciu/Projects/utech/Utech-fe/src/components/images/project/Screenshot 2019-06-23 at 21.44.23.png";
+import image2 from '/Users/cobaciu/Projects/utech/Utech-fe/src/project/Screenshot 2019-06-22 at 23.37.34.png';
+import image3 from "/Users/cobaciu/Projects/utech/Utech-fe/src/project/Screenshot 2019-06-23 at 21.44.23.png";
 import './home.css';
 import './MiApp/css/ionicons.min.css';
 import './MiApp/css/magnific-popup.css';

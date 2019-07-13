@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f995c01-3d5f-407b-aacf-5915deb97908" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/unicons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/unicons.css" afterDir="false" />
-    </list>
+    <list default="true" id="5f995c01-3d5f-407b-aacf-5915deb97908" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +62,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/unicons.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -192,7 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/FavouriteVideos/FavouriteVideos.js" />
         <option value="$PROJECT_DIR$/src/components/LoadMoreList.js" />
         <option value="$PROJECT_DIR$/src/components/Modal.js" />
         <option value="$PROJECT_DIR$/src/components/AddLessonRequest.js" />
@@ -243,6 +243,7 @@
         <option value="$PROJECT_DIR$/src/components/Homepage.js" />
         <option value="$PROJECT_DIR$/src/util/APIUtils.js" />
         <option value="$PROJECT_DIR$/src/components/GetLessons.js" />
+        <option value="$PROJECT_DIR$/src/components/unicons.css" />
       </list>
     </option>
   </component>
@@ -303,7 +304,7 @@
               <item name="Utech-fe" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="MiApp" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
@@ -311,7 +312,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="MiApp" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Utech-fe" type="b2602c69:ProjectViewProjectNode" />
@@ -350,7 +350,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563054431148" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563054548836" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -433,12 +433,12 @@
       <workItem from="1562762591174" duration="4000" />
       <workItem from="1562762781369" duration="41000" />
       <workItem from="1562762845902" duration="6801000" />
-      <workItem from="1562920551373" duration="30623000" />
+      <workItem from="1562920551373" duration="30893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257132000" />
+    <option name="totallyTimeSpent" value="257402000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -881,7 +881,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/unicons.css">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
