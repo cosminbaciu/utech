@@ -7,14 +7,13 @@ import GetDomains from "./GetDomains";
 import Input from "antd/es/input";
 import Search from "antd/es/input/Search";
 import {AutoComplete, Button, Icon, Layout} from 'antd';
+import GetLessons from "./GetLessons";
 const { Option } = AutoComplete;
 
 
 const { Header, Footer, Sider, Content } = Layout;
 
-function onSelect(value) {
-    console.log('onSelect', value);
-}
+
 
 class Categories extends Component{
 
@@ -24,13 +23,29 @@ class Categories extends Component{
             categories: [],
             categoryId: 0,
             displayQuestions: false,
-            dataSource: []
-        }
+            dataSourceBool: false,
+            dataSource: [],
+            lessonSearched: '',
+        };
+        this.onSelect=this.onSelect.bind(this);
+
     }
 
     markCategory(categoryId){
-        this.setState({categoryId: categoryId, displayQuestions: !this.state.displayQuestions});
+        this.setState({categoryId: categoryId, displayQuestions: !this.state.displayQuestions , dataSourceBool: false});
 
+    }
+
+    onSelect(value) {
+        console.log('onSelect', value);
+
+        this.setState({
+            dataSourceBool: true,
+            lessonSearched: value
+
+        });
+
+        console.log('onSelect', this.state.lessonSearched);
     }
 
     componentDidMount() {
@@ -52,7 +67,7 @@ class Categories extends Component{
             .then(response => {
 
                 this.setState({
-                    dataSource: response
+                    dataSource: response,
                 });
             });
         console.log(this.state.dataSource);
@@ -85,7 +100,7 @@ class Categories extends Component{
                     <AutoComplete
                         dataSource={this.state.dataSource}
                         style={{ width: 400 }}
-                        onSelect={onSelect}
+                        onSelect={this.onSelect}
                         onSearch={this.handleSearch}
                         placeholder="Search by name, category, mentor etc."
                     />
@@ -93,7 +108,9 @@ class Categories extends Component{
 
 
                 <Content>
-                {this.state.displayQuestions ? (
+                    {this.state.dataSourceBool ? (<div> <GetLessons name={this.state.lessonSearched}/></div>) :
+
+                        this.state.displayQuestions ? (
                     <GetDomains categoryId = {this.state.categoryId} />
                 ) : (<div>
                     <h3></h3>

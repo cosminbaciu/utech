@@ -12,7 +12,7 @@ import {
     addLessonPhoto,
     addTutoringFiles,
     getProfilePicture,
-    getScheduledLessons, getTutoringFiles,
+    getScheduledLessons, getTutoringFiles, getTutoringFilesNew,
     getUserPrincipal
 } from "../util/APIUtils";
 import Modal from "antd/es/modal";
@@ -53,14 +53,14 @@ function randomColor() {
     return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
 
-function getBase64(file) {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = error => reject(error);
-    });
-}
+// function getBase64(file) {
+//     return new Promise((resolve, reject) => {
+//         const reader = new FileReader();
+//         reader.readAsDataURL(file);
+//         reader.onload = () => resolve(reader.result);
+//         reader.onerror = error => reject(error);
+//     });
+// }
 
 class StreamComponent extends Component {
 
@@ -80,6 +80,7 @@ class StreamComponent extends Component {
             myId: null,
             otherId: null,
             receivedFiles: [],
+            counter: 1,
 
         };
         this.handleSubmit=this.handleSubmit.bind(this);
@@ -94,6 +95,7 @@ class StreamComponent extends Component {
             if (error) {
                 return console.error(error);
             }
+            console.log(this.state.clientId);
             const member = {...this.state.memberChat};
             member.id = this.droneChat.clientId;
             this.setState({memberChat: member});
@@ -102,78 +104,77 @@ class StreamComponent extends Component {
         room.on('data', (data, member) => {
             const messages = this.state.messagesChat;
             console.log("In room.on");
-            console.log(messages);
+            console.log(member);
             messages.push({member: member, text: data});
-            console.log(messages);
             this.setState({messagesChat: messages});
         });
     }
 
     componentWillMount(): void {
 
-        getScheduledLessons()
-            .then(response => {
-                this.setState({
-                    scheduledLessons : response
-                });
-            });
+        // getScheduledLessons()
+        //     .then(response => {
+        //         this.setState({
+        //             scheduledLessons : response
+        //         });
+        //     });
+        //
+        // this.getLesson();
+        //
+        // getUserPrincipal()
+        //     .then(response => {
+        //             this.setState({
+        //                 myId: response.id
+        //             });
+        //     });
+        //
+        // this.getOtherId();
 
-        this.getLesson();
-
-        getUserPrincipal()
-            .then(response => {
-                    this.setState({
-                        myId: response.id
-                    });
-            });
-
-        this.getOtherId();
-
-
-    }
-
-    sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    async getOtherId(){
-
-        await this.sleep(2000);
-
-        if(this.state.myId === this.state.lesson.mentorId)
-            this.setState({
-                otherId: this.state.lesson.menteeId
-            });
-        else this.setState({
-            otherId: this.state.lesson.mentorId
-        });
-
-        console.log(this.state.myId);
-        console.log(this.state.otherId);
 
     }
+    //
+    // sleep(ms) {
+    //     return new Promise(resolve => setTimeout(resolve, ms));
+    // }
 
-    async getLesson(){
-
-        await this.sleep(2000);
-
-        console.log(this.state.scheduledLessons.length);
-
-        for(let i =0; i< this.state.scheduledLessons.length; i++)
-        {
-
-            if(Math.round((((new Date(this.state.scheduledLessons[i].scheduletAt).getMinutes() - new Date().getMinutes())) % 86400000) % 3600000) / 60000 <60)
-            {
-                this.setState({
-                    lesson :this.state.scheduledLessons[i]
-            });
-            }
-
-        }
-        await this.sleep(2000);
-        console.log(this.state.lesson);
-
-    }
+    // async getOtherId(){
+    //
+    //     await this.sleep(2000);
+    //
+    //     if(this.state.myId === this.state.lesson.mentorId)
+    //         this.setState({
+    //             otherId: this.state.lesson.menteeId
+    //         });
+    //     else this.setState({
+    //         otherId: this.state.lesson.mentorId
+    //     });
+    //
+    //     console.log(this.state.myId);
+    //     console.log(this.state.otherId);
+    //
+    // }
+    //
+    // async getLesson(){
+    //
+    //     await this.sleep(2000);
+    //
+    //     console.log(this.state.scheduledLessons.length);
+    //
+    //     for(let i =0; i< this.state.scheduledLessons.length; i++)
+    //     {
+    //
+    //         if(Math.round((((new Date(this.state.scheduledLessons[i].scheduletAt).getMinutes() - new Date().getMinutes())) % 86400000) % 3600000) / 60000 <60)
+    //         {
+    //             this.setState({
+    //                 lesson :this.state.scheduledLessons[i]
+    //         });
+    //         }
+    //
+    //     }
+    //     await this.sleep(2000);
+    //     console.log(this.state.lesson);
+    //
+    // }
 
 
     click () {
@@ -299,8 +300,6 @@ class StreamComponent extends Component {
         const formData = new FormData();
         fileList.forEach(file => {
             formData.append('files', file);
-            formData.append('name', this.state.lesson.name);
-            formData.append('other', this.state.otherId);
         });
 
         this.setState({
@@ -323,17 +322,25 @@ class StreamComponent extends Component {
 
     handleLoadFiles(){
 
-        const formData = new FormData();
-        console.log(this.state.lesson.name);
+        // const formData = new FormData();
+        // console.log(this.state.lesson.name);
+        //
+        // formData.append('name', this.state.lesson.name);
+        //
+        // getTutoringFiles(formData)
+        //     .then(response => {
+        //             this.setState({
+        //                 receivedFiles: response
+        //             });
+        //             console.log(response);
+        //     });
 
-        formData.append('name', this.state.lesson.name);
-
-        getTutoringFiles(formData)
+        getTutoringFilesNew()
             .then(response => {
-                    this.setState({
-                        receivedFiles: response
-                    });
-                    console.log(response);
+                this.setState({
+                    receivedFiles: response
+                });
+                console.log(response);
             });
 
     }
@@ -391,6 +398,7 @@ class StreamComponent extends Component {
                         <Messages
                             messages={this.state.messagesChat}
                             currentMember={this.state.memberChat}
+                            counter={this.state.counter++}
                         />
                         <InputMessage
                             placeholder = "Insert your message here"
@@ -420,8 +428,16 @@ class StreamComponent extends Component {
                             type="primary"
                             onClick={this.handleLoadFiles}
                             style={{ marginTop: 16 }}
-                        >
+                        >Update
                         </Button>
+
+                        {this.state.receivedFiles.map(function(file, index) {
+
+                            return (
+                                <p><a href={"http://localhost:5000/api/downloadTutoringFile/" + file.filename}> {file.filename}</a>
+                                </p>
+                                    )
+                        })}
 
                     </TabPane>
 

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import '../app/bootstrap.min.css'; // Tell Webpack that Button.js uses these styles
 import './tooplate-style.css';
 import './unicons.css'
+import './style.css'
+import './font-awesome.min.css'
+import './imagehover.min.css'
+import './style.scss'
 import image1 from './images/undraw/undraw_software_engineer_lvl5.svg';
 
 import './home.css';
@@ -101,6 +105,126 @@ class HomePage extends Component{
                         </div>
                     </div>
                 </section>
+
+                <section>
+                <div className="banner" style={{width: "100%"}}>
+                    <div className="bg-color">
+                        <div className="container">
+                            <div className="row">
+                                <div className="banner-text text-center">
+                                    <div className="text-border">
+                                        <h2 className="text-dec">Trust & Quality</h2>
+                                    </div>
+                                    <div className="intro-para text-center quote">
+                                        <p style={{color: 'white'}} className="big-text" >Learning Today . . . Leading Tomorrow.</p>
+                                        <p style={{color: 'white'}} className="small-text"> “One of the greatest values of mentors is the ability to see ahead what others cannot see and to help them navigate a course to their destination.” — John C. Maxwell </p>
+                                        <a href="#footer" className="btn get-quote">GET A QUOTE</a>
+                                    </div>
+                                    <a href="#feature" className="mouse-hover">
+                                        <div className="mouse"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </section>
+
+
+                {/*<section id="feature" className="section-padding">*/}
+                    {/*<div className="container">*/}
+                        {/*<div className="row">*/}
+                            {/*<div className="header-section text-center">*/}
+                                {/*<h2>Features</h2>*/}
+                                {/*<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt*/}
+                                    {/*vitae, maiores, magni dolorum aliquam.</p>*/}
+                                {/*<hr className="bottom-line"/>*/}
+                            {/*</div>*/}
+                            {/*<div className="feature-info">*/}
+                                {/*<div className="fea">*/}
+                                    {/*<div className="col-md-4">*/}
+                                        {/*<div className="heading pull-right">*/}
+                                            {/*<h4>Latest Technologies</h4>*/}
+                                            {/*<p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum*/}
+                                                {/*egestas sollicitudin metus non urna in eros tincidunt convallis id id*/}
+                                                {/*nisi in interdum.</p>*/}
+                                        {/*</div>*/}
+                                        {/*<div className="fea-img pull-left">*/}
+                                            {/*<i className="fa fa-css3"></i>*/}
+                                        {/*</div>*/}
+                                    {/*</div>*/}
+                                {/*</div>*/}
+                                {/*<div className="fea">*/}
+                                    {/*<div className="col-md-4">*/}
+                                        {/*<div className="heading pull-right">*/}
+                                            {/*<h4>Toons Background</h4>*/}
+                                            {/*<p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum*/}
+                                                {/*egestas sollicitudin metus non urna in eros tincidunt convallis id id*/}
+                                                {/*nisi in interdum.</p>*/}
+                                        {/*</div>*/}
+                                        {/*<div className="fea-img pull-left">*/}
+                                            {/*<i className="fa fa-drupal"></i>*/}
+                                        {/*</div>*/}
+                                    {/*</div>*/}
+                                {/*</div>*/}
+                                {/*<div className="fea">*/}
+                                    {/*<div className="col-md-4">*/}
+                                        {/*<div className="heading pull-right">*/}
+                                            {/*<h4>Award Winning Design</h4>*/}
+                                            {/*<p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum*/}
+                                                {/*egestas sollicitudin metus non urna in eros tincidunt convallis id id*/}
+                                                {/*nisi in interdum.</p>*/}
+                                        {/*</div>*/}
+                                        {/*<div className="fea-img pull-left">*/}
+                                            {/*<i className="fa fa-trophy"></i>*/}
+                                        {/*</div>*/}
+                                    {/*</div>*/}
+                                {/*</div>*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                {/*</section>*/}
+
+                {/*<section id="organisations" className="section-padding">*/}
+                    {/*<div className="container">*/}
+                        {/*<div className="row">*/}
+                            {/*<div className="col-md-6">*/}
+                                {/*<div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">*/}
+                                    {/*<div className="orga-stru">*/}
+                                        {/*<h3>65%</h3>*/}
+                                        {/*<p>Say NO!!</p>*/}
+                                        {/*<i className="fa fa-male"></i>*/}
+                                    {/*</div>*/}
+                                {/*</div>*/}
+                                {/*<div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">*/}
+                                    {/*<div className="orga-stru">*/}
+                                        {/*<h3>20%</h3>*/}
+                                        {/*<p>Says Yes!!</p>*/}
+                                        {/*<i className="fa fa-male"></i>*/}
+                                    {/*</div>*/}
+                                {/*</div>*/}
+                                {/*<div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">*/}
+                                    {/*<div className="orga-stru">*/}
+                                        {/*<h3>15%</h3>*/}
+                                        {/*<p>Can't Say!!</p>*/}
+                                        {/*<i className="fa fa-male"></i>*/}
+                                    {/*</div>*/}
+                                {/*</div>*/}
+                            {/*</div>*/}
+                            {/*<div className="col-md-6">*/}
+                                {/*<div className="detail-info">*/}
+                                    {/*<hgroup>*/}
+                                        {/*<h3 className="det-txt"> Is inclusive quality education affordable?</h3>*/}
+                                        {/*<h4 className="sm-txt">(Revised and Updated for 2016)</h4>*/}
+                                    {/*</hgroup>*/}
+                                    {/*<p className="det-p">Donec et lectus bibendum dolor dictum auctor in ac erat.*/}
+                                        {/*Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id*/}
+                                        {/*nisi in interdum.</p>*/}
+                                {/*</div>*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                {/*</section>*/}
 
 
                 {/*<div className="container">*/}
@@ -317,7 +441,7 @@ class HomePage extends Component{
                                     <p>
                                         As a mentor, you should purchase a plan, monthly on yearly. At least, you can try our app one week by clicking this button.
                                     </p>
-                                    <a href='#' className='btn-minimal'>
+                                    <a href='/signup' className='btn-minimal'>
                                         Get Free Trial
                                     </a>
                                 </div>
@@ -327,17 +451,17 @@ class HomePage extends Component{
                                     <div className='header'>
                                         <h4>Basic</h4>
                                         <div className='price'>
-                                            <span className='currency'>$</span>
+                                            <span className='currency'>LEI</span>
                                             <span className='amount'>13</span>
                                             <span className='period'>/mo</span>
                                         </div>
                                     </div>
                                     <ul className='items'>
-                                        <li>1TB Storage</li>
+                                        <li>1eTB Storag</li>
                                         <li>Late Support</li>
-                                        <li>3 Tasks /day</li>
+                                        <li>2 tutorings /day</li>
                                     </ul>
-                                    <a href='#' className='btn-minimal'>
+                                    <a href='/signup' className='btn-minimal'>
                                         Sign Up
                                     </a>
                                 </div>
@@ -347,7 +471,7 @@ class HomePage extends Component{
                                     <div className='header'>
                                         <h4>Pro</h4>
                                         <div className='price'>
-                                            <span className='currency'>$</span>
+                                            <span className='currency'>LEI</span>
                                             <span className='amount'>100</span>
                                             <span className='period'>/yr</span>
                                         </div>
@@ -355,9 +479,9 @@ class HomePage extends Component{
                                     <ul className='items'>
                                         <li>2TB Storage</li>
                                         <li>Instant Support</li>
-                                        <li>Unlimited Tasks</li>
+                                        <li>Unlimited tutorings</li>
                                     </ul>
-                                    <a href='#' className='btn-minimal'>
+                                    <a href='/signup' className='btn-minimal'>
                                         Sign Up
                                     </a>
                                 </div>

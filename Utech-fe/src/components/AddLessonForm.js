@@ -93,15 +93,7 @@ class AddLessonForm extends Component{
 
         addLessonPhoto(formData)
             .then(response => {
-                notification.success({
-                    message: 'UTech',
-                    description: "Thank you! Your lesson was succesfully saved",
-                });
-            }).catch(error => {
-            notification.error({
-                message: 'UTech',
-                description: error.message || 'Sorry! Something went wrong. Please try again!'
-            });
+                console.log(response);
         });
     }
 

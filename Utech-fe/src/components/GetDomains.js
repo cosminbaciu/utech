@@ -71,7 +71,7 @@ class GetDomains extends Component{
                                         />
                                     </Card>
                                 </div>);
-                        })): (<GetLessons domain = {this.state.domainId}/>)}
+                        })): (<GetLessons domain = {this.state.domainId} name={""}/>)}
                     </ul>
                 </Layout>
             </div>

@@ -1,5 +1,12 @@
 import {Component} from "react";
-import {getLessonPicture, getLessons, getLessonsByDomain, getProfilePicture, getUsers} from "../util/APIUtils";
+import {
+    getLessonPicture,
+    getLessons,
+    getLessonsByDomain, getLessonsByKeyword,
+    getLessonsByKeywordSearch,
+    getProfilePicture,
+    getUsers
+} from "../util/APIUtils";
 import {Button, DatePicker, Form, Input, notification} from "antd";
 import FormItem from "./AddLessonForm";
 import React from "react";
@@ -35,7 +42,7 @@ class GetLessons extends Component{
             date: new Date(),
             image: null,
             images:[],
-            users: []
+            users: [],
         };
     }
 
@@ -55,12 +62,22 @@ class GetLessons extends Component{
 
     componentDidMount() {
 
-        getLessonsByDomain(this.props.domain)
+        if(this.props.name !== '')
+            getLessonsByKeyword(this.props.name)
+                .then(response => {
+                    this.setState({
+                        lessons : response
+                    });
+                });
+        else
+            getLessonsByDomain(this.props.domain)
             .then(response => {
                 this.setState({
                     lessons : response
                 });
             });
+
+
 
 
 
@@ -87,7 +104,9 @@ class GetLessons extends Component{
 
         getLessonPicture(name)
             .then(response  => {
-                this.image = response;
+                this.setState({
+                    image: response,
+                });;
 
             });
 
@@ -189,11 +208,11 @@ class GetLessons extends Component{
                                 <Card
                                     style={{width: 300}}
                                     cover={<img alt="example"
-                                                src={self.getPhoto(lesson.lesson.name)} />}
+                                                src={"http://localhost:5000/api/downloadLessonPhoto/" + lesson.lesson.name}/>}
                                     actions={[<a onClick={self.showModal}> <Icon type="check"/></a>, <Icon type="edit"/>, <Icon type="heart" />]}
                                 >
                                 <Meta
-                                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                    avatar={<Avatar src={"http://localhost:5000/api/downloadProfilePicture/" + lesson.user.username + "/profile.jpg" }/>}
                                     title={lesson.lesson.name + " - " + lesson.lesson.price + " LEI"}
                                     description={
                                         <a onClick={self.showModal1}> {lesson.user.username}</a>

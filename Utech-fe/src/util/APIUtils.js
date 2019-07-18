@@ -214,7 +214,7 @@ export function getTutoringFiles(name) {
 
 export function getLessonPicture(lessonName) {
     return request({
-        url: API_BASE_URL + "/downloadProfilePicture/" + lessonName,
+        url: API_BASE_URL + "/downloadLessonPhoto/" + lessonName,
         method: 'GET'
     });
 }
@@ -250,6 +250,13 @@ export function getLessonsByKeywordSearch(keyword) {
 export function getUsers() {
     return request({
         url: API_BASE_URL + "/users",
+        method: 'GET'
+    });
+}
+
+export function getTutoringFilesNew() {
+    return request({
+        url: API_BASE_URL + "/tutoring",
         method: 'GET'
     });
 }

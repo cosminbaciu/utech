@@ -6,6 +6,8 @@ import Messages from "./StreamComponent";
 import {Button, Icon} from "antd";
 import Tabs from "antd/es/tabs";
 import Graphic from "./HomepageUser";
+import Link from "react-router-dom/es/Link";
+import Timeline from "antd/es/timeline";
 const { TabPane } = Tabs;
 
 
@@ -64,11 +66,8 @@ class ProfilePage extends Component {
                             <div className="profile-img">
                                 <img
                                     src={"http://localhost:5000/api/downloadProfilePicture/" + this.state.username + "/profile.jpg"}
-                                    alt="ggg"/>
-                                <div className="file btn btn-lg btn-primary">
-                                    Change Photo
-                                    <input type="file" name="file"/>
-                                </div>
+                                    a="ggg"/>
+
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -93,7 +92,7 @@ class ProfilePage extends Component {
                             </div>
                         </div>
                         <div className="col-md-2">
-                            <input type="submit" className="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                            <Link to="/profilePageEdit"> <input type="submit" className="profile-edit-btn" name="btnAddMore" value="Edit Profile"/></Link>
                         </div>
                     </div>
                     <div className="row">
@@ -163,6 +162,20 @@ class ProfilePage extends Component {
                                 </TabPane>
                                 <TabPane tab="Activity" key="3">
 
+                                    <Timeline mode="alternate">
+                                        <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+                                        <Timeline.Item color="green">Solve initial network problems 2015-09-01</Timeline.Item>
+                                        <Timeline.Item dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />}>
+                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+                                            beatae vitae dicta sunt explicabo.
+                                        </Timeline.Item>
+                                        <Timeline.Item color="red">Network problems being solved 2015-09-01</Timeline.Item>
+                                        <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+                                        <Timeline.Item dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />}>
+                                            Technical testing 2015-09-01
+                                        </Timeline.Item>
+                                    </Timeline>
 
                                 </TabPane>
 

@@ -36,18 +36,12 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 700;
     color: #4B4B4C;
 }
-a{
-    color: #5fcf80;
-}
-a:hover, a:focus{
-    color: #5fcf80;
-}
+
+
 /***********************************
 Navigation bar
 ************************************/
-.navbar-default .navbar-brand {
-    color: #5FCF80;
-}
+
 .navbar-default {
     background-color: #ffffff;
 }
@@ -64,19 +58,14 @@ Navigation bar
 	margin: 10px 5px;
 	padding: 10px 15px;
 }
-.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover
-{
-	color: #5FCF80;
-}
+
 
 .navbar-nav .active a{
     background: none !important;
-    color: #5FCF80 !important;
     outline: none;
 }
 
 .btn-trial a{
-	background-color: #5FCF80;
 	border-radius: 25px;
 	color: #ffffff !important;
 	border: 1px solid #5FCF80;
@@ -713,6 +702,7 @@ Responsive media queries
     }
     .big-text {
     font-size: 30px;
+        color: white;
     }
     .small-text {
     font-size: 14px;

@@ -14,10 +14,11 @@ class Messages extends Component {
   renderMessage(message) {
 
 
+
+
     const {member, text} = message;
     console.log(member);
-    const {currentMember} = this.props;
-    const messageFromMe = member.id === currentMember.id;
+    const messageFromMe = this.props.counter%2;
     const className = messageFromMe ?
       "Messages-message currentMember" : "Messages-message";
     return (
@@ -27,7 +28,7 @@ class Messages extends Component {
       />
         <div className="Message-content">
           <div className="username">
-            {member.username}
+            {/*{member.username}*/}
           </div>
           <div className="text">{text}</div>
         </div>

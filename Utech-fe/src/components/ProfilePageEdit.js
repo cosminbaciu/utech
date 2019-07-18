@@ -2,6 +2,7 @@ import {Component} from "react";
 import React from "react";
 import "./profile.css";
 import {getProfilePicture, getUserPrincipal} from "../util/APIUtils";
+import Input from "antd/es/input";
 
 class ProfilePageEdit extends Component {
 
@@ -68,10 +69,10 @@ class ProfilePageEdit extends Component {
                         <div className="col-md-6">
                             <div className="profile-head">
                                 <h5>
-                                    {this.state.name}
+                                    <Input placeholder="Basic usage"  value={this.state.name}/>
                                 </h5>
                                 <h6>
-                                    Web Developer and Designer
+                                    <Input placeholder="Basic usage"  value="Web Developer and Designer"/>
                                 </h6>
                                 <p className="proile-rating">RANKINGS : <span>8/10</span></p>
                                 <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -87,7 +88,7 @@ class ProfilePageEdit extends Component {
                             </div>
                         </div>
                         <div className="col-md-2">
-                            <input type="submit" className="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                            <input type="submit" className="profile-edit-btn" name="btnAddMore" value="Save"/>
                         </div>
                     </div>
                     <div className="row">
@@ -114,7 +115,7 @@ class ProfilePageEdit extends Component {
                                             <label>User Id</label>
                                         </div>
                                         <div className="col-md-6">
-                                            <p>{this.state.username}</p>
+                                            <p><Input placeholder="Basic usage"  value={this.state.username}/></p>
                                         </div>
                                     </div>
                                     <div className="row">
@@ -122,7 +123,7 @@ class ProfilePageEdit extends Component {
                                             <label>Name</label>
                                         </div>
                                         <div className="col-md-6">
-                                            <p>{this.state.name}</p>
+                                            <p><Input placeholder="Basic usage"  value={this.state.name}/></p>
                                         </div>
                                     </div>
                                     <div className="row">
@@ -130,7 +131,7 @@ class ProfilePageEdit extends Component {
                                             <label>Email</label>
                                         </div>
                                         <div className="col-md-6">
-                                            <p>{this.state.email}</p>
+                                            <p><Input placeholder="Basic usage"  value={this.state.email}/></p>
                                         </div>
                                     </div>
                                     <div className="row">
@@ -138,7 +139,7 @@ class ProfilePageEdit extends Component {
                                             <label>Phone</label>
                                         </div>
                                         <div className="col-md-6">
-                                            <p>123 456 7890</p>
+                                            <p><Input placeholder="Basic usage"  value="0758628208"/></p>
                                         </div>
                                     </div>
                                     <div className="row">
@@ -146,59 +147,11 @@ class ProfilePageEdit extends Component {
                                             <label>Profession</label>
                                         </div>
                                         <div className="col-md-6">
-                                            <p>Web Developer and Designer</p>
+                                            <p><Input placeholder="Basic usage"  value="Web designer"/></p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="tab-pane fade" id="profile" role="tabpanel"
-                                     aria-labelledby="profile-tab">
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <label>Experience</label>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <p>Expert</p>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <label>Hourly Rate</label>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <p>10$/hr</p>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <label>Total Projects</label>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <p>230</p>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <label>English Level</label>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <p>Expert</p>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <label>Availability</label>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <p>6 months</p>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-md-12">
-                                            <label>Your Bio</label><br/>
-                                            <p>Your detail description</p>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
