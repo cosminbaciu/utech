@@ -78,9 +78,22 @@ public class LessonController {
 
 
     @RequestMapping (value = "/getLessonByKeyword/{keyword}", produces = "application/json", method = RequestMethod.GET)
-    public ResponseEntity<List<Lesson>> getLessonByKeyword(@PathVariable String keyword){
+    public ResponseEntity<List<LessonDTO>> getLessonByKeyword(@PathVariable String keyword){
 
-        return new ResponseEntity<>(lessonRepository.findAllByNameContains(keyword), HttpStatus.OK);
+        List<LessonDTO> lessonDTOs = new ArrayList<>();
+
+        List<Lesson> lessons = lessonRepository.findAllByNameContains(keyword);
+
+        for(Lesson lesson: lessons)
+        {
+            LessonDTO lessonDTO = new LessonDTO();
+            lessonDTO.setLesson(lesson);
+            lessonDTO.setUser(userRepository.findById(lesson.getUserId()).get());
+
+            lessonDTOs.add(lessonDTO);
+        }
+
+        return new ResponseEntity<>(lessonDTOs, HttpStatus.OK);
     }
 
     @RequestMapping (value = "/getLessonByKeywordSearch/{keyword}", produces = "application/json", method = RequestMethod.GET)
@@ -91,6 +104,9 @@ public class LessonController {
 
         for(Lesson lesson:lessons)
             lessonsNames.add(lesson.getName());
+
+
+
 
         return new ResponseEntity<>(lessonsNames, HttpStatus.OK);
 

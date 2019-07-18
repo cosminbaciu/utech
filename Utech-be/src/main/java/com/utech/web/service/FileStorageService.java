@@ -120,9 +120,9 @@ public class FileStorageService {
         }
     }
 
-    public String storeTutoringFiles(MultipartFile file, UserPrincipal currentUser, Long otherUserId, String lessonName) {
+    public String storeTutoringFiles(MultipartFile file, UserPrincipal currentUser) {
 
-        File folder = new File(this.fileStorageLocation.toString() + "/" + lessonName);
+        File folder = new File(this.fileStorageLocation.toString() + "/tutoring");
         if (!folder.exists()) {
             if (folder.mkdir()) {
                 System.out.println("Directory is created!");
@@ -137,9 +137,7 @@ public class FileStorageService {
 
 
 
-        String fileName = null;
-
-        fileName = otherUserId +  "-"+ file.getOriginalFilename();
+        String fileName = file.getOriginalFilename();
 
 
         try {
@@ -147,7 +145,7 @@ public class FileStorageService {
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
-            Path targetLocation = Paths.get(this.fileStorageLocation.toString() +  "/" + lessonName).resolve(fileName);
+            Path targetLocation = Paths.get(this.fileStorageLocation.toString() +  "/tutoring").resolve(fileName);
             Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
 //            String fileNameWithoutExt = FilenameUtils.removeExtension(fileName);
@@ -219,7 +217,7 @@ public class FileStorageService {
             } else {
 
                 filePath = Paths.get(this.fileStorageLocation.toString() + "/"
-                        + "cosmic.baciu").resolve("profile.jpg").normalize();
+                        + username).resolve("profile.jpg").normalize();
                 resource = new UrlResource(filePath.toUri());
                 if (resource.exists()) {
                     return resource;
@@ -254,23 +252,23 @@ public class FileStorageService {
         }
     }
 
-    public Resource loadTutoringFiles(String lessonName, String filename) {
+    public Resource loadTutoringFiles(String filename) {
 
 
 
         try {
-            Path filePath = Paths.get(this.fileStorageLocation.toString() + "/" + lessonName).resolve(filename).normalize();
+            Path filePath = Paths.get(this.fileStorageLocation.toString() + "/tutoring" ).resolve(filename).normalize();
             Resource resource = new UrlResource(filePath.toUri());
             if(resource.exists()) {
                 return resource;
             } else {
 
-                filePath = Paths.get(this.fileStorageLocation.toString() + "/" + lessonName).resolve(filename).normalize();
+                filePath = Paths.get(this.fileStorageLocation.toString() + "/tutoring").resolve(filename).normalize();
                 resource = new UrlResource(filePath.toUri());
                 if (resource.exists()) {
                     return resource;
                 } else
-                    throw new MyFileNotFoundException("File not found " + lessonName);
+                    throw new MyFileNotFoundException("File not found " + filename);
 
             }
         } catch (MalformedURLException ex) {

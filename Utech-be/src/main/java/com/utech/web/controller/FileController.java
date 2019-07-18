@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.websocket.server.PathParam;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -80,14 +82,13 @@ public class FileController {
     }
 
     @PostMapping("/uploadTutoringFile")
-    public UploadFileResponse uploadTutoringFile(@RequestParam("name") String name, @RequestParam("file") MultipartFile file, @CurrentUser UserPrincipal currentUser,@RequestParam("other") Long id ) {
+    public UploadFileResponse uploadTutoringFile( @RequestParam("file") MultipartFile file, @CurrentUser UserPrincipal currentUser) {
 
         FileSender fileSender = new FileSender();
         fileSender.setFilename(file.getOriginalFilename());
-        fileSender.setUserId(id);
         fileSenderRespository.save(fileSender);
 
-        String fileName = fileStorageService.storeTutoringFiles(file, currentUser, id, name );
+        String fileName = fileStorageService.storeTutoringFiles(file, currentUser);
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
@@ -99,10 +100,10 @@ public class FileController {
     }
 
     @PostMapping(path ="/uploadMultipleTutoringFiles", consumes = "multipart/form-data")
-    public List<UploadFileResponse> uploadMultipleTutoringFiles(@RequestParam("name") String name,@RequestParam("files") MultipartFile[] files, @CurrentUser UserPrincipal currentUser,@RequestParam("other") Long id) {
+    public List<UploadFileResponse> uploadMultipleTutoringFiles(@RequestParam("files") MultipartFile[] files, @CurrentUser UserPrincipal currentUser) {
         return Arrays.asList(files)
                 .stream()
-                .map(file -> uploadTutoringFile(name, file, currentUser, id))
+                .map(file -> uploadTutoringFile(file, currentUser))
                 .collect(Collectors.toList());
     }
 
@@ -149,8 +150,8 @@ public class FileController {
 //                .body(resource);
 //    }
 
-    @GetMapping("/downloadLessonPhoto")
-    public ResponseEntity<Resource> downloadProfilePicture(@RequestParam("name") String lessonName,  HttpServletRequest request) {
+    @GetMapping("/downloadLessonPhoto/{name}")
+    public ResponseEntity<Resource> downloadProfilePicture(@PathVariable("name") String lessonName,  HttpServletRequest request) {
 
         Resource resource = fileStorageService.loadLessonPhoto(lessonName);
 
@@ -170,18 +171,13 @@ public class FileController {
                 .body(resource);
     }
 
-    @PostMapping("/downloadTutoringFiles")
-    public ResponseEntity<List<Resource>> downloadTutoringFiles(@RequestParam("name") String lessonName, @CurrentUser UserPrincipal currentUser,  HttpServletRequest request) {
+    @GetMapping("/downloadTutoringFile/{name}")
+    public ResponseEntity<Resource> downloadTutoringFiles(@PathVariable("name") String filename) {
 
 
-        List<FileSender> lessonNames = fileSenderRespository.findAllByUserId(currentUser.getId());
+        Resource resource = fileStorageService.loadTutoringFiles(filename);
 
-        List<Resource> resourceList = new ArrayList<>();
 
-        for(FileSender fileSender: lessonNames) {
-
-             resourceList.add(fileStorageService.loadTutoringFiles(lessonName, fileSender.getFilename()));
-        }
 
 
         String contentType = null;
@@ -195,9 +191,19 @@ public class FileController {
             contentType = "application/octet-stream";
         }
 
+        HttpHeaders header = new HttpHeaders();
+        header.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename);
         return ResponseEntity.ok()
+                .headers(header)
                 .contentType(MediaType.parseMediaType(contentType))
-                .body(resourceList);
+                .body(resource);
     }
+
+    @GetMapping("/tutoring")
+    public List<FileSender> getTutoingFiles(){
+        return fileSenderRespository.findAll();
+    }
+
+
 
 }
